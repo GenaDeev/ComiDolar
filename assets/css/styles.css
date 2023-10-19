@@ -135,6 +135,16 @@
     .wide {
         width: 200;
     }
+    .lad {
+        visibility: none;
+        width: 0;
+        height: 0;
+    }
+    .rad {
+        visibility: none;
+        width: 0;
+        height: 0;
+    }
 }
 @media only screen and (min-width: 768px) {
     body {
@@ -260,5 +270,13 @@
 
     .info {
         text-decoration: none;
+    }
+    .lad {
+        float: left;
+        margin-top: 5%;
+    }
+    .rad {
+        float: right;
+        margin-top: 5%;
     }
 }
