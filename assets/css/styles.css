@@ -136,14 +136,14 @@
         width: 200;
     }
     .lad {
-        visibility: none;
-        width: 0;
-        height: 0;
+        visibility: hidden;
+        width: 0px;
+        height: 0px;
     }
     .rad {
-        visibility: none;
-        width: 0;
-        height: 0;
+        visibility: hidden;
+        width: 0px;
+        height: 0px;
     }
 }
 @media only screen and (min-width: 768px) {
