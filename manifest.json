@@ -1,0 +1,25 @@
+{
+    "name": "ComiDolar",
+    "short_name": "ComiDolar",
+    "description": "Consulta el valor del dolar oficial y el dolar blue a diario mediante el sitio de la Comision de Dolar del Colegio Nacional de Buenos Aires.",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#ffffff",
+    "theme_color": "#009688",
+    "icons": [
+      {
+        "src": "/assets/img/favicon.png",
+        "sizes": "1024x1024",
+        "type": "image/png"
+      }
+    ],
+    "scope": "/",
+    "orientation": "portrait",
+    "lang": "es",
+    "dir": "ltr",
+    "prefer_related_applications": false,
+    "related_applications": [],
+    "permissions": [],
+    "splash_pages": null
+  }
+  
