@@ -285,7 +285,7 @@
         margin-top: 5%;
     }
     .sad {
-        visibility: none;
+        visibility: hidden;
         width: 0;
         height: 0;
     }
