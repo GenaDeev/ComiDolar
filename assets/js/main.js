@@ -52,10 +52,13 @@
                     // Extraer los valores de "compra" y "venta" del JSON
                     const compra = '$' + data.blue.value_buy; // Agregar el símbolo de dinero
                     const venta = '$' + data.blue.value_sell;   // Agregar el símbolo de dinero
-
+                    const brechadecimal = (data.blue.value_sell - data.oficial.value_sell) / data.oficial.value_sell * 100;
+                    const brecha = '%' + parseFloat(brechadecimal.toFixed(2));
+                    
                     // Actualizar los valores de los elementos HTML
                     document.getElementById('bcompra').value = compra;
                     document.getElementById('bventa').value = venta;
+                    document.getElementById('brechav').value = brecha;
                 })
                 .catch(error => {
                     console.error('Error al obtener los precios del dólar:', error);
