@@ -53,7 +53,7 @@
                     const compra = '$' + data.blue.value_buy; // Agregar el símbolo de dinero
                     const venta = '$' + data.blue.value_sell;   // Agregar el símbolo de dinero
                     const brechadecimal = (data.blue.value_sell - data.oficial.value_sell) / data.oficial.value_sell * 100;
-                    const brecha = '%' + parseFloat(brechadecimal.toFixed(2));
+                    const brecha = parseFloat(brechadecimal.toFixed(2)) + '%';
                     
                     // Actualizar los valores de los elementos HTML
                     document.getElementById('bcompra').value = compra;
