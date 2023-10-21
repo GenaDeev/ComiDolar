@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: /    # Bloquea todo, pero permite excepciones
+Allow: /$
+Allow: /wsp
