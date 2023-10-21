@@ -1,4 +1,5 @@
 User-agent: *
-Disallow: /    # Bloquea todo, pero permite excepciones
+Disallow: /info
+Sitemap: https://comimc.com.ar/sitemap.xml
 Allow: /$
 Allow: /wsp
