@@ -1,5 +1,10 @@
 User-agent: *
 Disallow: /info
-Sitemap: https://comimc.com.ar/sitemap.xml
+
+Sitemap: https://comidolar.com.ar/sitemap.xml
+
 Allow: /$
 Allow: /wsp
+
+User-agent: Twitterbot
+Allow: /
