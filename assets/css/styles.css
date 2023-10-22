@@ -142,9 +142,6 @@
   .navwsp h1 {
     font-size: inherit;
   }
-  .wide {
-    width: 200;
-  }
   .lad {
     visibility: hidden;
     width: 0px;
@@ -196,9 +193,6 @@
 
   .navlogo {
     float: left;
-  }
-  .wide {
-    width: 300;
   }
   .navwsp {
     margin-top: 30px;
