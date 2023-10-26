@@ -5,6 +5,7 @@ Sitemap: https://comidolar.com.ar/sitemap.xml
 
 Allow: /$
 Allow: /wsp
+Allow: /assets/img/
 
 User-agent: Twitterbot
 Allow: /
