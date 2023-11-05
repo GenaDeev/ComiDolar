@@ -197,6 +197,10 @@
     .navwsp a{
         color:inherit
     }
+    .navwsp p{
+        font-size: 36px;
+        color: black;
+    }
     .navwsp:hover{
         background:linear-gradient(90deg,#65c047 0,#2db47a 55%,#63ac72 100%)
     }
