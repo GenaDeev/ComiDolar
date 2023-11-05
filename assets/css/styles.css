@@ -105,7 +105,7 @@
         background-color:#e0dede
     }
     label{
-        font-size:20px
+        font-size:36px
     }
     .oficial{
         background-color:rgb(0,100,0,.5)
@@ -140,7 +140,7 @@
         transition:1s
     }
     input,label{
-        font-size:20px
+        font-size:36px
     }
     .info,.navwsp a{
         text-decoration:none
