@@ -124,8 +124,8 @@
         margin-top:1vh
     }
     .navwsp p{
-        font-size: 20px;
-        color: black;
+        font-size: 0px;
+        visibility: hidden;
     }
     .bad,.lad,.rad,footer{
         visibility:hidden;
