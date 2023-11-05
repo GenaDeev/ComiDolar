@@ -12,6 +12,8 @@
     font-size: 0px;
     visibility: hidden;
     color: white;
+    width: 0;
+    height: 0;
     }
     .navwsp,p,input{
         text-align:center
