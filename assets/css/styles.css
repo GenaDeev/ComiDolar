@@ -75,7 +75,7 @@
     p{
         font-size:36px
     }
-    .fecha,input{
+    .fecha{
         font-size:28px
     }
     .container{
@@ -100,6 +100,7 @@
         border:none;
         border-radius:8px;
         margin-bottom:2vh
+        font-size: 24px;
     }
     input:hover{
         background-color:#e0dede
@@ -140,7 +141,7 @@
         transition:1s
     }
     input,label{
-        font-size:36px
+        font-size:24px
     }
     .info,.navwsp a{
         text-decoration:none
@@ -215,6 +216,7 @@
         border:none;
         border-radius:8px;
         margin-bottom:2vh
+        font-size: 24px;
     }
     input:hover{
         background-color:#e0dede
