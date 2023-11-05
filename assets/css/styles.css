@@ -45,7 +45,7 @@
     .navwsp{
         margin-top:8%;
         margin-left:35%;
-        color:rgb(255,255,255,.7);
+        color: black;
         background:linear-gradient(90deg,#83f95b 0,#3df2a4 55%,#88ed9c 100%);
         border-radius:8px;
         width:25%;
