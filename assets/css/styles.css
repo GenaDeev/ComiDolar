@@ -8,6 +8,11 @@
     .cat {
         font-size: 24px;
     }
+    .hid {
+    font-size: 0px;
+    visibility: hidden;
+    color: white;
+    }
     .navwsp,p,input{
         text-align:center
     }
