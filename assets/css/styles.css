@@ -99,7 +99,7 @@
         width:75%;
         border:none;
         border-radius:8px;
-        margin-bottom:2vh
+        margin-bottom:2vh;
         font-size: 24px;
     }
     input:hover{
@@ -215,7 +215,7 @@
         height:5vh;
         border:none;
         border-radius:8px;
-        margin-bottom:2vh
+        margin-bottom:2vh;
         font-size: 24px;
     }
     input:hover{
