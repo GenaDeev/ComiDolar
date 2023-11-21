@@ -8,7 +8,7 @@
                         <div class="--sell">
                           <span class="--label"> Precio de venta</span>
                             <span class="--price">$
-                              911.69 
+                              911.788 
                             </span>
                         </div>
                         <div class="--variation --negative">
