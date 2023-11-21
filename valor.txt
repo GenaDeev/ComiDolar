@@ -1,20 +1,20 @@
 <div class="--variation" id="crypto__variation"><div class="--buy">
                           <span class="--label"> Precio de compra</span>
                             <span class="--price">$ 
-                              971.384 
+                              970.517 
                             </span>
                           
                         </div>
                         <div class="--sell">
                           <span class="--label"> Precio de venta</span>
                             <span class="--price">$
-                              929.403 
+                              930.332 
                             </span>
                         </div>
                         <div class="--variation --negative">
                           <span class="--label">Variación</span>
                             <span class="--price">
-                              -1.57 
+                              -1.65 
                             </span>
                         </div>
                         </div>
