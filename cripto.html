@@ -38,14 +38,15 @@
         body {
             background-img: url("https://comidolar.com.ar/assets/img/bg.webp")
         }
-        .--variation {
+        .content {
             background-color: white;
             border-radius: 8px;
             transition: 1s all;
             display: flex;
             align-items: center;
+            padding: 100px
         }
-        .--variation:hover {
+        .content:hover {
         box-shadow: 0 0 20px rgba(109, 7, 230, 0.5);
             transition: 1s all;
         }
@@ -53,7 +54,9 @@
 </head>
 <body>
 
-<!-- Aquí se agregará el contenido de valor.txt -->
+<div class="content" id="content">
+    
+</div>
 
 <script>
     var xhr = new XMLHttpRequest();
@@ -61,7 +64,7 @@
     xhr.onreadystatechange = function () {
         if (xhr.readyState == 4 && xhr.status == 200) {
             // Crea un nuevo div para contener el HTML de valor.txt
-            var container = document.createElement('div');
+            var container = document.getElementById('#content');
             container.innerHTML = xhr.responseText;
 
             // Agrega el contenido al body
