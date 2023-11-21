@@ -40,19 +40,16 @@
 <!-- Aquí se agregará el contenido de valor.txt -->
 
 <script>
-    // Crea un nuevo elemento script
-    var scriptElement = document.createElement('script');
-
-    // Utiliza una petición AJAX para cargar el contenido de valor.txt
     var xhr = new XMLHttpRequest();
     xhr.open('GET', 'valor.txt', true);
     xhr.onreadystatechange = function () {
         if (xhr.readyState == 4 && xhr.status == 200) {
-            // Asigna el contenido de valor.txt al elemento script
-            scriptElement.text = xhr.responseText;
+            // Crea un nuevo div para contener el HTML de valor.txt
+            var container = document.createElement('div');
+            container.innerHTML = xhr.responseText;
 
-            // Agrega el elemento script al body
-            document.body.appendChild(scriptElement);
+            // Agrega el contenido al body
+            document.body.appendChild(container);
         }
     };
     xhr.send();
