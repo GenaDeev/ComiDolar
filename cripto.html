@@ -64,7 +64,7 @@
     xhr.onreadystatechange = function () {
         if (xhr.readyState == 4 && xhr.status == 200) {
             // Crea un nuevo div para contener el HTML de valor.txt
-            var container = document.getElementById('#content');
+            var container = document.getElementById('content');
             container.innerHTML = xhr.responseText;
 
             // Agrega el contenido al body
