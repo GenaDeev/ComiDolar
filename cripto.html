@@ -60,21 +60,19 @@
     
 </div>
 <center><a href="https://comidolar.com.ar"><img src="https://comidolar.com.ar/assets/img/wide.webp" width="35%" height="auto"></a></center>
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 <script>
-    var xhr = new XMLHttpRequest();
-    xhr.open('GET', 'valor.txt', true);
-    xhr.onreadystatechange = function () {
-        if (xhr.readyState == 4 && xhr.status == 200) {
-            // Crea un nuevo div para contener el HTML de valor.txt
-            var container = document.getElementById('content');
-            container.innerHTML = xhr.responseText;
+    $(document).ready(function () {
+        // Realiza la solicitud AJAX con $.get
+        $.get('valor.txt', function (data) {
+            // Actualiza el contenido de #content con el contenido de valor.txt
+            $('#content').html(data);
 
-            // Agrega el contenido al body
-            document.body.appendChild(container);
-        }
-    };
-    xhr.send();
+            // No es necesario crear un contenedor adicional, ya que #content ya existe en el DOM
+        });
+    });
 </script>
+
 
 </body>
 </html>
