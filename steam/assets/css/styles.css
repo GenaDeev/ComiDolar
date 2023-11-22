@@ -179,6 +179,7 @@ input {
     }
     .copycontainer {
         margin-left: -120px;
+        font-size: 24px;
     }
     .container {
         max-width: 95%;
@@ -206,6 +207,9 @@ input {
     }
     .sum .results label {
         font-size: 24px;
+    }
+    .navitem {
+      font-size: 24px;
     }
 }
 
