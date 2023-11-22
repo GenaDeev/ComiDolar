@@ -188,7 +188,7 @@ input {
     }
     .container {
         width: 95vw;
-        height: 100%;
+        height: 75vh;
     }
     input {
         width: 200px;
