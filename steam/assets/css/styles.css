@@ -183,7 +183,7 @@ input {
         font-size: 24px;
     }
     .container {
-        max-width: 95%;
+        max-width: 95vw;
         height: 100%;
     }
     input {
