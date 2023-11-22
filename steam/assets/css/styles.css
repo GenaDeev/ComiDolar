@@ -193,6 +193,7 @@ input {
     input {
         width: 400px;
         font-size: 24px;
+        height: 60px;
     }
     .price {
         width: 400px  !important;
@@ -215,6 +216,13 @@ input {
     }
     .navitem {
       font-size: 36px;
+    }
+    .form p {
+        font-size: 36px;
+    }
+    .form p a {
+        width: 50%;
+        height: 60px;
     }
 }
 
