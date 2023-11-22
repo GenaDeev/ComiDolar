@@ -173,6 +173,7 @@ input {
 @media screen and (max-width: 1080px) {
     header {
         display: block;
+        height: 100vh;
     }
     header h1 {
         margin-left: -120px;
