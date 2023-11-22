@@ -211,8 +211,9 @@ input {
     .sum h2 {
         font-size: 60px;
     }
-    .sum .results label {
+    .results label {
         font-size: 50px;
+        margin-bottom: 20px;
     }
     .navitem {
       font-size: 36px;
