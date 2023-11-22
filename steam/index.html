@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <title>Calculadora Steam - ComiDólar</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="icon" type="image/png" href="https://comidolar.com.ar/assets/img/favicon.png">
+    <link rel="canonical" href="https://comidolar.com.ar/">
+    <link rel="manifest" href="https://comidolar.com.ar/manifest.json">
+    <meta name="description" content="Calcula cuanto valdra tu juego con impuestos! Impuestos steam, impuesto pais, percepciones. Todo lo que necesitas saber!">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://comidolar.com.ar/assets/img/atouch/180.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="https://comidolar.com.ar/assets/img/atouch/152.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="https://comidolar.com.ar/assets/img/atouch/120.png">
+    <link rel="apple-touch-startup-image" href="https://comidolar.com.ar/assets/img/atouch/atouch.png">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Comi Dólar">
+    <meta name="theme-color" content="#14b54f">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://comidolar.com.ar/steam">
+    <meta property="og:title" content="Calculadora Steam - ComiDólar">
+    <meta property="og:description" content="Calcula cuanto valdra tu juego con impuestos! Impuestos steam, impuesto pais, percepciones. Todo lo que necesitas saber!">
+    <meta property="og:image" content="https://comidolar.com.ar/steam/assets/img/banner.png">
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://comidolar.com.ar">
+    <meta property="twitter:title" content="Calculadora Steam - ComiDólar">
+    <meta property="twitter:description" content="Calcula cuanto valdra tu juego con impuestos! Impuestos steam, impuesto pais, percepciones. Todo lo que necesitas saber!">
+    <meta property="twitter:image" content="https://comidolar.com.ar/steam/assets/img/banner.png">
+    <meta property="twitter:site" content="@comidolar">
+    <meta property="twitter:creator" content="@comidolar">
+</head>
+
+<body>
+    <nav class="navbar">
+        <ul class="navlist">
+            <li class="navlogo">
+                <a class="navanchor" href="https://comidolar.com.ar">
+                    <img src="https://comidolar.com.ar/assets/img/favicon.webp" width="100" height="100">
+                </a>
+            </li>
+            <li class="navitem">
+                <a href="https://steamcito.com.ar/">
+                    <span>
+                        <img src="assets/img/mate.webp" width="16px" height="16px"
+                            alt="Logo de Steamcito, una extensión que convierte los precios de Steam a pesos argentinos con impuestos incluídos.">
+                        Steamcito
+                    </span>
+                </a>
+            </li>
+            <li class="navitem">
+                <a href="https://store.steampowered.com/">
+                    <span>
+                        <img src="assets/img/steam.webp" width="16px" height="16px"
+                            alt="Logo de Steam, una plataforma de distribución digital de videojuegos desarrollada por Valve Corporation.">
+                        Steam
+                    </span>
+                </a>
+            </li>
+            <li class="navitem">
+                <a href="https://steamcito.com.ar/impuestos-hoy">
+                    <span>
+                        <img src="assets/img/tax.webp" width="16px" height="16px"
+                            alt="Estos son los impuestos que tenes que abonar con tu compra de steam.">
+                        Impuestos
+                    </span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <header>
+        <h1 class="title">
+            Calculadora
+            <br>
+            <span>
+                Impuestos
+            </span>
+            <a href="https://store.steampowered.com/">Steam</a>
+        </h1>
+        <div class="copycontainer">
+            Powered by<a class="copy" href="https://comidolar.com.ar/">©ComiDolar</a>
+        </div>
+        <div class="arrow">
+            <a href="#main">
+                <img src="assets/img/arrow.webp" width="64">
+            </a>
+        </div>
+    </header>
+    <div class="main" id="main">
+        <div class="container">
+            <div class="sum">
+                <h2>Resumen</h2>
+                <br>
+                <div class="results" id="results">
+                    <label for="pesosResult">Sin Impuestos:</label>
+                    <br>
+                    <input type="text" id="pesosResult" readonly>
+                    <br>
+                    <label for="impaisResult">Impuesto Pais:</label>
+                    <br>
+                    <input type="text" id="impaisResult" readonly>
+                    <br>
+                    <label for="gananciasResult">Ganancias (RG AFIP Nº 5232):</label>
+                    <input type="text" id="gananciasResult" readonly>
+                    <br>
+                    <label for="bienesResult">Bienes Personales (RG AFIP Nº 5430):</label>
+                    <br>
+                    <input type="text" id="bienesResult" readonly>
+                    <br>
+                    <label for="totalResult">Total:</label>
+                    <br>
+                    <input class="total" type="text" id="totalResult" readonly>
+
+                </div>
+            </div>
+            <div class="form">
+                <h2>Monto</h2>
+                <label>Ingresa el total del juego que querés comprar, en USD</label>
+                <br>
+                <input type="number" id="price" class="price" placeholder="Precio en USD">
+                <p>¿Qué estoy pagando?
+                <br>
+                <br>
+                <a href="https://steamcito.com.ar/impuestos-hoy">
+                    <span>
+                        <img src="assets/img/tax.webp" width="16px" height="16px"
+                            alt="Estos son los impuestos que tenes que abonar con tu compra de steam.">
+                        Impuestos
+                    </span>
+                </a>
+                <br>
+                <br>
+                <img src="https://comidolar.com.ar/assets/img/wide.webp" width="180px" height="auto>">
+            </div>
+        </div>
+    </div>
+    <script src="assets/js/main.js">
+    </script>
+</body>
+
+</html>

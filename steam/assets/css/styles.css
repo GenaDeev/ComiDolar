@@ -1,0 +1,219 @@
+* {
+    font-family: Arial;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: 1s all;
+}
+body {
+    background-color: rgb(30, 30, 40) !important;
+    color: white;
+}
+.navbar {
+    background-color: rgb(60, 60, 60);
+    display: flex;
+    justify-content: flex;
+    border-bottom-right-radius: 8px;
+    border-bottom-left-radius: 8px;
+}
+.navlist {
+    display: flex;
+    list-style: none;
+    align-items: center;
+}
+.navitem {
+    margin-left: 20px;
+}
+a {
+    color: inherit !important;
+    text-decoration: none;
+    background-color: rgb(60, 60, 60);
+    border-radius: 8px;
+    padding: 8px;
+}
+a:hover {
+    background-color: rgb(30, 30, 30);
+}
+.navanchor {
+    background-color: transparent !important;
+    border-radius: 0;
+}
+header {
+    justify-content: center;
+    text-align: left;
+    padding: 150px;
+}
+header h1 {
+    font-size: 80px;
+}
+header h1 span {
+    opacity: 0.5;
+}
+header h1 a {
+    background:linear-gradient(0deg, #00adee, #000000);
+}
+header h1 a:hover {
+    background-position: 100px 105px;
+}
+.copycontainer {
+    margin-top: 30px;;
+    background-color: black;
+    padding: 10px;
+    width: 300px;
+    font-family: monospace;
+    border-radius: 6px;
+    transition: 1s ease;
+}
+.copycontainer:hover {
+    border: white dotted;
+    transition: 1s ease;
+}
+.copy {
+    font-family: inherit;
+    background-color: transparent !important;
+}
+.copy:hover {
+    color: green !important;
+}
+.arrow {
+    margin-top: 60px;
+    text-align: center;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+.main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+    margin-bottom: 100px;
+}
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 12px;
+    height: 600px;
+    width: 700px;
+    border: 3px solid #0000;
+    border-radius: 12px;
+    background: linear-gradient(#131219, #131219) padding-box, linear-gradient(
+          var(--angle),
+          #070707,
+          #00adee
+        ) border-box;
+    animation: 8s rotate linear infinite;
+  }
+  
+  @keyframes rotate {
+    to {
+      --angle: 360deg;
+    }
+  }
+  
+  @property --angle {
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+  }
+.sum {
+    flex-direction: column;
+    float: left;
+    background-color: black;
+    width: 50%;
+    text-align: center;
+    height: 100%;
+    border-radius: 6px;
+    padding-top: 50px;
+    padding-bottom: 100px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.form {
+    flex-direction: column;
+    float: right;
+    background-color: black;
+    width: 50%;
+    text-align: center;
+    height: 100%;
+    border-radius: 6px;
+    padding-top: 50px;
+    padding-bottom: 100px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.form input {
+    margin-top: 100px;
+    width: 50%;
+    height: 40px;
+    border-radius: 6px;
+    background-color: rgb(36, 35, 35);
+    border: none;
+    color: white;
+    padding: 10px;
+}
+input {
+    width: 50%;
+    height: 40px;
+    border-radius: 6px;
+    background-color: rgb(36, 35, 35);
+    border: none;
+    color: white;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+.total {
+    box-shadow: 0 0 30px rgba(251, 252, 251, 1);
+}
+.results {
+    border: 1px solid white;
+    border-radius: 4px;
+}
+@media screen and (max-width: 768px) {
+    header {
+        display: block;
+    }
+    header h1 {
+        margin-left: -120px;
+    }
+    .copycontainer {
+        margin-left: -120px;
+    }
+    .container {
+        max-width: 95%;
+        height: 100%;
+    }
+    input {
+        width: 200px;
+        font-size: 24px;
+    }
+    .price {
+        width: 200px  !important;
+        height: 50px  !important;
+        font-size: 24px;
+        margin-top: 30px  !important;
+        margin-bottom: 100px  !important;
+    }
+    .form label {
+        font-size: 24px;
+    }
+    .form h2 {
+        font-size: 34px;
+    }
+    .sum h2 {
+        font-size: 34px;
+    }
+    .sum .results label {
+        font-size: 24px;
+    }
+}
+
+@media screen and (max-width: 520px) {
+    .navitem {
+        visibility: hidden;
+        width: 0;
+        height: 0;
+
+    }
+}
