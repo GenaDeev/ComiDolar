@@ -198,19 +198,19 @@ input {
         margin-bottom: 100px  !important;
     }
     .form label {
-        font-size: 24px;
+        font-size: 36px;
     }
     .form h2 {
-        font-size: 34px;
+        font-size: 44px;
     }
     .sum h2 {
         font-size: 34px;
     }
     .sum .results label {
-        font-size: 24px;
+        font-size: 36px;
     }
     .navitem {
-      font-size: 24px;
+      font-size: 36px;
     }
 }
 
