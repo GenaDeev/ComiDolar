@@ -63,17 +63,9 @@
 <center><a href="https://comidolar.com.ar"><img src="https://comidolar.com.ar/assets/img/wide.webp" width="35%" height="auto"></a></center>
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 <script>
-    $(document).ready(function () {
-        // Realiza la solicitud AJAX con $.get
-        $.get('https://filehost.comidolar.com.ar/valor.txt', function (data) {
-            // Actualiza el contenido de #content con el contenido de valor.txt
-            $('#content').html(data);
-
-            // No es necesario crear un contenedor adicional, ya que #content ya existe en el DOM
-        });
+    $.get('https://filehost.comidolar.com.ar/valor.txt', function (data) {
+        $('#content').html(data);
     });
 </script>
-
-
 </body>
 </html>
