@@ -532,6 +532,36 @@
         float: right !important;
         margin-left: auto;
     }
+    .html {
+        box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.15);
+        border-radius: 19px;
+        background-color: #FFFFFF;
+        border: none;
+        color: white;
+        text-decoration: none;
+        display: flex;
+        font-size: 14px;
+        margin: 4px 2px;
+        border-radius: 13px;
+        width: 90%;
+        color: black;
+        text-align: left;
+        padding: 1em;
+        padding-left: 2em;
+        justify-content: center;
+        transition: 1s all;
+        cursor: pointer;
+    }
+
+    .html:hover {
+        box-shadow: #fc7b03 0px 0px 20px;
+        transition: 1s all;
+    }
+
+    .html img {
+        float: right !important;
+        margin-left: auto;
+    }
 
     .but {
         margin-top: 20px;
