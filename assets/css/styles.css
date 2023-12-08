@@ -309,6 +309,10 @@
         color: inherit;
         text-decoration: none;
     }
+    .partner {
+        background-color: #fc7b03;
+        border-radius: 4px;
+    }
 }
 
 @media only screen and (min-width:768px) {
@@ -597,5 +601,9 @@
     a {
         color: inherit;
         text-decoration: none;
+    }
+    .partner {
+        background-color: #fc7b03;
+        border-radius: 4px;
     }
 }
