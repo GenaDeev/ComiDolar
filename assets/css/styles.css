@@ -312,6 +312,7 @@
     .partner {
         background-color: #fc7b03;
         border-radius: 4px;
+        margin-left: 10px;
     }
 }
 
@@ -605,5 +606,6 @@
     .partner {
         background-color: #fc7b03;
         border-radius: 4px;
+        margin-left: 10px;
     }
 }
