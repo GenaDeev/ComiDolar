@@ -24,9 +24,8 @@ async function calculate() {
     const price = parseFloat(priceInput.value);
     const pesos = price * oficial;
     const impais = 0.3 * pesos;
-    const gan = 1.0 * pesos;
-    const bien = 0.25 * pesos;
-    const total = pesos + impais + bien + gan;
+    const gan = 0.3 * pesos;
+    const total = pesos + impais + gan;
 
     // Actualizar elementos HTML
     document.getElementById('pesosResult').value = pesos.toFixed(2);
