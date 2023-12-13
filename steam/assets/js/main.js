@@ -31,7 +31,6 @@ async function calculate() {
     document.getElementById('pesosResult').value = pesos.toFixed(2);
     document.getElementById('impaisResult').value = impais.toFixed(2);
     document.getElementById('gananciasResult').value = gan.toFixed(2);
-    document.getElementById('bienesResult').value = bien.toFixed(2);
     document.getElementById('totalResult').value = total.toFixed(2);
   } catch (error) {
     console.error('Error:', error);
