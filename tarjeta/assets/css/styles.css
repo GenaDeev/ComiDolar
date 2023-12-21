@@ -50,10 +50,11 @@ header h1 span {
     opacity: 0.5;
 }
 header h1 a {
-    background-color: transparent;
+    background-position: 0%;
+    background-image: url(https://comidolar.com.ar/tarjeta/assets/img/card.webp);
 }
 header h1 a:hover {
-    background-image: url(https://comidolar.com.ar/tarjeta/assets/img/card.webp);
+    background-position: center;
 }
 .copycontainer {
     margin-top: 30px;;
