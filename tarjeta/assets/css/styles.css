@@ -52,11 +52,13 @@ header h1 span {
 header h1 a {
     background-position: 0%;
     background-size: cover;
+    transition: 0.5s all;
     background-image: url(https://comidolar.com.ar/tarjeta/assets/img/card.webp);
 }
 header h1 a:hover {
     background-position: center;
     background-size: 200%;
+    transition: 0.5s all;
 }
 .copycontainer {
     margin-top: 30px;;
