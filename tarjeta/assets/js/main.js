@@ -25,7 +25,7 @@ async function calculate() {
     // Resto de tu lógica de cálculo
     const price = parseFloat(priceInput.value);
     const pesos = price * oficial;
-
+    let reg = 0;
     if (provInput == 'none') {
       var reg = 0;
     }
