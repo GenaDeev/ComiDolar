@@ -53,7 +53,7 @@ header h1 a {
     background-position: 0%;
     background-size: cover;
     transition: 0.5s all;
-    background-image: url(https://comidolar.com.ar/tarjeta/assets/img/card.webp);
+    background-image: url(https://comidolar.com.ar/tarjeta/assets/img/banner.jpg);
 }
 header h1 a:hover {
     background-position: center;
