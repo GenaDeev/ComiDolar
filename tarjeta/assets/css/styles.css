@@ -177,8 +177,6 @@ input {
 }
 .hidden {
     visibility: hidden;
-    width: 0px;
-    height: 0px;
 }
 @media screen and (max-width: 1080px) {
     .navitem a span img {
@@ -188,49 +186,51 @@ input {
     header {
         display: block;
         height: 50%;
-        text-align: center; /* Alineación centrada para header en dispositivos móviles */
-        padding: 50px;
     }
     header h1 {
-        margin-left: 0;
+        margin-left: -120px;
     }
     .copycontainer {
-        margin-left: 0;
+        margin-left: -120px;
         font-size: 24px;
-        text-align: center; /* Alineación centrada para copycontainer en dispositivos móviles */
     }
     .container {
         width: 95vw;
         height: 60vh;
     }
     input {
-        width: 90%;
+        width: 400px;
         font-size: 24px;
         height: 60px;
-        margin-bottom: 20px;
     }
     .price {
-        width: 90%;
-        height: 60px;
+        width: 400px  !important;
+        height: 60px  !important;
         font-size: 50px;
-        margin-top: 50px;
-        margin-bottom: 100px;
+        margin-top: 50px  !important;
+        margin-bottom: 100px  !important;
     }
-    .form label,
-    .form h2,
-    .sum h2,
+    .form label {
+        font-size: 50px;
+    }
+    .form h2 {
+        font-size: 60px;
+    }
+    .sum h2 {
+        font-size: 60px;
+    }
     .results label {
-        font-size: 30px; /* Ajusta el tamaño del texto según sea necesario */
+        font-size: 50px;
         margin-bottom: 20px;
     }
     .navitem {
-        font-size: 24px;
+      font-size: 36px;
     }
     .form p {
-        font-size: 24px;
+        font-size: 36px;
     }
     .form p a {
-        width: 90%;
+        width: 50%;
         height: 60px;
     }
 }
