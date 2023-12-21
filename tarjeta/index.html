@@ -112,6 +112,9 @@
                     <label for="gananciasResult">Ganancias (RG AFIP Nº 5232):</label>
                     <input type="text" id="gananciasResult" readonly>
                     <br>
+                    <label id="regionalimp" for="regionalResult">Impuesto Regional X%:</label>
+                    <input type="text" id="regionalResult" readonly>
+                    <br>
                     <label for="totalResult">Total:</label>
                     <br>
                     <input class="total" type="text" id="totalResult" readonly>
@@ -120,9 +123,26 @@
             </div>
             <div class="form">
                 <h2>Monto</h2>
-                <label>Ingresa el total de tu compra, en USD</label>
+                <label for="price">Ingresa el total de tu compra, en USD</label>
                 <br>
                 <input type="number" id="price" class="price" placeholder="Precio en USD">
+                <br>
+                <label for="province">¿Vivís en alguna de estas provincias?</label>
+                <select onchange="calculate()" id="province" name="province" class="price">
+                    <option value="none">No</option>
+                    <option value="caba">CABA</option>
+                    <option value="pba">Provincia de Buenos Aires</option>
+                    <option value="cdba">Córdoba</option>
+                    <option value="lppa">La Pampa</option>
+                    <option value="rrnn">Río Negro</option>
+                    <option value="salt">Salta</option>
+                    <option value="chac">Chaco</option>
+                    <option value="neuq">Neuquén</option>
+                    <option value="ttff">Tierra del Fuego</option>
+                </select>
+                <br>
+                <br>
+                <br>
                 <p>¿Qué estoy pagando?
                 <br>
                 <br>
