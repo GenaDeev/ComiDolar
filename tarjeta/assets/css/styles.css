@@ -178,6 +178,10 @@ input {
 .hidden {
     visibility: hidden;
 }
+select {
+    padding: 2px;
+    background-color: rgb(46, 46, 46);
+}
 @media screen and (max-width: 1080px) {
     .navitem a span img {
         width: 32px;
