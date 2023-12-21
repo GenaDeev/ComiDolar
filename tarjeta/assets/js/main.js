@@ -64,6 +64,7 @@ async function calculate() {
         }
       }
     }
+    console.log(reg);
     // Resto de tu lógica de cálculo
     const impais = 0.3 * pesos;
     const gan = 0.3 * pesos;
