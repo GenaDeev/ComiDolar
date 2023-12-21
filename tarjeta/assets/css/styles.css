@@ -56,6 +56,7 @@ header h1 a {
 }
 header h1 a:hover {
     background-position: center;
+    background-size: 200%;
 }
 .copycontainer {
     margin-top: 30px;;
