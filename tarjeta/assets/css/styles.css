@@ -175,6 +175,11 @@ input {
     border: 1px solid white;
     border-radius: 4px;
 }
+.hidden {
+    visibility: hidden;
+    width: 0px;
+    height: 0px;
+}
 @media screen and (max-width: 1080px) {
     .navitem a span img {
         width: 32px;

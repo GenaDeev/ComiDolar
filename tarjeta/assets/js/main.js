@@ -25,24 +25,51 @@ async function calculate() {
     // Resto de tu lógica de cálculo
     const price = parseFloat(priceInput.value);
     const pesos = price * oficial;
-
+    const regionallabel = document.getElementById('regionalimp');
+    const regionalcontainer = document.getElementById('regcont');
     let reg = 0;  // Inicializa reg aquí, después de obtener pesos
 
-    if (provInput.value === 'caba' || provInput.value === 'pba') {
+    if (provInput.value === 'caba') {
       reg = 0.02 * pesos;
-    } else if (provInput.value === 'cdba' || provInput.value === 'ttff') {
+      regionallabel.textContent = 'Ingresos Brutos CABA (AGIP RG 312/2019)'
+      regionalcontainer.classList.remove('hidden')
+    } else if (provInput.value === 'pba') {
+      reg = 0.02 * pesos;
+      regionallabel.textContent = 'Ingresos Brutos PBA (ARBA RG 38/2019)'
+      regionalcontainer.classList.remove('hidden')
+    } else if (provInput.value === 'cdba') {
       reg = 0.03 * pesos;
+      regionallabel.textContent = 'Ingresos Brutos CORDOBA (Decreto 774/2018)'
+      regionalcontainer.classList.remove('hidden')
+    } else if (provInput.value === 'ttff') {
+      reg = 0.03 * pesos;
+      regionallabel.textContent = 'Ingresos Brutos TIERRA DEL FUEGO (RG 929/2022)'
+      regionalcontainer.classList.remove('hidden')
     } else if (provInput.value === 'lppa') {
       reg = 0.01 * pesos;
+      regionallabel.textContent = 'Ingresos Brutos LA PAMPA (RG 14/2019 (Anexo II)'
+      regionalcontainer.classList.remove('hidden')
     } else if (provInput.value === 'rrnn') {
       reg = 0.05 * pesos;
+      regionallabel.textContent = 'Ingresos Brutos RIO NEGRO (RG 808/2020)'
+      regionalcontainer.classList.remove('hidden')
     } else if (provInput.value === 'salt') {
       reg = 0.036 * pesos;
+      regionallabel.textContent = 'Ingresos Brutos SALTA (RG 34/2018)'
+      regionalcontainer.classList.remove('hidden')
     } else if (provInput.value === 'chac') {
       reg = 0.055 * pesos;
+      regionallabel.textContent = 'Ingresos Brutos CHACO (RG 2046/2020)'
+      regionalcontainer.classList.remove('hidden')
     } else if (provInput.value === 'neuq') {
       reg = 0.04 * pesos;
+      regionallabel.textContent = 'Ingresos Brutos NEUQUEN (RG 1/2022)'
+      regionalcontainer.classList.remove('hidden')
+    } else if (provInput.value === 'none') {
+      reg = 0;
+      regionalcontainer.classList.add('hidden')
     }
+    
 
     // Resto de tu lógica de cálculo
     const impais = 0.3 * pesos;
