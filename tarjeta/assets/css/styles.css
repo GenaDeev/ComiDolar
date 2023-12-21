@@ -188,51 +188,49 @@ input {
     header {
         display: block;
         height: 50%;
+        text-align: center; /* Alineación centrada para header en dispositivos móviles */
+        padding: 50px;
     }
     header h1 {
-        margin-left: -120px;
+        margin-left: 0;
     }
     .copycontainer {
-        margin-left: -120px;
+        margin-left: 0;
         font-size: 24px;
+        text-align: center; /* Alineación centrada para copycontainer en dispositivos móviles */
     }
     .container {
         width: 95vw;
         height: 60vh;
     }
     input {
-        width: 400px;
+        width: 90%;
         font-size: 24px;
         height: 60px;
+        margin-bottom: 20px;
     }
     .price {
-        width: 400px  !important;
-        height: 60px  !important;
+        width: 90%;
+        height: 60px;
         font-size: 50px;
-        margin-top: 50px  !important;
-        margin-bottom: 100px  !important;
+        margin-top: 50px;
+        margin-bottom: 100px;
     }
-    .form label {
-        font-size: 50px;
-    }
-    .form h2 {
-        font-size: 60px;
-    }
-    .sum h2 {
-        font-size: 60px;
-    }
+    .form label,
+    .form h2,
+    .sum h2,
     .results label {
-        font-size: 50px;
+        font-size: 30px; /* Ajusta el tamaño del texto según sea necesario */
         margin-bottom: 20px;
     }
     .navitem {
-      font-size: 36px;
+        font-size: 24px;
     }
     .form p {
-        font-size: 36px;
+        font-size: 24px;
     }
     .form p a {
-        width: 50%;
+        width: 90%;
         height: 60px;
     }
 }
