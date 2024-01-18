@@ -6,7 +6,7 @@
   "display": "standalone",
   "theme_color": "#117333",
   "orientation": "portrait",
-  "description": "Consulta el valor del dolar oficial y el dolar blue a diario mediante el sitio de la Comision de Dolar del Colegio Nacional de Buenos Aires.",
+  "description": "Consulta el valor del dólar oficial y el dólar blue a diario mediante el sitio de la Comisión de Dólar del Colegio Nacional de Buenos Aires.",
   "related_applications": [],
   "permissions": [],
   "prefer_related_applications": false,
@@ -29,7 +29,7 @@
     {
       "name": "Dólar Cripto",
       "short_name": "Dólar Cripto",
-      "description": "Obtené la cotizaciónen tiempo real del Dólar Cripto.",
+      "description": "Obtené la cotización en tiempo real del Dólar Cripto.",
       "url": "/cripto",
       "icons": [{ "src": "https://static.vecteezy.com/system/resources/previews/013/893/270/original/3d-violet-coin-with-bitcoin-sign-investment-money-growth-banking-payment-business-and-finance-concept-realistic-3d-high-quality-render-png.png", "sizes": "192x192" }]
     },
