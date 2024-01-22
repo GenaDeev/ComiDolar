@@ -1,1 +1,507 @@
-@media only screen and (max-width:768px){.navlogo,li{float:left}.but,.fecha{font-weight:500}.cripto,.html,.info,.steam,\ .navwsp a,a{text-decoration:none}li,nav{align-items:center}.navwsp,body{font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Open Sans","Helvetica Neue",sans-serif}.cat{font-size:24px}.hid{font-size:0px;visibility:hidden;color:#fff;width:0;height:0}.navwsp,input{font-size:24px}.fecha,.navwsp,p{color:#000}.navwsp,input,p{text-align:center}.navwsp,input,input:hover{transition:1s}body{background-image:url(/assets/img/bgm.webp);background-repeat:no-repeat;background-size:110% 120%}ul{list-style-type:none;margin:0;padding:0;overflow:hidden}nav{background-color:rgb(0,0,0,.6);border-bottom-left-radius:12px;border-bottom-right-radius:12px;margin-top:-30;padding-top:5px;height:25%;width:100vw}.navlogo{margin-top:4%;align-items:center}.navwsp{margin-top:8%;margin-left:35%;background:linear-gradient(90deg,#83f95b 0,#3df2a4 55%,#88ed9c 100%);border-radius:8px;width:25%;height:75%;padding-top:7%;padding-bottom:7%}\ .navwsp a,a{color:inherit}.wspsvg{visibility:visible;width:32px;margin-top:0}.navwsp:hover{background:linear-gradient(90deg,#65c047 0,#2db47a 55%,#63ac72 100%);transition:5s}.fecha{font-size:28px;font-style:italic}.container{background-color:#fff;max-width:80%;height:100%;border-radius:12px;transition:1s ease-in-out;padding-bottom:5%}.container:hover{box-shadow:0 100px 400px 0 #00ff9d;transition:1s ease-in-out}.but,.but:hover,.cripto:hover,.html:hover,.steam:hover{transition:1s}input{height:5vh;width:75%;border:none;border-radius:8px;margin-bottom:2vh}input:hover{background-color:#e0dede}label{font-size:36px}.oficial{background-color:rgb(0,100,0,.5)}.brecha{background-color:rgba(93,100,0,.5)}.blue{background-color:rgb(0,0,100,.5)}.container img{margin-top:1vh}.navwsp p{font-size:0px;visibility:hidden}.bad,.lad,.rad,footer{visibility:hidden;width:0;height:0}.cripto,.html,.steam{box-shadow:0 2px 6px rgba(0,0,0,.15);border-radius:13px;background-color:#fff;border:none;display:flex;font-size:14px;margin:4px 2px;width:90%;color:#000;text-align:left;padding:1em 1em 1em 2em;justify-content:center;transition:1s;cursor:pointer}.steam:hover{box-shadow:#00adee 0 0 20px}.cripto img,.html img,.steam img{float:right!important;margin-left:auto}.cripto:hover{box-shadow:#ee00c6 0 0 20px}.html:hover{box-shadow:#fc7b03 0 0 20px}.but{margin-top:20px;display:inline-flex;padding:.625rem 1.25rem;margin-bottom:.5rem;align-items:center;border-radius:.5rem;font-size:.875rem;line-height:1.25rem;text-align:center;color:#111827;background:#389bf7;border:none;cursor:pointer}.but:hover{background:#5badfa;box-shadow:#5badfa 0 0 20px}.butsvg{width:1rem;height:1rem;margin-right:10px}.partner{background-color:#fc7b03;border-radius:4px;margin-left:10px}}@media only screen and (min-width:768px){.but,.fecha{font-weight:500}.cripto,.html,.info,.navwsp a,.steam,a{text-decoration:none}.navwsp,body{font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Open Sans","Helvetica Neue",sans-serif}.navwsp,input,p{text-align:center}.navwsp,.navwsp:hover,input,input:hover{transition:1s}.cat,input,label{font-size:24px}body{background-image:url(/assets/img/bg.webp);background-repeat:no-repeat;background-size:100% 120%}ul{list-style-type:none;margin:0;padding:0;overflow:hidden}nav{background-color:rgb(0,0,0,.6);border-bottom-left-radius:12px;border-bottom-right-radius:12px;margin-top:-30;padding:20px 20px 0}.lad,.navlogo,li{float:left}.navwsp,.rad{float:right}.navwsp{margin-top:30px;display:flex;align-items:center;justify-content:center;color:rgb(255,255,255,.7);background:linear-gradient(90deg,#83f95b 0,#3df2a4 55%,#88ed9c 100%);border-radius:8px;width:200px;height:50px;font-size:10px}.fecha,.navwsp p,p{color:#000}.hid,.wspsvg{visibility:hidden;width:0}.fecha,input{font-size:24px}.lad,.rad,.wide{margin-top:5%}.wspsvg{height:0}.navwsp p{font-size:20px}.navwsp:hover{background:linear-gradient(90deg,#65c047 0,#2db47a 55%,#63ac72 100%)}.container{background-color:#fff;max-width:40%;height:110%;border-radius:12px;transition:1s ease-in-out;padding-bottom:2%}.container:hover{box-shadow:0 100px 400px 0 #fff;transition:1s ease-in-out}.but,.but:hover,.cripto:hover,.html:hover,.steam:hover{transition:1s}.fecha{font-style:italic}input{height:5vh;border:none;border-radius:8px;margin-bottom:2vh}input:hover{background-color:#e0dede}.oficial{background-color:rgb(0,100,0,.5)}.brecha{background-color:rgba(93,100,0,.5)}.blue{background-color:rgb(0,0,100,.5)}.hid{height:0;font-size:0}.cripto,.html,.steam{box-shadow:0 2px 6px rgba(0,0,0,.15);border-radius:13px;background-color:#fff;border:none;display:flex;font-size:14px;margin:4px 2px;width:90%;color:#000;text-align:left;padding:1em 1em 1em 2em;justify-content:center;transition:1s;cursor:pointer}.steam:hover{box-shadow:#00adee 0 0 20px}.cripto img,.html img,.steam img{float:right!important;margin-left:auto}.cripto:hover{box-shadow:#ee00c6 0 0 20px}.html:hover{box-shadow:#fc7b03 0 0 20px}.but{margin-top:20px;display:inline-flex;padding:.625rem 1.25rem;margin-bottom:.5rem;align-items:center;border-radius:.5rem;font-size:.875rem;line-height:1.25rem;text-align:center;color:#111827;background:#389bf7;border:none;cursor:pointer}.but:hover{background:#5badfa;box-shadow:#5badfa 0 0 20px}.butsvg{width:1rem;height:1rem;margin-right:10px}a{color:inherit}.partner{background-color:#fc7b03;border-radius:4px;margin-left:10px}}
+
+
+@media only screen and (max-width:768px) {
+
+    .navlogo,
+    li {
+        float: left
+    }
+
+    .but,
+    .fecha {
+        font-weight: 500
+    }
+
+    .cripto,
+    .html,
+    .info,
+    .steam,
+    \ .navwsp a,
+    a {
+        text-decoration: none
+    }
+
+    li,
+    nav {
+        align-items: center
+    }
+
+    .navwsp,
+    body {
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif
+    }
+
+    .cat {
+        font-size: 24px
+    }
+
+    .hid {
+        font-size: 0px;
+        visibility: hidden;
+        color: #fff;
+        width: 0;
+        height: 0
+    }
+
+    .navwsp,
+    input {
+        font-size: 24px
+    }
+
+    .fecha,
+    .navwsp,
+    p {
+        color: #000
+    }
+
+    .navwsp,
+    input,
+    p {
+        text-align: center
+    }
+
+    .navwsp,
+    input,
+    input:hover {
+        transition: 1s
+    }
+
+    body {
+        background-image: url(/assets/img/bgm.webp);
+        background-repeat: no-repeat;
+        background-size: 110% 120%
+    }
+
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden
+    }
+
+    nav {
+        background-color: rgb(0, 0, 0, .6);
+        border-bottom-left-radius: 12px;
+        border-bottom-right-radius: 12px;
+        height: 25%;
+        width: 100%;
+    }
+
+    .navwsp {
+        background: linear-gradient(90deg, #83f95b 0, #3df2a4 55%, #88ed9c 100%);
+        border-radius: 999px;
+        padding: 30px;
+        cursor: pointer;
+    }
+
+    \ .navwsp a,
+    a {
+        color: inherit
+    }
+
+    .wspsvg {
+        visibility: visible;
+        width: 32px;
+        margin-top: 0
+    }
+
+    .navwsp:hover {
+        background: linear-gradient(90deg, #65c047 0, #2db47a 55%, #63ac72 100%);
+        transition: 5s
+    }
+
+    .fecha {
+        font-size: 28px;
+        font-style: italic
+    }
+
+    .container {
+        background-color: #fff;
+        max-width: 80%;
+        height: 100%;
+        border-radius: 12px;
+        transition: 1s ease-in-out;
+        padding-bottom: 5%
+    }
+
+    .container:hover {
+        box-shadow: 0 100px 400px 0 #00ff9d;
+        transition: 1s ease-in-out
+    }
+
+    .but,
+    .but:hover,
+    .cripto:hover,
+    .html:hover,
+    .steam:hover {
+        transition: 1s
+    }
+
+    
+    input {
+        height: 5vh;
+        width: 75%;
+        border: none;
+        border-radius: 8px;
+        margin-bottom: 2vh
+    }
+
+    input:hover {
+        background-color: #e0dede
+    }
+
+    label {
+        font-size: 36px
+    }
+
+    .oficial {
+        background-color: rgb(0, 100, 0, .5)
+    }
+
+    .brecha {
+        background-color: rgba(93, 100, 0, .5)
+    }
+
+    .blue {
+        background-color: rgb(0, 0, 100, .5)
+    }
+
+    .container img {
+        margin-top: 1vh
+    }
+
+    .navwsp p {
+        font-size: 0px;
+        visibility: hidden
+    }
+
+    .bad,
+    .lad,
+    .rad,
+    footer {
+        visibility: hidden;
+        width: 0;
+        height: 0
+    }
+
+    .cripto,
+    .html,
+    .steam {
+        box-shadow: 0 2px 6px rgba(0, 0, 0, .15);
+        border-radius: 13px;
+        background-color: #fff;
+        border: none;
+        display: flex;
+        font-size: 14px;
+        margin: 4px 2px;
+        width: 90%;
+        color: #000;
+        text-align: left;
+        padding: 1em 1em 1em 2em;
+        justify-content: center;
+        transition: 1s;
+        cursor: pointer
+    }
+
+    .steam:hover {
+        box-shadow: #00adee 0 0 20px
+    }
+
+    .cripto img,
+    .html img,
+    .steam img {
+        float: right !important;
+        margin-left: auto
+    }
+
+    .cripto:hover {
+        box-shadow: #ee00c6 0 0 20px
+    }
+
+    .html:hover {
+        box-shadow: #fc7b03 0 0 20px
+    }
+
+    .but {
+        margin-top: 20px;
+        display: inline-flex;
+        padding: .625rem 1.25rem;
+        margin-bottom: .5rem;
+        align-items: center;
+        border-radius: .5rem;
+        font-size: .875rem;
+        line-height: 1.25rem;
+        text-align: center;
+        color: #111827;
+        background: #389bf7;
+        border: none;
+        cursor: pointer
+    }
+
+    .but:hover {
+        background: #5badfa;
+        box-shadow: #5badfa 0 0 20px
+    }
+
+    .butsvg {
+        width: 1rem;
+        height: 1rem;
+        margin-right: 10px
+    }
+
+    .partner {
+        background-color: #fc7b03;
+        border-radius: 4px;
+        margin-left: 10px
+    }
+}
+
+@media only screen and (min-width:768px) {
+
+    .but,
+    .fecha {
+        font-weight: 500
+    }
+
+    .cripto,
+    .html,
+    .info,
+    .navwsp a,
+    .steam,
+    a {
+        text-decoration: none
+    }
+
+    .navwsp,
+    body {
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif
+    }
+
+    .navwsp,
+    input,
+    p {
+        text-align: center
+    }
+
+    .navwsp,
+    .navwsp:hover,
+    input,
+    input:hover {
+        transition: 1s
+    }
+
+    .cat,
+    input,
+    label {
+        font-size: 24px
+    }
+
+    body {
+        background-image: url(/assets/img/bg.webp);
+        background-repeat: no-repeat;
+        background-size: 100% 120%
+    }
+
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden
+    }
+
+    nav {
+        background-color: rgb(0, 0, 0, .6);
+        border-bottom-left-radius: 12px;
+        border-bottom-right-radius: 12px;
+        margin-top: -30;
+        padding: 20px 20px 0
+    }
+
+    .lad,
+    .navlogo,
+    li {
+        float: left
+    }
+
+    .navwsp,
+    .rad {
+        float: right
+    }
+
+    .navwsp {
+        margin-top: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: rgb(255, 255, 255, .7);
+        background: linear-gradient(90deg, #83f95b 0, #3df2a4 55%, #88ed9c 100%);
+        border-radius: 8px;
+        width: 200px;
+        height: 50px;
+        font-size: 10px
+    }
+
+    .fecha,
+    .navwsp p,
+    p {
+        color: #000
+    }
+
+    .hid,
+    .wspsvg {
+        visibility: hidden;
+        width: 0
+    }
+
+    .fecha,
+    input {
+        font-size: 24px
+    }
+
+    .lad,
+    .rad,
+    .wide {
+        margin-top: 5%
+    }
+
+    .wspsvg {
+        height: 0
+    }
+
+    .navwsp p {
+        font-size: 20px
+    }
+
+    .navwsp:hover {
+        background: linear-gradient(90deg, #65c047 0, #2db47a 55%, #63ac72 100%)
+    }
+
+    .container {
+        background-color: #fff;
+        max-width: 40%;
+        height: 110%;
+        border-radius: 12px;
+        transition: 1s ease-in-out;
+        padding-bottom: 2%
+    }
+
+    .container:hover {
+        box-shadow: 0 100px 400px 0 #fff;
+        transition: 1s ease-in-out
+    }
+
+    .but,
+    .but:hover,
+    .cripto:hover,
+    .html:hover,
+    .steam:hover {
+        transition: 1s
+    }
+
+    .fecha {
+        font-style: italic
+    }
+
+    input {
+        height: 5vh;
+        border: none;
+        border-radius: 8px;
+        margin-bottom: 2vh
+    }
+
+    input:hover {
+        background-color: #e0dede
+    }
+
+    .oficial {
+        background-color: rgb(0, 100, 0, .5)
+    }
+
+    .brecha {
+        background-color: rgba(93, 100, 0, .5)
+    }
+
+    .blue {
+        background-color: rgb(0, 0, 100, .5)
+    }
+
+    .hid {
+        height: 0;
+        font-size: 0
+    }
+
+    .cripto,
+    .html,
+    .steam {
+        box-shadow: 0 2px 6px rgba(0, 0, 0, .15);
+        border-radius: 13px;
+        background-color: #fff;
+        border: none;
+        display: flex;
+        font-size: 14px;
+        margin: 4px 2px;
+        width: 90%;
+        color: #000;
+        text-align: left;
+        padding: 1em 1em 1em 2em;
+        justify-content: center;
+        transition: 1s;
+        cursor: pointer
+    }
+
+    .steam:hover {
+        box-shadow: #00adee 0 0 20px
+    }
+
+    .cripto img,
+    .html img,
+    .steam img {
+        float: right !important;
+        margin-left: auto
+    }
+
+    .cripto:hover {
+        box-shadow: #ee00c6 0 0 20px
+    }
+
+    .html:hover {
+        box-shadow: #fc7b03 0 0 20px
+    }
+
+    .but {
+        margin-top: 20px;
+        display: inline-flex;
+        padding: .625rem 1.25rem;
+        margin-bottom: .5rem;
+        align-items: center;
+        border-radius: .5rem;
+        font-size: .875rem;
+        line-height: 1.25rem;
+        text-align: center;
+        color: #111827;
+        background: #389bf7;
+        border: none;
+        cursor: pointer
+    }
+
+    .but:hover {
+        background: #5badfa;
+        box-shadow: #5badfa 0 0 20px
+    }
+
+    .butsvg {
+        width: 1rem;
+        height: 1rem;
+        margin-right: 10px
+    }
+
+    a {
+        color: inherit
+    }
+
+    .partner {
+        background-color: #fc7b03;
+        border-radius: 4px;
+        margin-left: 10px
+    }
+}
