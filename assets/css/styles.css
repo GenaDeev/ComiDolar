@@ -123,9 +123,8 @@ ul {
     }
 
     .wspsvg {
-        visibility: visible;
+        display: block;
         width: 32px;
-        margin-top: 0
     }
 
     .navwsp:hover {
@@ -371,7 +370,7 @@ ul {
 
     .hid,
     .wspsvg {
-        visibility: hidden;
+        display: none;
         width: 0
     }
 
@@ -384,10 +383,6 @@ ul {
     .rad,
     .wide {
         margin-top: 5%
-    }
-
-    .wspsvg {
-        height: 0
     }
 
     .navwsp p {
