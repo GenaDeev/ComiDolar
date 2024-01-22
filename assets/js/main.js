@@ -1,3 +1,5 @@
+addEventListener("DOMContentLoaded", actualizarPrecios);
+
 var fechaActual = new Date,
     diasSemana = ["Domingo", "Lunes", "Martes", "Mi\xe9rcoles", "Jueves", "Viernes", "S\xe1bado"],
     diaSemanaActual = diasSemana[fechaActual.getDay()],
@@ -6,8 +8,6 @@ var fechaActual = new Date,
     mesActual = meses[fechaActual.getMonth()],
     anoActual = fechaActual.getFullYear(),
     nuevaFecha = diaSemanaActual + " " + diaMesActual + " de " + mesActual + " de " + anoActual;
-
-addEventListener("DOMContentLoaded", actualizarPrecios);
 
 function actualizarPrecios() {
     fetch("https://api.bluelytics.com.ar/v2/latest").then(e => e.json()).then(e => {
