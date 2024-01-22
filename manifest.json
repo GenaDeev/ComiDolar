@@ -2,7 +2,7 @@
   "name": "ComiDólar",
   "description": "Consulta el valor del dólar oficial y el dólar blue a diario mediante el sitio de la Comisión de Dólar del Colegio Nacional de Buenos Aires.",
   "short_name": "ComiDólar",
-  "start_url": "/",
+  "start_url": "https://comidolar.com.ar",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#117333",
