@@ -13,27 +13,4 @@
       "type": "image/png"
     }
   ],
-  "shortcuts": [
-    {
-      "name": "Dólar Tarjeta",
-      "short_name": "Dólar Tarjeta",
-      "description": "Calculá el precio real de tus compras en dólares.",
-      "url": "/tarjeta",
-      "icons": [{ "src": "/tarjeta/assets/img/card.webp", "sizes": "192x112" }]
-    },
-    {
-      "name": "Dólar Cripto",
-      "short_name": "Dólar Cripto",
-      "description": "Obtené la cotización en tiempo real del Dólar Cripto.",
-      "url": "/cripto",
-      "icons": [{ "src": "/cripto/cripto.png", "sizes": "192x192" }]
-    },
-    {
-      "name": "Donar",
-      "short_name": "Donar",
-      "description": "Ayudanos a seguir creciendo",
-      "url": "/donaciones.pdf",
-      "icons": [{ "src": "/assets/img/donate.png", "sizes": "192x192" }]
-    }
-  ]
 }
