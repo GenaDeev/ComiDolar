@@ -1,6 +1,7 @@
 html,
 body {
     height: 100%;
+    width: 100%;
 }
 
 body {
@@ -185,10 +186,11 @@ svg {
     .row {
         flex-direction: column;
         height: auto;
+        width: 100%;
     }
 
     .paymethod {
-        width: 75%;
+        width: 95%;
         height: 100%;
         padding: 16px;
     }
