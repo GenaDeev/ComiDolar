@@ -133,7 +133,7 @@ fetch(blueURL)
               .then(data => {
                 officialYesterday = data.venta;
                 brechaYesterday = (blueYesterday - officialYesterday) / officialYesterday * 100;
-                brechaDifferential = (brecha - brechaYesterday) / brechaYesterday * 100;
+                brechaDifferential = brecha - brechaYesterday;
                 if (brechaDifferential > 0) {
                   brechaDif.textContent = '+%' + brechaDifferential.toFixed(2);
                 } else {
