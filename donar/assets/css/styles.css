@@ -1,7 +1,6 @@
 html,
 body {
     height: 100%;
-    width: 100%;
 }
 
 body {
@@ -190,7 +189,7 @@ svg {
     }
 
     .paymethod {
-        width: 95%;
+        width: 85%;
         height: 100%;
         padding: 16px;
     }
