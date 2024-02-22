@@ -1,5 +1,6 @@
 User-agent: *
 Disallow: /info
+Disallow: /donaciones.pdf
 
 Sitemap: https://comidolar.com.ar/sitemap.xml
 
