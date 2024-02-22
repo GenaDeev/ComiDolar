@@ -179,7 +179,7 @@ svg {
 
 @media screen and (max-width: 768px) {
     body {
-        padding-block: 350px;
+        padding-block: 250px;
     }
 
     .row {
