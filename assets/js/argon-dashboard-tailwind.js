@@ -141,12 +141,11 @@ fetch(blueURL)
                     brechaDifferential = brechaDifferential * -1;
                     brechaDif.textContent = '-%' + brechaDifferential.toFixed(2);
                     brechaDif.classList.remove('text-emerald-500');
-                    brechaDif.classList.add('text-redd-500');
+                    brechaDif.classList.add('text-red-500');
                   } else {
                     if (brechaDifferential == 0) {
                       brechaDif.textContent = 'Igual ';
                       brechaDif.classList.remove('text-emerald-500');
-                      brechaDif.classList.add('text-redd-500');
                     }
                   }
                 }
@@ -159,12 +158,12 @@ fetch(blueURL)
                     blueDifferential = blueDifferential * -1;
                     blueDif.textContent = '-%' + blueDifferential.toFixed(2);
                     blueDif.classList.remove('text-emerald-500');
-                    blueDif.classList.add('text-redd-500');
+                    blueDif.classList.add('text-red-500');
                   } else {
                     if (blueDifferential == 0) {
                       blueDif.textContent = 'Igual ';
                       blueDif.classList.remove('text-emerald-500');
-                      blueDif.classList.add('text-redd-500');
+
                     }
                   }
                 }
@@ -175,12 +174,11 @@ fetch(blueURL)
                     officialDifferential = officialDifferential * -1;
                     ofiDif.textContent = '-%' + officialDifferential.toFixed(2);
                     ofiDif.classList.remove('text-emerald-500');
-                    ofiDif.classList.add('text-redd-500');
+                    ofiDif.classList.add('text-red-500');
                   } else {
                     if (officialDifferential == 0) {
                       ofiDif.textContent = 'Igual ';
                       ofiDif.classList.remove('text-emerald-500');
-                      ofiDif.classList.add('text-default');
                     }
                   }
                 }
