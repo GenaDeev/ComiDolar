@@ -54,6 +54,7 @@ async function calculate() {
         document.getElementById('regionalimp').textContent = 'Ingresos Brutos NEUQUEN (RG 1/2022)';
         break;
       case 'none':
+        document.getElementById('regcont').classList.add('hidden');
         reg = 0;
         break;
       default:
