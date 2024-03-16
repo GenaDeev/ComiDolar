@@ -26,30 +26,45 @@ async function calculate() {
       case 'caba':
       case 'pba':
         reg = 0.02 * pesos;
+        regionallabel.textContent = 'Ingresos Brutos CABA (AGIP RG 312/2019)';
         break;
       case 'cdba':
       case 'ttff':
         reg = 0.03 * pesos;
+        regionallabel.textContent = 'Ingresos Brutos CORDOBA (Decreto 774/2018)';
         break;
       case 'lppa':
         reg = 0.01 * pesos;
+        regionallabel.textContent = 'Ingresos Brutos LA PAMPA (RG 14/2019 (Anexo II)';
         break;
       case 'rrnn':
         reg = 0.05 * pesos;
+        regionallabel.textContent = 'Ingresos Brutos RIO NEGRO (RG 808/2020)';
         break;
       case 'salt':
         reg = 0.036 * pesos;
+        regionallabel.textContent = 'Ingresos Brutos SALTA (RG 34/2018)';
         break;
       case 'chac':
         reg = 0.055 * pesos;
+        regionallabel.textContent = 'Ingresos Brutos CHACO (RG 2046/2020)';
         break;
       case 'neuq':
         reg = 0.04 * pesos;
+        regionallabel.textContent = 'Ingresos Brutos NEUQUEN (RG 1/2022)';
         break;
       case 'none':
+        reg = 0;
         break;
       default:
         break;
+    }
+
+    // Mostrar u ocultar el contenedor según el valor de reg
+    if (reg === 0) {
+      regionalcontainer.classList.add('hidden');
+    } else {
+      regionalcontainer.classList.remove('hidden');
     }
 
     const impais = 0.3 * pesos;
@@ -60,12 +75,13 @@ async function calculate() {
     document.getElementById('pesosResult').value = pesos.toFixed(2);
     document.getElementById('impaisResult').value = impais.toFixed(2);
     document.getElementById('gananciasResult').value = gan.toFixed(2);
-    regionalResult.value = reg.toFixed(2); // Actualizamos el valor de regionalResult
+    document.getElementById('regionalResult').value = reg.toFixed(2);
     document.getElementById('totalResult').value = total.toFixed(2);
   } catch (error) {
     console.error('Error:', error);
   }
 }
+
 
 document.addEventListener("DOMContentLoaded", function () {
   const links = document.querySelectorAll('a[href^="#"]');
