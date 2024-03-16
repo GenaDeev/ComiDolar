@@ -2,6 +2,7 @@ const API_URL = 'https://api.bluelytics.com.ar/v2/latest';
 let oficialValue = null;
 const priceInput = document.getElementById('price');
 const provInput = document.getElementById('province');
+const regionalResult = document.getElementById('regionalResult'); // Agregamos esta línea
 
 async function obtenerValorOficial() {
   try {
@@ -59,7 +60,7 @@ async function calculate() {
     document.getElementById('pesosResult').value = pesos.toFixed(2);
     document.getElementById('impaisResult').value = impais.toFixed(2);
     document.getElementById('gananciasResult').value = gan.toFixed(2);
-    document.getElementById('regionalResult').value = reg.toFixed(2);
+    regionalResult.value = reg.toFixed(2); // Actualizamos el valor de regionalResult
     document.getElementById('totalResult').value = total.toFixed(2);
   } catch (error) {
     console.error('Error:', error);
