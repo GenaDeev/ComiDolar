@@ -41,7 +41,7 @@
             background-size: cover auto;
         }
         .content {
-	    margin-top: 10%;
+            margin-top: 10%;
             background-color: white;
             border-radius: 8px;
             transition: 1s all;
@@ -50,15 +50,25 @@
             padding: 50px
         }
         .content:hover {
-        box-shadow: 0 0 50px rgba(109, 7, 230);
+            box-shadow: 0 0 50px rgba(109, 7, 230);
             transition: 1s all;
         }
-	.hour {
-	    display: block;
-	}
-	.hour span {
-	    color: #6d07e6;
-	}
+        .hour {
+            display: block;
+        }
+        .hour span {
+            color: #6d07e6;
+        }
+        .error-message {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .error-svg {
+            display: block;
+            margin: auto;
+            width: 100px;
+            height: 100px;
+        }
     </style>
 </head>
 <body>
@@ -69,8 +79,18 @@
 <center><a href="https://comidolar.com.ar"><img src="https://comidolar.com.ar/assets/img/wide.webp" width="35%" height="auto"></a></center>
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 <script>
-    $.get('https://filehost.comidolar.com.ar/valor.txt', function (data) {
-        $('#content').html(data);
+    $.ajax({
+        url: 'https://filehost.comidolar.com.ar/valor.txt',
+        type: 'GET',
+        timeout: 5000, // 5 segundos
+        success: function(data) {
+            $('#content').html(data);
+        },
+        error: function(xhr, status, error) {
+            if (status === "timeout") {
+                $('#content').html('<svg xmlns="http://www.w3.org/2000/svg" class="ionicon error-svg" viewBox="0 0 512 512"><path d="M93.72 183.25C49.49 198.05 16 233.1 16 288c0 66 54 112 120 112h184.37M467.82 377.74C485.24 363.3 496 341.61 496 312c0-59.82-53-85.76-96-88-8.89-89.54-71-144-144-144-26.16 0-48.79 6.93-67.6 18.14" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"/><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="32" d="M448 448L64 64"/></svg><p class="error-message">No se puede acceder al servicio en este momento. Lamentamos las molestias.</p>');
+            }
+        }
     });
 </script>
 </body>
