@@ -652,5 +652,11 @@
          </div>
       </main>
    </body>
+   <script>
+  if (typeof navigator.serviceWorker !== 'undefined') {
+    navigator.serviceWorker.register('sw.js')
+  }
+</script>
+
    <script src="https://comidolar.com.ar/assets/js/comidolar.js" async></script>
 </html>
