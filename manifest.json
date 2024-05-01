@@ -5,7 +5,7 @@
   "start_url": "https://comidolar.com.ar",
   "display": "standalone",
   "background_color": "#ffffff",
-  "theme_color": "#117333",
+  "theme_color": "#6fb463",
   "icons": [
     {
       "src": "assets/img/appicon.png",
