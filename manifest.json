@@ -26,22 +26,32 @@
     {
       "name": "Inicio ",
       "url": "https://comidolar.com.ar",
-      "description": "Cotizaciones del Dólar Blue y Oficial"
+      "description": "Cotizaciones del Dólar Blue y Oficial",
+      "icons": [{ "src": "/assets/img/appicon_192.png", "sizes": "192x192" }]
     },
     {
       "name": "Tarjeta",
       "url": "https://comidolar.com.ar/tarjeta",
-      "description": "Cotización del Dólar Tarjeta para compras en moneda extranjera."
+      "description": "Cotización del Dólar Tarjeta para compras en moneda extranjera.",
+      "icons": [{ "src": "/assets/img/tarjeta_192.png", "sizes": "192x192" }]
     },
     {
       "name": "Cripto",
       "url": "https://comidolar.com.ar/cripto",
-      "description": "Cotización del Dólar Cripto o Digital."
+      "description": "Cotización del Dólar Cripto o Digital.",
+      "icons": [{ "src": "/assets/img/cripto_192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "Donaciones",
+      "url": "https://comidolar.com.ar/donar",
+      "description": "Ayudanos a seguir creciendo.",
+      "icons": [{ "src": "/assets/img/donar_192.png", "sizes": "192x192" }]
     },
     {
       "name": "Grupo de WhatsApp",
       "url": "https://comidolar.com.ar/wsp",
-      "description": "Grupo de WhatsApp oficial de la Comisión para estar al tanto de todas las novedades."
+      "description": "Grupo de WhatsApp oficial de la Comisión para estar al tanto de todas las novedades.",
+      "icons": [{ "src": "/assets/img/wsp_192.png", "sizes": "192x192" }]
     }
   ],
   "categories": [
