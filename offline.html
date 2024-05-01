@@ -1,6 +1,7 @@
 <html lang="es">
  <head>
   <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
  <style>
      .nointernet {
          background: #fff
@@ -9006,12 +9007,7 @@ function loadStylesheet(e) {
 }
 
 aux.includes("pages") || (page = "dashboard"),
-    document.querySelector("[data-target='tooltip']") && (loadJS(to_build + "assets/js/tooltips.js", !0), loadStylesheet(to_build + "assets/css/tooltips.css")),
-    document.querySelector("[nav-pills]") && loadJS(to_build + "assets/js/nav-pills.js", !0),
-    document.querySelector("[dropdown-trigger]") && loadJS(to_build + "assets/js/dropdown.js", !0),
-    document.querySelector("[fixed-plugin]") && loadJS(to_build + "assets/js/fixed-plugin.js", !0),
     (document.querySelector("[navbar-main]") || document.querySelector("[navbar-profile]")) && document.querySelector("aside") && loadJS(to_build + "assets/js/sidenav-burger.js", !0),
-    document.querySelector(".github-button") && loadJS("https://buttons.github.io/buttons.js", !0);
  </script>
  </html>
  </div>
