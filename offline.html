@@ -8990,8 +8990,28 @@
    }
  </script>
  <script>
-     var page=window.location.pathname.split("/").pop().split(".")[0],aux=window.location.pathname.split("/"),to_build=aux.includes("pages")||aux.includes("docs")?"../":"./",root=window.location.pathname.split("/");function loadJS(e,t){let a=document.createElement("script");a.setAttribute("src",e),a.setAttribute("type","text/javascript"),a.setAttribute("async",t),document.head.appendChild(a)}function loadStylesheet(e){let t=document.createElement("link");t.setAttribute("href",e),t.setAttribute("type","text/css"),t.setAttribute("rel","stylesheet"),document.head.appendChild(t)}
-     var sidenav=document.querySelector("aside"),sidenav_trigger=document.querySelector("[sidenav-trigger]"),sidenav_close_button=document.querySelector("[sidenav-close]"),burger=sidenav_trigger.firstElementChild,top_bread=burger.firstElementChild,bottom_bread=burger.lastElementChild;sidenav_trigger.addEventListener("click",(function(){"virtual-reality"==page&&sidenav.classList.toggle("xl:left-[18%]"),"false"==sidenav.getAttribute("aria-expanded")?sidenav.setAttribute("aria-expanded","true"):sidenav.setAttribute("aria-expanded","false"),sidenav.classList.toggle("translate-x-0"),sidenav.classList.toggle("ml-6"),sidenav.classList.toggle("shadow-xl"),"rtl"==page?(top_bread.classList.toggle("-translate-x-[5px]"),bottom_bread.classList.toggle("-translate-x-[5px]")):(top_bread.classList.toggle("translate-x-[5px]"),bottom_bread.classList.toggle("translate-x-[5px]"))})),sidenav_close_button.addEventListener("click",(function(){sidenav_trigger.click()})),window.addEventListener("click",(function(e){sidenav.contains(e.target)||sidenav_trigger.contains(e.target)||"true"==sidenav.getAttribute("aria-expanded")&&sidenav_trigger.click()}));
+     var page = window.location.pathname.split("/").pop().split(".")[0],
+    aux = window.location.pathname.split("/"),
+    to_build = aux.includes("pages") || aux.includes("docs") ? "../" : "./",
+    root = window.location.pathname.split("/");
+
+function loadJS(e, t) {
+    let a = document.createElement("script");
+    a.setAttribute("src", e), a.setAttribute("type", "text/javascript"), a.setAttribute("async", t), document.head.appendChild(a)
+}
+
+function loadStylesheet(e) {
+    let t = document.createElement("link");
+    t.setAttribute("href", e), t.setAttribute("type", "text/css"), t.setAttribute("rel", "stylesheet"), document.head.appendChild(t)
+}
+
+aux.includes("pages") || (page = "dashboard"),
+    document.querySelector("[data-target='tooltip']") && (loadJS(to_build + "assets/js/tooltips.js", !0), loadStylesheet(to_build + "assets/css/tooltips.css")),
+    document.querySelector("[nav-pills]") && loadJS(to_build + "assets/js/nav-pills.js", !0),
+    document.querySelector("[dropdown-trigger]") && loadJS(to_build + "assets/js/dropdown.js", !0),
+    document.querySelector("[fixed-plugin]") && loadJS(to_build + "assets/js/fixed-plugin.js", !0),
+    (document.querySelector("[navbar-main]") || document.querySelector("[navbar-profile]")) && document.querySelector("aside") && loadJS(to_build + "assets/js/sidenav-burger.js", !0),
+    document.querySelector(".github-button") && loadJS("https://buttons.github.io/buttons.js", !0);
  </script>
  </html>
  </div>
