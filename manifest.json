@@ -95,9 +95,5 @@
   },
   "launch_handler": {
     "client_mode": "navigate-existing"
-  },
-  "scope_extensions": [
-    {"origin": "*.comidolar.com.ar"},
-    {"origin": "mundial.comidolar.com.ar"},
-  ]
+  }
 }
