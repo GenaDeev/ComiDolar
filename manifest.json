@@ -15,7 +15,7 @@
   ],
   "id": "cdwapp",
   "dir": "ltr",
-  "scope": "https://comidolar.com.ar",
+  "scope": "https://comidolar.com.ar https://mundial.comidolar.com.ar",
   "lang": "es",
   "orientation": "portrait",
   "display_override": [
