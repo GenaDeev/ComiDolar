@@ -95,5 +95,14 @@
   },
   "launch_handler": {
     "client_mode": "navigate-existing"
+  },
+  "screenshots" : [
+  {
+    "src": "/assets/img/screenshot1.webp",
+    "sizes": "720x1080",
+    "type": "image/webp",
+    "form_factor": "narrow",
+    "label": "Captura de pantalla de la pagina de inicio de Comi Dólar"
   }
+]
 }
