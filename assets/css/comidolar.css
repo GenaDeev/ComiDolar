@@ -6,6 +6,7 @@
         text-decoration: none;
         display: flex;
         align-items: center;
+        flex-direction: column;
         padding: 20px;
         border-radius:8px;
         gap: 10px;
