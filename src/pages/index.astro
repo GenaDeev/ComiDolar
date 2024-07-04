@@ -1,0 +1,65 @@
+---
+import Layout from "../layouts/layout.astro";
+import DolarCard from "../components/DolarCard.astro";
+import Lore from "../components/Lore.astro";
+const metadata = {
+  title: "Comi Dólar | Comisión de Dólar del CNBA",
+  description: {
+    meta: "Dólar Blue Hoy. Bienvenidos al sitio oficial de la Comisión de Dólar del Colegio Nacional de Buenos Aires (Comi Dólar). Cotización diaria Dólar Blue y Dólar Oficial.",
+    og: "Bienvenidos al sitio oficial de la Comisión de Dólar del Colegio Nacional de Buenos Aires (Comi Dólar). Acá vas a encontrar diariamente la cotización tanto del Dólar Blue como del Dólar Oficial.",
+  },
+  canonical: "https://comidolar.com.ar",
+};
+
+let dolares = [];
+
+try {
+  const response = await fetch("https://dolarapi.com/v1/dolares");
+  if (!response.ok) {
+    throw new Error(`Error fetching data: ${response.statusText}`);
+  }
+  dolares = await response.json();
+} catch (error) {
+  console.error("Error fetching data:", error);
+}
+
+const brecha = (dolares[1].venta - dolares[0].venta) / dolares[0].venta *100
+---
+
+<Layout metadata={metadata}>
+  <main class="space-y-12">
+    <h1 class="text-gray-600">Comi Dólar | Comisión de Dólar del CNBA</h1>
+    <div class="flex items-center w-full sm:w-auto flex-wrap gap-6 justify-center">
+      {
+        dolares.length > 0 ? (
+          dolares.map((dolar) => (
+            <DolarCard
+              type={dolar.casa}
+              sell={dolar.venta}
+              buy={dolar.compra}
+              date={dolar.fechaActualizacion}
+              name={dolar.nombre}
+            />
+          ))
+        ) : (
+          <p>
+            No se pudieron obtener los datos del dólar. Intente de nuevo más
+            tarde.
+          </p>
+        )
+      }
+      <DolarCard
+      type="brecha"
+      sell={brecha}
+      buy={1}
+      date={dolares[0].fechaActualizacion}
+      name="Brecha"
+    />
+    </div>
+    <Lore className="space-y-10" />
+    <h4>Links utiles</h4>
+    <a href="https://blackmaps.com.ar">BlackMaps (Sponsored)</a>
+    <a href="https://backlinks1.vercel.app">EGBL (Sponsored)</a>
+    <a href="https://texttohtml.online">Text to HTML (Sponsored)</a>
+  </main>
+</Layout>
