@@ -433,4 +433,16 @@ const metadata = {
             }
         }
     </style>
+    <script is:inline>
+        function copyToClipboard(elementId) {
+            var copyText = document.getElementById(elementId);
+            var tempInput = document.createElement("input");
+            tempInput.value = copyText.textContent;
+            document.body.appendChild(tempInput);
+            tempInput.select();
+            document.execCommand("copy");
+            document.body.removeChild(tempInput);
+            alert("¡Copiado al portapapeles!");
+        }
+    </script>
 </Layout>
