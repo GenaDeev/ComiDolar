@@ -64,22 +64,13 @@ import { ViewTransitions } from "astro:transitions";
         <meta http-equiv="Cache-Control" content="no-cache, mustrevalidate" />
         <meta http-equiv="Pragma" content="no-cache" />
         <ViewTransitions />
-        <script is:inline
-            src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js"
-            defer></script>
-        <script is:inline>
-            window.OneSignalDeferred = window.OneSignalDeferred || [];
-            OneSignalDeferred.push(async function (OneSignal) {
-                await OneSignal.init({
-                    appId: "8718ce03-c439-4a9f-b9a5-48ae91d60ac7",
-                });
-            });
-        </script>
+        <script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
     </head>
     <body transition:animate="slide" class={bodyclass}>
         <Header>
             <slot />
             <Footer />
         </Header>
+        <script src="../scripts/onesignal.js" defer></script>
     </body>
 </html>
