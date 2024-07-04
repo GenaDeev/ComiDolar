@@ -3,7 +3,7 @@ name: Build and Deploy
 
 on:
   schedule:
-    - cron: '0 * * * *'  # Ejecutar cada hora
+   - cron: '*/10 * * * *'
   workflow_dispatch:  # Permitir ejecución manual
 
 jobs:
