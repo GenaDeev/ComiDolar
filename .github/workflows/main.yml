@@ -1,41 +1,32 @@
-name: Build and Deploy
+name: Build Dolar and Deploy
+
+env:
+    VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+    VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
 
 on:
-  schedule:
-    - cron: '*/10 * * * *'
-  workflow_dispatch:  # Permitir ejecución manual
+    push:
+        branches:
+            - main
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
+    Deploy-Production:
+        runs-on: ubuntu-latest
+        steps:
 
-    steps:
-      - name: Check out repository
-        uses: actions/checkout@v3
+            - uses: actions/checkout@v3
 
-      - name: Install dependencies
-        run: npm install
+            - name: Install Vercel CLI
+              run: npm install --global vercel
 
-      - name: Verify Vercel Token
-        id: verify-token
-        run: |
-          curl -s -o /dev/null -w "%{http_code}" \
-          -H "Authorization: Bearer ${{ secrets.VERCEL_TOKEN }}" \
-          https://api.vercel.com/v2/teams
-      - name: Check Token Validation
-        run: |
-          if [[ "$(steps.verify-token.outputs.result)" == "200" ]]; then
-            echo "Token is valid."
-          else
-            echo "Token is invalid or there was an error."
-            exit 1
-          fi
+            - name: Pull Vercel Environment Information
+              run: vercel pull --yes --environment=production --token=${{ secrets.VERCEL_TOKEN }}
+            
+            - name: Build Astro Proyect
+              run: npx astro build
 
-      - name: Build Astro
-        run: npx astro build
+            - name: Build Project Artifacts
+              run: vercel build --prod --token=${{ secrets.VERCEL_TOKEN }}
 
-      - name: Show Build Directory (Debugging)
-        run: ls -la ./dist
-
-      - name: Deploy to Vercel
-        run: npx vercel --prod --token=${{ secrets.VERCEL_TOKEN }} --local-config=./vercel.json
+            - name: Deploy Project Artifacts
+              run: vercel deploy --prebuilt --prod --token=${{ secrets.VERCEL_TOKEN }}
