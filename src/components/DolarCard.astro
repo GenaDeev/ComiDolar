@@ -62,9 +62,10 @@ else if (type === "brecha") {
             Compra: <strong>{buy.toFixed(2)}</strong>
         </p>
         }
-        <span class="bg-green-500/25 p-1 rounded-full"
-            >Actualizado: {new Date(date).toLocaleString()}</span
-        >
+        <span class="bg-green-500/25 p-1 rounded-full">
+            Actualizado: {new Date(date).toLocaleString('es-ES', { day: '2-digit', month: '2-digit', year: 'numeric', hour: '2-digit', minute: '2-digit' })}
+        </span>
+        
         {
         type === "tarjeta" ?
         <a class="bg-[#1c2633] text-white p-1 rounded-full hover:bg-[#252c36] transition duration-200" href="/calculadora">Calculadora</a> :
