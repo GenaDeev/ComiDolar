@@ -1,9 +1,8 @@
-# .github/workflows/update-build.yml
 name: Build and Deploy
 
 on:
   schedule:
-   - cron: '*/10 * * * *'
+    - cron: '*/10 * * * *'
   workflow_dispatch:  # Permitir ejecución manual
 
 jobs:
@@ -17,8 +16,26 @@ jobs:
       - name: Install dependencies
         run: npm install
 
+      - name: Verify Vercel Token
+        id: verify-token
+        run: |
+          curl -s -o /dev/null -w "%{http_code}" \
+          -H "Authorization: Bearer ${{ secrets.VERCEL_TOKEN }}" \
+          https://api.vercel.com/v2/teams
+      - name: Check Token Validation
+        run: |
+          if [[ "$(steps.verify-token.outputs.result)" == "200" ]]; then
+            echo "Token is valid."
+          else
+            echo "Token is invalid or there was an error."
+            exit 1
+          fi
+
       - name: Build Astro
         run: npx astro build
 
+      - name: Show Build Directory (Debugging)
+        run: ls -la ./dist
+
       - name: Deploy to Vercel
-        run: npx vercel --prod --token=${{ secrets.VERCEL_TOKEN }}
+        run: npx vercel --prod --token=${{ secrets.VERCEL_TOKEN }} --local-config=./vercel.json
