@@ -23,13 +23,16 @@ try {
   console.error("Error fetching data:", error);
 }
 
-const brecha = (dolares[1].venta - dolares[0].venta) / dolares[0].venta *100
+const brecha = ((dolares[1].venta - dolares[0].venta) / dolares[0].venta) * 100;
 ---
 
 <Layout metadata={metadata}>
+  <CarouselDefault client:load images={images}/>
   <main class="space-y-12">
     <h1 class="text-gray-600">Comi Dólar | Comisión de Dólar del CNBA</h1>
-    <div class="flex items-center w-full sm:w-auto flex-wrap gap-6 justify-center">
+    <div
+      class="flex items-center w-full sm:w-auto flex-wrap gap-6 justify-center"
+    >
       {
         dolares.length > 0 ? (
           dolares.map((dolar) => (
@@ -49,12 +52,12 @@ const brecha = (dolares[1].venta - dolares[0].venta) / dolares[0].venta *100
         )
       }
       <DolarCard
-      type="brecha"
-      sell={brecha}
-      buy={1}
-      date={dolares[0].fechaActualizacion}
-      name="Brecha"
-    />
+        type="brecha"
+        sell={brecha}
+        buy={1}
+        date={dolares[0].fechaActualizacion}
+        name="Brecha"
+      />
     </div>
     <Lore className="space-y-10" />
     <h4>Links utiles</h4>
@@ -62,4 +65,18 @@ const brecha = (dolares[1].venta - dolares[0].venta) / dolares[0].venta *100
     <a href="https://backlinks1.vercel.app">EGBL (Sponsored)</a>
     <a href="https://texttohtml.online">Text to HTML (Sponsored)</a>
   </main>
+  <div class="campo w-full grid place-content-center">
+    <a
+      class="twitter-timeline"
+      href="https://twitter.com/CnbaEduFisica?ref_src=twsrc%5Etfw"
+      >Tweets by CnbaEduFisica</a
+    >
+    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"
+    ></script>
+  </div>
 </Layout>
+<style is:inline>
+  .twitter-timeline {
+    width: 50% !important;
+  }
+</style>
