@@ -72,5 +72,10 @@ import { ViewTransitions } from "astro:transitions";
             <Footer />
         </Header>
         <script src="../scripts/onesignal.js" defer></script>
+        <style is:global>
+          * {
+              -webkit-tap-highlight-color: transparent;
+            }
+        </style>
     </body>
 </html>
