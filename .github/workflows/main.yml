@@ -7,6 +7,7 @@ env:
 on:
     schedule:
         - cron: '*/30 * * * 1-5'
+    workflow_dispatch:  # Permite ejecución manual del workflow
 
 jobs:
     Deploy-Production:
