@@ -68,7 +68,6 @@ const oficial = dolares[0].venta;
                         id="finalPrice"
                         value={tarjeta}
                         disabled
-                        type="number"
                         class="border border-neutral-300 dark:bg-neutral-500 bg-neutral-200 rounded-lg w-full p-2 text-right"
                     />
                 </div>
@@ -130,8 +129,7 @@ const oficial = dolares[0].venta;
                 gananciasContainer.value = `$${(oficial * 0.3).toFixed(2)}`;
                 totalTaxContainer.value = `$${(oficial * 0.6).toFixed(2)}`;
             } else {
-                const finalvalue = value * tarjeta;
-                finalContainer.value = `$${finalvalue.toFixed(2)}`;
+                finalContainer.value = `$${(value * tarjeta).toFixed(2)}`;
                 noTaxContainer.value = `$${(value * oficial).toFixed(2)}`;
                 paisContainer.value = `$${(value * oficial * 0.3).toFixed(2)}`;
                 gananciasContainer.value = `$${(value * oficial * 0.3).toFixed(2)}`;
