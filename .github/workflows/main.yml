@@ -13,23 +13,19 @@ jobs:
     Deploy-Production:
         runs-on: ubuntu-latest
         steps:
-            - name: Checkout Code
-              uses: actions/checkout@v3
+            - name: Checkout
+              uses: actions/checkout@v4
 
-            - name: Install Vercel CLI
-              run: npm install -g vercel
+            - name: Installing Dependencies
+              run: npm install && npm install -g vercel
 
-            - name: Pull Vercel Environment Information
+            - name: Vercel Auth
               run: vercel pull --yes --environment=production --token=${{ secrets.VERCEL_TOKEN }}
 
-            - name: Install Project Dependencies
-              run: npm install
-
-            - name: Build Astro Project
-              run: npx astro build
-
-            - name: Build Project Artifacts
+            - name: Building
               run: vercel build --prod --token=${{ secrets.VERCEL_TOKEN }}
 
-            - name: Deploy Project Artifacts
-              run: vercel deploy --prebuilt --prod --token=${{ secrets.VERCEL_TOKEN }}
+            - name: Deploying
+              run: |
+                  TIMESTAMP=$(date '+%Y-%m-%d %H:%M:%S')
+                  vercel deploy --prebuilt --prod --token=${{ secrets.VERCEL_TOKEN }} --name "Actualizacion Cotizaciones - ${TIMESTAMP}"
