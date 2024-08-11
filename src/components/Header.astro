@@ -1,4 +1,5 @@
-<nav transition:persist
+<nav
+    transition:persist
     class="fixed top-0 z-50 w-full bg-white border-b border-gray-200 dark:bg-gray-800 dark:border-gray-700"
 >
     <div class="px-3 py-3 lg:px-5 lg:pl-3">
@@ -224,22 +225,33 @@
             </li>
         </ul>
         <div class="text-neutral-600">
+            <a
+                class="-ml-8 inline-block hover:scale-125 hover:-ml-6 transition-all"
+                href="https://github.com/GenaDeev/"
+                referrerpolicy="no-referrer"
+                target="_blank"
+                ><img
+                    src="/assets/img/genadev-v-nobg-1.webp"
+                    width="128px"
+                    height="128px"
+                    alt="Logo de GenaDeev"
+                />
+            </a>
             <p>
                 <a
-                    class="font-bold hover:text-green-500 transition"
-                    href="https://github.com/GenaDeev/"
-                    referrerpolicy="no-referrer"
-                    target="_blank">©GenaDev</a
-                > & <a
-                    class="font-bold hover:text-green-500 transition"
-                    href="https://genahost.vercel.app/"
-                    referrerpolicy="no-referrer"
-                    target="_blank">®GenaHost</a
-                >
+                class="font-bold hover:text-green-500 transition"
+                href="https://github.com/GenaDeev/"
+                referrerpolicy="no-referrer"
+                target="_blank">©GenaDev</a>
+                 & 
+                <a
+                class="font-bold hover:text-green-500 transition"
+                href="https://genahost.vercel.app/"
+                referrerpolicy="no-referrer"
+                target="_blank">®GenaHost</a>
                 {new Date().getFullYear()}
             </p>
             <p>Todos los derechos reservados</p>
-        </div>
     </div>
 </aside>
 
