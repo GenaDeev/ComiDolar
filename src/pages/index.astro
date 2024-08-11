@@ -85,7 +85,9 @@ const brecha = ((dolares[1].venta - dolares[0].venta) / dolares[0].venta) * 100;
     </aside>
   </section>
   <main class="space-y-12">
-    <h1 class="text-gray-600">Comi Dólar | Comisión de Dólar del CNBA</h1>
+    <h1 class="text-neutral-600 dark:text-neutral-300">
+      Comi Dólar | Comisión de Dólar del CNBA
+    </h1>
     <div
       class="flex items-center w-full sm:w-auto flex-wrap gap-6 justify-center"
     >
@@ -129,16 +131,16 @@ const brecha = ((dolares[1].venta - dolares[0].venta) / dolares[0].venta) * 100;
     background-position: center !important;
   }
   #carousel__slide1 {
-    background: url('./assets/img/wide.webp');
+    background: url("./assets/img/wide.webp");
   }
   #carousel__slide2 {
-    background: url('./assets/img/colegio.webp');
+    background: url("./assets/img/colegio.webp");
   }
   #carousel__slide3 {
-    background: url('./assets/img/mundiallogo.webp');
+    background: url("./assets/img/mundiallogo.webp");
   }
   #carousel__slide4 {
-    background: url('./assets/img/colegio2.webp');
+    background: url("./assets/img/colegio2.webp");
   }
   .twitter-timeline {
     width: 100% !important;
@@ -294,7 +296,6 @@ const brecha = ((dolares[1].venta - dolares[0].venta) / dolares[0].venta) * 100;
     animation-name: none;
   }
 
-
   .carousel__navigation-list,
   .carousel__navigation-item {
     display: inline-block;
@@ -311,7 +312,6 @@ const brecha = ((dolares[1].venta - dolares[0].venta) / dolares[0].venta) * 100;
     font-size: 0;
     transition: transform 0.1s;
   }
-
 
   .carousel::before,
   .carousel__prev {
@@ -557,5 +557,11 @@ const brecha = ((dolares[1].venta - dolares[0].venta) / dolares[0].venta) * 100;
 
   .carousel::after {
     background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpolygon points='100,50 20,100 20,0' fill='%23fff'/%3E%3C/svg%3E");
+  }
+
+  @media (prefers-color-scheme: dark) {
+    .carousel__navigation-button {
+      background-color: #aaa;
+    }
   }
 </style>

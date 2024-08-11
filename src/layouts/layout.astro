@@ -66,7 +66,7 @@ import { ViewTransitions } from "astro:transitions";
         <ViewTransitions />
         <script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
     </head>
-    <body transition:animate="slide" class={bodyclass}>
+    <body transition:animate="fade" class={`${bodyclass ? bodyclass : ''} bg-white dark:bg-neutral-800`}>
         <Header>
             <slot />
             <Footer />
