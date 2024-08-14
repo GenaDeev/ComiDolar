@@ -77,7 +77,12 @@ const oficial = dolares[0].venta;
             id="taxes"
             class="flex w-full flex-col gap-2 p-4 bg-neutral-200 dark:bg-neutral-600 rounded-lg sm:rounded-r-lg shadow-lg max-w-md"
         >
-            <h3 class="text-xl">¿Qué estoy pagando? <a href="https://steamcito.com.ar/impuestos-hoy" class="text-xs dark:text-green-400 dark:hover:text-green-500 hover:text-green-700 text-green-950">ℹ️ Mas info</a></h3>
+            <h3 class="text-xl">
+                ¿Qué estoy pagando? <a
+                    href="https://steamcito.com.ar/impuestos-hoy"
+                    class="text-xs dark:text-green-400 dark:hover:text-green-500 hover:text-green-700 text-green-950"
+                    >ℹ️ Mas info</a>
+            </h3>
             <label for="pais">Impuesto Pais (30%)</label>
             <input
                 disabled
@@ -92,7 +97,9 @@ const oficial = dolares[0].venta;
                 id="ganancias"
                 value={(tarjeta * 0.3).toFixed(2)}
             />
-            <div class="final flex flex-col gap-2 rounded-xl p-2 bg-neutral-400 dark:bg-neutral-700">
+            <div
+                class="final flex flex-col gap-2 rounded-xl p-2 bg-neutral-400 dark:bg-neutral-700"
+            >
                 <label for="totaltax">Solo Impuestos (60%)</label>
                 <input
                     disabled
@@ -111,30 +118,30 @@ const oficial = dolares[0].venta;
         </section>
     </main>
     <Lore className="space-y-10" />
-    <script is:inline data-astro-rerun define:vars={{ tarjeta, oficial }}>
-        const originContainer = document.getElementById("originalPrice");
-        const finalContainer = document.getElementById("finalPrice");
-        const paisContainer = document.getElementById("pais");
-        const gananciasContainer = document.getElementById("ganancias");
-        const noTaxContainer = document.getElementById("notax");
-        const totalTaxContainer = document.getElementById("totaltax");
-        originContainer.addEventListener("input", handleInput);
+    <script data-astro-rerun define:vars={{ tarjeta, oficial }}>
+            const originContainer = document.getElementById("originalPrice");
+            const finalContainer = document.getElementById("finalPrice");
+            const paisContainer = document.getElementById("pais");
+            const gananciasContainer = document.getElementById("ganancias");
+            const noTaxContainer = document.getElementById("notax");
+            const totalTaxContainer = document.getElementById("totaltax");
+            originContainer.addEventListener("input", handleInput);
 
-        function handleInput() {
-            const value = originContainer.value;
-            if (value === "1") {
-                finalContainer.value = `$${tarjeta}`;
-                noTaxContainer.value = `$${oficial}`;
-                paisContainer.value = `$${(oficial * 0.3).toFixed(2)}`;
-                gananciasContainer.value = `$${(oficial * 0.3).toFixed(2)}`;
-                totalTaxContainer.value = `$${(oficial * 0.6).toFixed(2)}`;
-            } else {
-                finalContainer.value = `$${(value * tarjeta).toFixed(2)}`;
-                noTaxContainer.value = `$${(value * oficial).toFixed(2)}`;
-                paisContainer.value = `$${(value * oficial * 0.3).toFixed(2)}`;
-                gananciasContainer.value = `$${(value * oficial * 0.3).toFixed(2)}`;
-                totalTaxContainer.value = `$${(value * oficial * 0.6).toFixed(2)}`;
+            function handleInput() {
+                const value = originContainer.value;
+                if (value === "1") {
+                    finalContainer.value = `$${tarjeta}`;
+                    noTaxContainer.value = `$${oficial}`;
+                    paisContainer.value = `$${(oficial * 0.3).toFixed(2)}`;
+                    gananciasContainer.value = `$${(oficial * 0.3).toFixed(2)}`;
+                    totalTaxContainer.value = `$${(oficial * 0.6).toFixed(2)}`;
+                } else {
+                    finalContainer.value = `$${(value * tarjeta).toFixed(2)}`;
+                    noTaxContainer.value = `$${(value * oficial).toFixed(2)}`;
+                    paisContainer.value = `$${(value * oficial * 0.3).toFixed(2)}`;
+                    gananciasContainer.value = `$${(value * oficial * 0.3).toFixed(2)}`;
+                    totalTaxContainer.value = `$${(value * oficial * 0.6).toFixed(2)}`;
+                }
             }
-        }
     </script>
 </Layout>
