@@ -118,30 +118,30 @@ const oficial = dolares[0].venta;
         </section>
     </main>
     <Lore className="space-y-10" />
-    <script data-astro-rerun define:vars={{ tarjeta, oficial }}>
-            const originContainer = document.getElementById("originalPrice");
-            const finalContainer = document.getElementById("finalPrice");
-            const paisContainer = document.getElementById("pais");
-            const gananciasContainer = document.getElementById("ganancias");
-            const noTaxContainer = document.getElementById("notax");
-            const totalTaxContainer = document.getElementById("totaltax");
-            originContainer.addEventListener("input", handleInput);
+    <script data-astro-rerun async define:vars={{ tarjeta, oficial }} defer>
+        const originContainer = document.getElementById("originalPrice");
+        const finalContainer = document.getElementById("finalPrice");
+        const paisContainer = document.getElementById("pais");
+        const gananciasContainer = document.getElementById("ganancias");
+        const noTaxContainer = document.getElementById("notax");
+        const totalTaxContainer = document.getElementById("totaltax");
+        originContainer.addEventListener("input", handleInput);
 
-            function handleInput() {
-                const value = originContainer.value;
-                if (value === "1") {
-                    finalContainer.value = `$${tarjeta}`;
-                    noTaxContainer.value = `$${oficial}`;
-                    paisContainer.value = `$${(oficial * 0.3).toFixed(2)}`;
-                    gananciasContainer.value = `$${(oficial * 0.3).toFixed(2)}`;
-                    totalTaxContainer.value = `$${(oficial * 0.6).toFixed(2)}`;
-                } else {
-                    finalContainer.value = `$${(value * tarjeta).toFixed(2)}`;
-                    noTaxContainer.value = `$${(value * oficial).toFixed(2)}`;
-                    paisContainer.value = `$${(value * oficial * 0.3).toFixed(2)}`;
-                    gananciasContainer.value = `$${(value * oficial * 0.3).toFixed(2)}`;
-                    totalTaxContainer.value = `$${(value * oficial * 0.6).toFixed(2)}`;
-                }
+        function handleInput() {
+            const value = originContainer.value;
+            if (value === "1") {
+                finalContainer.value = `$${tarjeta}`;
+                noTaxContainer.value = `$${oficial}`;
+                paisContainer.value = `$${(oficial * 0.3).toFixed(2)}`;
+                gananciasContainer.value = `$${(oficial * 0.3).toFixed(2)}`;
+                totalTaxContainer.value = `$${(oficial * 0.6).toFixed(2)}`;
+            } else {
+                finalContainer.value = `$${(value * tarjeta).toFixed(2)}`;
+                noTaxContainer.value = `$${(value * oficial).toFixed(2)}`;
+                paisContainer.value = `$${(value * oficial * 0.3).toFixed(2)}`;
+                gananciasContainer.value = `$${(value * oficial * 0.3).toFixed(2)}`;
+                totalTaxContainer.value = `$${(value * oficial * 0.6).toFixed(2)}`;
             }
-    </script>
+        }
+</script>
 </Layout>
