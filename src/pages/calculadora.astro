@@ -119,7 +119,7 @@ const oficial = dolares[0].venta;
         </section>
     </main>
     <Lore className="space-y-10" />
-    <script define:vars={{ tarjeta, oficial }}>
+    <script data-astro-rerun define:vars={{ tarjeta, oficial }}>
         document.addEventListener("astro:page-load", () => {
             const originContainer = document.getElementById("originalPrice");
             const finalContainer = document.getElementById("finalPrice");
