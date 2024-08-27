@@ -64,17 +64,33 @@ import { ViewTransitions } from "astro:transitions";
         <meta http-equiv="Cache-Control" content="no-cache, mustrevalidate" />
         <meta http-equiv="Pragma" content="no-cache" />
         <ViewTransitions />
-        <script data-astro-rerun src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
+        <script
+            data-astro-rerun
+            is:inline
+            src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js"
+            defer></script>
     </head>
-    <body transition:animate="fade" class={`${bodyclass ? bodyclass : ''} bg-white dark:bg-neutral-800`}>
+    <body
+        transition:animate="fade"
+        class={`${bodyclass ? bodyclass : ""} bg-white dark:bg-neutral-800`}
+    >
         <Header>
             <slot />
             <Footer />
         </Header>
-        <script data-astro-rerun src="../scripts/onesignal.js" defer></script>
+        <script data-astro-rerun is:inline defer>
+            window.OneSignalDeferred = window.OneSignalDeferred || [];
+            OneSignalDeferred.push(async function (OneSignal) {
+                OneSignal.SERVICE_WORKER_PARAM = { scope: "/sdk/onesignal/" };
+                OneSignal.SERVICE_WORKER_PATH = "sdk/onesignal/onesignal.js";
+                await OneSignal.init({
+                    appId: "8718ce03-c439-4a9f-b9a5-48ae91d60ac7",
+                });
+            });
+        </script>
         <style is:global>
-          * {
-              -webkit-tap-highlight-color: transparent;
+            * {
+                -webkit-tap-highlight-color: transparent;
             }
         </style>
     </body>
