@@ -11,6 +11,16 @@
       "src": "assets/img/appicon.png",
       "sizes": "512x512",
       "type": "image/png"
+    },
+    {
+      "src": "assets/img/appicon_256.png",
+      "sizes": "256x256",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/img/appicon_192.png",
+      "sizes": "192x192",
+      "type": "image/png"
     }
   ],
   "id": "cdwapp",
@@ -99,10 +109,45 @@
   "screenshots" : [
   {
     "src": "/assets/img/screenshot1.webp",
-    "sizes": "720x1080",
+    "sizes": "444x896",
     "type": "image/webp",
     "form_factor": "narrow",
     "label": "Captura de pantalla de la pagina de inicio de Comi Dólar"
+  },
+  {
+    "src": "/assets/img/screenshot2.webp",
+    "sizes": "444x896",
+    "type": "image/webp",
+    "form_factor": "narrow",
+    "label": "Captura de pantalla de la calculadora del dólar tarjeta"
+  },
+  {
+    "src": "/assets/img/screenshot3.webp",
+    "sizes": "444x896",
+    "type": "image/webp",
+    "form_factor": "narrow",
+    "label": "Captura de pantalla de la pagina de donaciones"
+  },
+  {
+    "src": "/assets/img/screenshot1-wide.webp",
+    "sizes": "1400x804",
+    "type": "image/webp",
+    "form_factor": "wide",
+    "label": "Captura de pantalla de la pagina de inicio de Comi Dólar"
+  },
+  {
+    "src": "/assets/img/screenshot2-wide.webp",
+    "sizes": "1400x804",
+    "type": "image/webp",
+    "form_factor": "wide",
+    "label": "Captura de pantalla de la calculadora del dólar tarjeta"
+  },
+  {
+    "src": "/assets/img/screenshot3-wide.webp",
+    "sizes": "1400x804",
+    "type": "image/webp",
+    "form_factor": "wide",
+    "label": "Captura de pantalla de la pagina de donaciones"
   }
 ]
 }
