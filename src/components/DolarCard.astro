@@ -51,27 +51,29 @@ if (type === "oficial") {
             </a>
         </section>
         <section class="space-y-1">
-        <p class="text-2xl sm:text-xl">
+            <p class="text-2xl sm:text-xl">
+                {
+                    type !== "brecha" ? (
+                        <>
+                            Venta&colon; <strong>{sell.toFixed(2)}</strong>
+                        </>
+                    ) : (
+                        <strong>{sell.toFixed(2) + " %"}</strong>
+                    )
+                }
+            </p>
             {
-                type !== "brecha" ? (
-                    <>
-                        Venta&colon; <strong>{sell.toFixed(2)}</strong>
-                    </>
-                ) : (
-                    <strong>{sell.toFixed(2) + " %"}</strong>
+                type !== "brecha" && (
+                    <p class="text-lg sm:text-md">
+                        Compra: <strong>{buy.toFixed(2)}</strong>
+                    </p>
                 )
             }
-        </p>
-        {
-            type !== "brecha" && (
-                <p class="text-lg sm:text-md">
-                    Compra: <strong>{buy.toFixed(2)}</strong>
-                </p>
-            )
-        }
         </section>
         <section class="flex flex-col gap-1">
-            <span class="bg-green-500/25 px-3 py-1 rounded-full">
+            <span
+                class={`bg-green-500/25 px-3 py-1 rounded-full dolar-timestamp-${type}`}
+            >
                 Actualizado: {
                     new Date(date).toLocaleString("es-ES", {
                         day: "2-digit",
@@ -98,3 +100,16 @@ if (type === "oficial") {
         </section>
     </div>
 </article>
+
+<script is:inline define:vars={{ date, type }}>
+    const timestamp = document.querySelector(".dolar-timestamp-" + type);
+    const clientDate = new Date(date);
+
+    timestamp.textContent = `Actualizado: ${clientDate.toLocaleString("es-ES", {
+        day: "2-digit",
+        month: "2-digit",
+        year: "numeric",
+        hour: "2-digit",
+        minute: "2-digit",
+    })}`;
+</script>
