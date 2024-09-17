@@ -2,7 +2,7 @@
   "name": "ComiDólar",
   "short_name": "ComiDólar",
   "description": "Consulta el valor del dólar oficial y el dólar blue a diario mediante el sitio de la Comisión de Dólar del Colegio Nacional de Buenos Aires.",
-  "start_url": "https://comidolar.com.ar",
+  "start_url": "/",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#6fb463",
@@ -15,7 +15,6 @@
   ],
   "id": "cdwapp",
   "dir": "ltr",
-  "scope": "https://comidolar.com.ar https://mundial.comidolar.com.ar",
   "lang": "es",
   "orientation": "portrait",
   "display_override": [
@@ -35,8 +34,8 @@
       ]
     },
     {
-      "name": "Tarjeta",
-      "url": "https://comidolar.com.ar/tarjeta",
+      "name": "Calculadora ",
+      "url": "https://comidolar.com.ar/calculadora",
       "description": "Cotización del Dólar Tarjeta para compras en moneda extranjera.",
       "icons": [
         {
@@ -46,20 +45,8 @@
       ]
     },
     {
-      "name": "Cripto",
-      "url": "https://comidolar.com.ar/cripto",
-      "description": "Cotización del Dólar Cripto o Digital.",
-      "icons": [
-        {
-          "src": "/assets/img/cripto_192.png",
-    
-          "sizes": "192x192"
-        }
-      ]
-    },
-    {
       "name": "Donaciones",
-      "url": "https://comidolar.com.ar/donar",
+      "url": "https://comidolar.com.ar/donaciones",
       "description": "Ayudanos a seguir creciendo.",
       "icons": [
         {
@@ -70,7 +57,7 @@
     },
     {
       "name": "Grupo de WhatsApp",
-      "url": "https://comidolar.com.ar/wsp",
+      "url": "https://comidolar.com.ar/whatsapp",
       "description": "Grupo de WhatsApp oficial de la Comisión para estar al tanto de todas las novedades.",
       "icons": [
         {
