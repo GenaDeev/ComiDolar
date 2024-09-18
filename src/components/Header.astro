@@ -273,21 +273,25 @@
     }
 </style>
 
-<script is:inline data-astro-rerun>
-        document
-            .getElementById("toggle-sidebar")
-            .addEventListener("click", function () {
-                const sidebar = document.getElementById("logo-sidebar");
+<script is:inline data-astro-replace>
+    function initSidebarToggle() {
+        const toggleButton = document.getElementById("toggle-sidebar");
+        const pageContent = document.getElementById("page-content");
+        const sidebar = document.getElementById("logo-sidebar");
+
+        if (toggleButton && pageContent && sidebar) {
+            toggleButton.addEventListener("click", function () {
                 sidebar.classList.toggle("-translate-x-full");
             });
-        document
-            .getElementById("page-content")
-            .addEventListener("click", function () {
-                const sidebar = document.getElementById("logo-sidebar");
-                if (sidebar.classList.contains("-translate-x-full")) {
-                    return;
-                } else {
+
+            pageContent.addEventListener("click", function () {
+                if (!sidebar.classList.contains("-translate-x-full")) {
                     sidebar.classList.add("-translate-x-full");
                 }
             });
+        }
+    }
+
+    document.addEventListener("astro:after-swap", initSidebarToggle);
+    document.addEventListener("DOMContentLoaded", initSidebarToggle);
 </script>
