@@ -273,8 +273,7 @@
     }
 </style>
 
-<script>
-    document.addEventListener("astro:page-load", () => {
+<script is:inline data-astro-rerun>
         document
             .getElementById("toggle-sidebar")
             .addEventListener("click", function () {
@@ -291,5 +290,4 @@
                     sidebar.classList.add("-translate-x-full");
                 }
             });
-    });
 </script>
