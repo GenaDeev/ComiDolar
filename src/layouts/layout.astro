@@ -86,18 +86,13 @@ import { ViewTransitions } from "astro:transitions";
                 });
             });
         </script>
-        <script
-            type="text/partytown"
+        <script is:inline
+            data-host="https://biasml.com"
+            data-dnt="false"
+            src="https://biasml.com/js/script.js"
+            id="ZwSg9rf6GA"
             async
-            src="https://www.googletagmanager.com/gtag/js?id=GTM-59NC3L65"
-        ></script>
-        <script is:inline data-astro-rerun type="text/partytown">
-            window.dataLayer = window.dataLayer || [];
-            window.gtag = function gtag() {
-                dataLayer.push(arguments);
-            };
-            gtag("js", new Date());
-            gtag("config", "GTM-59NC3L65");
+            defer>
         </script>
         <style is:global>
             * {
