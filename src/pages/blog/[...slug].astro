@@ -65,7 +65,7 @@ const formattedDate = jsDate.toLocaleString("es-AR", {
             <img
                 src={metadata.og.image}
                 alt={`Post de ComiDolar titulado ${metadata.title}`}
-                class="w-full h-64 object-cover rounded-lg shadow-lg"
+                class="sm:h-[400px] w-full object-cover rounded-lg shadow-lg"
             />
             <div class="absolute inset-0 bg-black opacity-30 rounded-lg"></div>
         </div>
@@ -168,8 +168,6 @@ const formattedDate = jsDate.toLocaleString("es-AR", {
         }
 
         img {
-            max-width: 100%; /* Ajustar imágenes al ancho del contenedor */
-            height: auto; /* Mantener la proporción */
             margin: 20px 0; /* Espaciado vertical */
         }
 
