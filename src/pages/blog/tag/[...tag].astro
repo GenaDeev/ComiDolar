@@ -1,0 +1,72 @@
+---
+import { getCollection } from "astro:content";
+import Layout from "../../../layouts/layout.astro";
+import BlogPostCard from "../../../components/BlogPostCard.astro";
+
+export async function getStaticPaths() {
+    const posts = await getCollection("blog");
+
+    const uniqueTags = [
+        ...new Set(
+            posts.flatMap((post) =>
+                post.data.tags.map((tag) => tag.toLowerCase()),
+            ),
+        ),
+    ];
+
+    return uniqueTags.map((tag) => ({
+        params: { tag },
+    }));
+}
+
+const posts = await getCollection("blog");
+
+const { tag } = Astro.params;
+const normalizedTag = tag.toLowerCase();
+
+const filteredPosts = posts.filter((post) =>
+    post.data.tags.map((t) => t.toLowerCase()).includes(normalizedTag),
+);
+
+const metadata = {
+    title: `Posts con la etiqueta ${tag} | Comi Dólar`,
+    description: {
+        meta: `Posts con la etiqueta '${tag}' en el blog oficial de Comi Dólar.`,
+        og: `Posts con la etiqueta '${tag}' en el blog oficial de Comi Dólar.`,
+    },
+    canonical: `https://comidolar.com.ar/blog/tag/${tag}`,
+    og: {
+        image: "https://comidolar.com.ar/assets/img/opengraph/blog.png",
+    },
+};
+---
+
+<Layout metadata={metadata}>
+    <main>
+        <h1 class="text-4xl font-bold mb-4 text-center">
+            Posts etiquetados con "{tag}"
+        </h1>
+
+        {
+            filteredPosts.length > 0 ? (
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                    {filteredPosts.map((post) => (
+                        <BlogPostCard
+                            title={post.data.title}
+                            description={post.data.description}
+                            date={post.data.date}
+                            author={post.data.author}
+                            theme={post.data.theme}
+                            tags={post.data.tags}
+                            slug={post.slug}
+                        />
+                    ))}
+                </div>
+            ) : (
+                <p class="text-lg text-center">
+                    No se encontraron posts con la etiqueta "{tag}".
+                </p>
+            )
+        }
+    </main>
+</Layout>

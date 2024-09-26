@@ -1,3 +1,7 @@
+---
+import AsideLink from "./AsideLink.astro";
+---
+
 <nav
     transition:persist
     class="fixed top-0 z-50 w-full bg-white border-b border-neutral-200 dark:bg-neutral-800 dark:border-neutral-700"
@@ -90,139 +94,30 @@
         class="h-full flex flex-col justify-between px-3 pb-4 overflow-y-hidden bg-white dark:bg-neutral-800"
     >
         <ul class="space-y-2 font-medium">
-            <li>
-                <a
-                    href="/"
-                    class="flex hover:scale-105 active:scale-90 transition duration-200 justify-between items-center p-2 text-neutral-900 rounded-lg dark:text-white hover:bg-neutral-100 dark:hover:bg-neutral-700 group"
-                >
-                    <div class="flex items-center">
-                        <svg
-                            class="w-5 h-5 text-neutral-500 transition duration-75 dark:text-neutral-400 group-hover:text-neutral-900 dark:group-hover:text-white"
-                            aria-hidden="true"
-                            xmlns="http://www.w3.org/2000/svg"
-                            fill="currentColor"
-                            viewBox="0 0 22 21"
-                        >
-                            <path
-                                d="M16.975 11H10V4.025a1 1 0 0 0-1.066-.998 8.5 8.5 0 1 0 9.039 9.039.999.999 0 0 0-1-1.066h.002Z"
-                            ></path>
-                            <path
-                                d="M12.5 0c-.157 0-.311.01-.565.027A1 1 0 0 0 11 1.02V10h8.975a1 1 0 0 0 1-.935c.013-.188.028-.374.028-.565A8.51 8.51 0 0 0 12.5 0Z"
-                            ></path>
-                        </svg>
-                        <span class="ms-3">Cotizaciones</span>
-                    </div>
-                    <span class="p-1 text-xs bg-red-300 rounded-xl text-red-700"
-                        >● En vivo</span
-                    >
-                </a>
-            </li>
-            <li>
-                <a
-                    href="/calculadora"
-                    class="flex hover:scale-105 active:scale-90 transition duration-200 items-center justify-between p-2 text-neutral-900 rounded-lg dark:text-white hover:bg-neutral-100 dark:hover:bg-neutral-700 group"
-                >
-                    <div class="flex items-center">
-                        <svg
-                            class="flex-shrink-0 w-5 h-5 text-neutral-500 transition duration-75 dark:text-neutral-400 group-hover:text-neutral-900 dark:group-hover:text-white"
-                            aria-hidden="true"
-                            xmlns="http://www.w3.org/2000/svg"
-                            fill="currentColor"
-                            viewBox="0 0 18 18"
-                        >
-                            <path
-                                d="M6.143 0H1.857A1.857 1.857 0 0 0 0 1.857v4.286C0 7.169.831 8 1.857 8h4.286A1.857 1.857 0 0 0 8 6.143V1.857A1.857 1.857 0 0 0 6.143 0Zm10 0h-4.286A1.857 1.857 0 0 0 10 1.857v4.286C10 7.169 10.831 8 11.857 8h4.286A1.857 1.857 0 0 0 18 6.143V1.857A1.857 1.857 0 0 0 16.143 0Zm-10 10H1.857A1.857 1.857 0 0 0 0 11.857v4.286C0 17.169.831 18 1.857 18h4.286A1.857 1.857 0 0 0 8 16.143v-4.286A1.857 1.857 0 0 0 6.143 10Zm10 0h-4.286A1.857 1.857 0 0 0 10 11.857v4.286c0 1.026.831 1.857 1.857 1.857h4.286A1.857 1.857 0 0 0 18 16.143v-4.286A1.857 1.857 0 0 0 16.143 10Z"
-                            ></path>
-                        </svg>
-                        <span class="flex-1 ms-3 whitespace-nowrap"
-                            >Calc. Impuestos</span
-                        >
-                    </div>
-                </a>
-            </li>
-            <li>
-                <a
-                    href="https://wa.me/5491127556546/"
-                    class="flex hover:scale-105 active:scale-90 transition duration-200 items-center p-2 text-neutral-900 rounded-lg dark:text-white hover:bg-neutral-100 dark:hover:bg-neutral-700 group"
-                >
-                    <svg
-                        class="flex-shrink-0 w-5 h-5 text-neutral-500 transition duration-75 dark:text-neutral-400 group-hover:text-neutral-900 dark:group-hover:text-white"
-                        aria-hidden="true"
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="currentColor"
-                        viewBox="0 0 20 20"
-                    >
-                        <path
-                            d="m17.418 3.623-.018-.008a6.713 6.713 0 0 0-2.4-.569V2h1a1 1 0 1 0 0-2h-2a1 1 0 0 0-1 1v2H9.89A6.977 6.977 0 0 1 12 8v5h-2V8A5 5 0 1 0 0 8v6a1 1 0 0 0 1 1h8v4a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1v-4h6a1 1 0 0 0 1-1V8a5 5 0 0 0-2.582-4.377ZM6 12H4a1 1 0 0 1 0-2h2a1 1 0 0 1 0 2Z"
-                        ></path>
-                    </svg>
-                    <span class="flex-1 ms-3 whitespace-nowrap">Contacto</span>
-                </a>
-            </li>
-            <li>
-                <a
-                    href="/whatsapp"
-                    class="flex hover:scale-105 active:scale-90 transition duration-200 items-center p-2 text-neutral-900 rounded-lg dark:text-white hover:bg-neutral-100 dark:hover:bg-neutral-700 group"
-                >
-                    <svg
-                        class="flex-shrink-0 w-5 h-5 text-neutral-500 transition duration-75 dark:text-neutral-400 group-hover:text-neutral-900 dark:group-hover:text-white"
-                        aria-hidden="true"
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="currentColor"
-                        viewBox="0 0 20 18"
-                    >
-                        <path
-                            d="M14 2a3.963 3.963 0 0 0-1.4.267 6.439 6.439 0 0 1-1.331 6.638A4 4 0 1 0 14 2Zm1 9h-1.264A6.957 6.957 0 0 1 15 15v2a2.97 2.97 0 0 1-.184 1H19a1 1 0 0 0 1-1v-1a5.006 5.006 0 0 0-5-5ZM6.5 9a4.5 4.5 0 1 0 0-9 4.5 4.5 0 0 0 0 9ZM8 10H5a5.006 5.006 0 0 0-5 5v2a1 1 0 0 0 1 1h11a1 1 0 0 0 1-1v-2a5.006 5.006 0 0 0-5-5Z"
-                        ></path>
-                    </svg>
-                    <span class="flex-1 ms-3 whitespace-nowrap">Grupo</span>
-                </a>
-            </li>
-            <li>
-                <a
-                    href="/donaciones"
-                    class="flex hover:scale-105 active:scale-90 transition duration-200 items-center p-2 text-neutral-900 rounded-lg dark:text-white hover:bg-neutral-100 dark:hover:bg-neutral-700 group"
-                >
-                    <svg
-                        class="flex-shrink-0 w-5 h-5 text-neutral-500 transition duration-75 dark:text-neutral-400 group-hover:text-neutral-900 dark:group-hover:text-white"
-                        aria-hidden="true"
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="currentColor"
-                        viewBox="0 0 18 20"
-                    >
-                        <path
-                            d="M17 5.923A1 1 0 0 0 16 5h-3V4a4 4 0 1 0-8 0v1H2a1 1 0 0 0-1 .923L.086 17.846A2 2 0 0 0 2.08 20h13.84a2 2 0 0 0 1.994-2.153L17 5.923ZM7 9a1 1 0 0 1-2 0V7h2v2Zm0-5a2 2 0 1 1 4 0v1H7V4Zm6 5a1 1 0 1 1-2 0V7h2v2Z"
-                        ></path>
-                    </svg>
-                    <span class="flex-1 ms-3 whitespace-nowrap">Donaciones</span
-                    >
-                </a>
-            </li>
-            <li>
-                <a
-                    href="https://mundial.comidolar.com.ar"
-                    class="flex hover:scale-105 active:scale-90 transition duration-200 items-center p-2 text-neutral-900 rounded-lg dark:text-white hover:bg-neutral-100 dark:hover:bg-neutral-700 group"
-                >
-                    <svg
-                        class="flex-shrink-0 w-5 h-5 text-neutral-500 transition duration-75 dark:text-neutral-400 group-hover:text-neutral-900 dark:group-hover:text-white"
-                        aria-hidden="true"
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
-                        viewBox="0 0 18 16"
-                    >
-                        <path
-                            stroke="currentColor"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            stroke-width="2"
-                            d="M1 8h11m0 0L8 4m4 4-4 4m4-11h3a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-3"
-                        ></path>
-                    </svg>
-                    <span class="flex-1 ms-3 whitespace-nowrap"
-                        >Mundial de Comis</span
-                    >
-                </a>
-            </li>
+            <AsideLink
+                href="/"
+                title="Cotizaciones"
+                badge={{
+                    bg: "bg-red-300",
+                    text: "text-red-700",
+                    content: "● En vivo",
+                }}
+            />
+
+            <AsideLink href="/calculadora" title="Calc. Impuestos" />
+
+            <AsideLink href="/blog" title="Blog" />
+
+            <AsideLink href="/whatsapp" title="Grupo" />
+
+            <AsideLink href="https://wa.me/5491127556546/" title="Contacto" />
+
+            <AsideLink href="/donaciones" title="Donaciones" />
+
+            <AsideLink
+                href="https://mundial.comidolar.com.ar"
+                title="Mundial de Comis"
+            />
         </ul>
         <div class="text-neutral-600 dark:text-neutral-300">
             <a
@@ -275,38 +170,37 @@
 
 <script>
     let isAsideVisible;
-    let target = document.getElementById("logo-sidebar")
-    let toggle = document.getElementById("toggle-sidebar")
-    let outside = document.getElementById("page-content")
+    let target = document.getElementById("logo-sidebar");
+    let toggle = document.getElementById("toggle-sidebar");
+    let outside = document.getElementById("page-content");
 
     const getStatus = () => {
         if (target.classList.contains("-translate-x-full")) {
             isAsideVisible = false;
-        }
-        else {
+        } else {
             isAsideVisible = true;
         }
-    }
+    };
 
     const showSidebar = () => {
         target.classList.remove("-translate-x-full");
         isAsideVisible = true;
         return;
-    }
+    };
 
     const hideSidebar = () => {
         target.classList.add("-translate-x-full");
         isAsideVisible = false;
         return;
-    }
+    };
 
     toggle.addEventListener("click", () => {
-        isAsideVisible ? hideSidebar() : showSidebar()
+        isAsideVisible ? hideSidebar() : showSidebar();
     });
 
     outside.addEventListener("click", () => {
         isAsideVisible && hideSidebar();
-    })
+    });
 
-    document.addEventListener("astro:page-load", getStatus)
+    document.addEventListener("astro:page-load", getStatus);
 </script>

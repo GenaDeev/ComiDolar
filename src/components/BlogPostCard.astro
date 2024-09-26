@@ -1,0 +1,49 @@
+---
+const { title, description, date, author, theme, tags, slug } = Astro.props;
+
+const formattedDate = new Date(date).toLocaleDateString("es-AR", {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+});
+---
+
+<article
+    class="border rounded-lg p-4 mb-4 shadow-md w-full sm:w-[400px] h-[500px] bg-white dark:bg-neutral-700 border-gray-200 dark:border-gray-700"
+>
+    <img
+        class="roundedl-xl"
+        src={`https://comidolar.com.ar/assets/img/opengraph/blog/${slug}.png`}
+        alt={title}
+    />
+    <h2 class="text-xl font-semibold">
+        <a href={`/blog/${slug}`} class="text-green-500 hover:underline"
+            >{title}</a
+        >
+    </h2>
+    <p class="text-gray-600 dark:text-gray-400 mb-2">
+        {formattedDate} - Por <a
+            href={"/blog/autor/" + author.toLowerCase()}
+            class="text-green-500 hover:underline font-semibold">{author}</a>
+    </p>
+    <p class="text-gray-800 dark:text-gray-300 mb-2">{description}</p>
+    <p class="text-sm text-gray-500 dark:text-gray-400">
+        Tema: <a
+            href={"/blog/tema/" + theme.toLowerCase()}
+            class="text-green-500 hover:underline font-semibold">{theme}</a>
+    </p>
+
+    <div class="mt-2">
+        {
+            tags &&
+                tags.map((tag) => (
+                    <a
+                        href={"/blog/tag/" + tag.toLowerCase()}
+                        class="inline-block bg-green-200 text-green-800 dark:bg-green-600 dark:text-green-100 text-xs font-medium mr-2 px-2.5 py-0.5 rounded"
+                    >
+                        {tag}
+                    </a>
+                ))
+        }
+    </div>
+</article>
