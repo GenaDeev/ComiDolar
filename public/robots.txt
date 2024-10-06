@@ -1,6 +1,4 @@
 User-agent: *
-Disallow: /info
-Disallow: /donaciones.pdf
 
 Sitemap: https://comidolar.com.ar/sitemap.xml
 
@@ -8,7 +6,12 @@ Allow: /$
 Allow: /whatsapp
 Allow: /donaciones
 Allow: /calculadora
+Allow: /blog/
 Allow: /assets/img/
+
+Disallow: /blog/tag/
+Disallow: /blog/autor/
+Disallow: /blog/tema/
 
 User-agent: Twitterbot
 Allow: /
