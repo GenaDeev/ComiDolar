@@ -31,6 +31,7 @@ export default function DonationGrid({ donationTable }) {
     return (
         <aside className="w-full mt-5 lg:w-1/3 xl:w-1/2 p-4 bg-neutral-200 dark:bg-neutral-900 text-neutral-800 dark:text-white rounded-lg shadow">
             <h2 className="text-xl font-bold mb-4">Tabla de Donaciones</h2>
+            <h3 className='text-lg font-semibold mb-4'>Total: <span className='text-green-500'>{donationTable.reduce((acc, donor) => acc + donor.total, 0).toLocaleString('es-AR', { style: 'currency', currency: 'ARS' })}</span></h3>
             <input
                 type="text"
                 placeholder="Buscar donante..."
