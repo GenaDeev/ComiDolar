@@ -1,4 +1,9 @@
-export const DONATION_TABLE = [
+export interface Donor {
+    name: string,
+    total: number
+}
+
+export const DONATION_TABLE: Donor[] = [
     {
         name: "Mariano Rivarossa",
         total: 1

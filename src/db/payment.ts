@@ -1,4 +1,21 @@
-export const PAYMENT_METHODS = [
+export interface PaymentMethodType {
+    name: string,
+    short: string,
+    image: string,
+    pallete: {
+        background: string,
+        gradientfrom: string,
+        gradientto: string,
+        border: string,
+        shadow: string
+    },
+    cbu?: string,
+    alias?: string,
+    isWallet?: boolean,
+    coffee?: string
+}
+
+export const PAYMENT_METHODS: PaymentMethodType[] = [
     {
         name: "Mercado Pago",
         short: "mp",

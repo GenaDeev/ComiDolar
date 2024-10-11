@@ -45,7 +45,7 @@ export default function DonationGrid({ donationTable }) {
                         Nombre <span className='text-green-500'>{sortConfig.key === 'name' ? (sortConfig.direction === 'ascending' ? '▲' : '▼') : ''}</span>
                     </span>
                     <span className="flex flex-wrap items-center justify-center text-right cursor-pointer" onClick={() => handleSort('total')}>
-                        Total Donaciones 
+                        Total Donaciones
                         <span className='text-green-500 block'>{sortConfig.key === 'total' ? (sortConfig.direction === 'ascending' ? '▲' : '▼') : ''}</span>
                     </span>
                 </div>
@@ -53,8 +53,8 @@ export default function DonationGrid({ donationTable }) {
             <div className="flex flex-col">
                 {sortedDonations.slice(0, visibleCount).map((donor) => (
                     <div key={donor.name} className="flex items-center border-b border-neutral-300 dark:border-neutral-600 hover:bg-neutral-100 dark:hover:bg-neutral-700 p-2">
-                        <span className='p-2 bg-neutral-300 mx-3 dark:bg-black rounded-full'>
-                            {donor.name.split(' ')[0][0] + donor.name.split(' ')[1][0]}
+                        <span className="flex items-center justify-center bg-neutral-300 dark:bg-black min-w-12 min-h-12 rounded-full text-lg font-semibold text-center">
+                            {donor.name.split(' ')[0][0] + (donor.name.split(' ')[1] ? donor.name.split(' ')[1][0] : '')}
                         </span>
                         <span className="flex-grow py-2 px-4">
                             {donor.name}
