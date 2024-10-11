@@ -107,4 +107,8 @@ export const DONATION_TABLE = [
         name: "Nasser Ordenes",
         total: 20.39
     },
+    {
+        name: "Emma Valentina Olivia Gazzano",
+        total: 1000
+    },
 ]
