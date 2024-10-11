@@ -131,22 +131,26 @@ const { background, gradientfrom, gradientto, border, shadow } = pallete;
             }
         }
 </style>
+{
+    !coffee && (
+        <script is:inline define:vars={{ short }}>
+            const copyCBU = document.getElementById('copy-cbu-' + short);
+            const copyALIAS = document.getElementById('copy-alias-' + short);
 
-<script is:inline define:vars={{ short }}>
-    const copyCBU = document.getElementById('copy-cbu-' + short);
-    const copyALIAS = document.getElementById('copy-alias-' + short);
+            copyCBU.addEventListener('click', () => copyToClipboard(`cbu-${short}`));
+            copyALIAS.addEventListener('click', () => copyToClipboard(`alias-${short}`));
 
-    copyCBU.addEventListener('click', () => copyToClipboard(`cbu-${short}`));
-    copyALIAS.addEventListener('click', () => copyToClipboard(`alias-${short}`));
+            function copyToClipboard(elementId) {
+                var copyText = document.getElementById(elementId);
+                var tempInput = document.createElement("input");
+                tempInput.value = copyText.textContent;
+                document.body.appendChild(tempInput);
+                tempInput.select();
+                document.execCommand("copy");
+                document.body.removeChild(tempInput);
+                alert("¡Copiado al portapapeles!");
+            }
+        </script>
+    )
+}
 
-    function copyToClipboard(elementId) {
-        var copyText = document.getElementById(elementId);
-        var tempInput = document.createElement("input");
-        tempInput.value = copyText.textContent;
-        document.body.appendChild(tempInput);
-        tempInput.select();
-        document.execCommand("copy");
-        document.body.removeChild(tempInput);
-        alert("¡Copiado al portapapeles!");
-    }
-</script>
