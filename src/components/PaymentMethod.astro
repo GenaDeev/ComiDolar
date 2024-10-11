@@ -1,5 +1,6 @@
 ---
-const { name, short, image, pallete, cbu, alias, isWallet, coffee } = Astro.props;
+import type { PaymentMethodType } from "../db/payment.ts";
+const { name, short, image, pallete, cbu, alias, isWallet, coffee }: PaymentMethodType = Astro.props as PaymentMethodType;
 const { background, gradientfrom, gradientto, border, shadow } = pallete;
 ---
 

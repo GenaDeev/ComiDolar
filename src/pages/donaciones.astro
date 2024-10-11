@@ -1,8 +1,8 @@
 ---
 import Layout from "../layouts/layout.astro";
-import { PAYMENT_METHODS } from "../db/payment.js";
-import { DONATION_TABLE } from "../db/donation_table.js";
-import DonationTable from "../components/DonationTable.jsx";
+import { PAYMENT_METHODS } from "../db/payment.ts";
+import { DONATION_TABLE } from "../db/donation_table.ts";
+import DonationTable from "../components/DonationTable.tsx";
 import PaymentMethod from "../components/PaymentMethod.astro";
 
 const metadata = {
@@ -40,7 +40,7 @@ const metadata = {
         }
         .row {
             display: flex;
-            flex-wrap: wrap; /* Agregamos flex-wrap para envolver las tarjetas */
+            flex-wrap: wrap; 
             align-items: center;
             justify-content: center;
             height: 100%;
