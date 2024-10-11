@@ -103,4 +103,8 @@ export const DONATION_TABLE = [
         name: "Sandro Daney",
         total: 1000
     },
+    {
+        name: "Nasser Ordenes",
+        total: 20.39
+    },
 ]
