@@ -98,5 +98,9 @@ export const DONATION_TABLE = [
     {
         name: "Ramiro Martinez Nuñez",
         total: 2002.03
-    }
+    },
+    {
+        name: "Sandro Daney",
+        total: 1000
+    },
 ]
