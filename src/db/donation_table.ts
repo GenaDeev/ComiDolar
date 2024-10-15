@@ -116,4 +116,8 @@ export const DONATION_TABLE: Donor[] = [
         name: "Emma Valentina Olivia Gazzano",
         total: 500
     },
+    {
+        name: "Lola Ferro",
+        total: 200
+    },
 ]
