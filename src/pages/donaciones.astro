@@ -1,7 +1,6 @@
 ---
 import Layout from "../layouts/layout.astro";
 import { PAYMENT_METHODS } from "../db/payment.ts";
-import { DONATION_TABLE } from "../db/donation_table.ts";
 import DonationTable from "../components/DonationTable.tsx";
 import PaymentMethod from "../components/PaymentMethod.astro";
 
@@ -30,7 +29,7 @@ const metadata = {
         </section>        
     
         <aside class="donation-table w-full max-w-full lg:max-w-[400px] mt-5 p-4 bg-neutral-200 dark:bg-neutral-900 text-neutral-800 dark:text-white rounded-lg shadow">
-            <DonationTable client:load donationTable={DONATION_TABLE} />
+            <DonationTable client:load/>
         </aside>
     </main>    
 </Layout>
