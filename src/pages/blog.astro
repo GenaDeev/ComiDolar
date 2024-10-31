@@ -30,20 +30,20 @@ const metadata = {
 
         <p class="my-6 text-xl">Últimos posteos:</p>
 
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {
-                posts.map((post) => (
-                    <BlogPostCard
-                        title={post.data.title}
-                        description={post.data.description}
-                        date={post.data.date}
-                        author={post.data.author}
-                        theme={post.data.theme}
-                        tags={post.data.tags}
-                        slug={post.slug}
-                    />
-                ))
-            }
-        </div>
+        <div class="grid gap-6 justify-items-center sm:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3">
+            {posts.map((post) => (
+                <BlogPostCard
+                    key={post.slug}
+                    title={post.data.title}
+                    description={post.data.description}
+                    date={post.data.date}
+                    author={post.data.author}
+                    theme={post.data.theme}
+                    tags={post.data.tags}
+                    slug={post.slug}
+                    className="w-full max-w-[400px] h-[500px]"
+                />
+            ))}
+        </div>        
     </main>
 </Layout>
