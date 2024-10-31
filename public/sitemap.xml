@@ -30,4 +30,9 @@
         <changefreq>never</changefreq>
         <priority>0.1</priority>
     </url>
+    <url>
+       <loc>https://comidolar.com.ar/blog/resultados-encuesta-cenba-2024</loc>
+        <changefreq>never</changefreq>
+        <priority>0.1</priority>
+    </url>
 </urlset>
