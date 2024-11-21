@@ -10,19 +10,19 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/react": "^3.6.2",
+    "@astrojs/react": "^3.6.3",
     "@astrojs/sitemap": "^3.2.1",
     "@astrojs/tailwind": "5.1.2",
     "@astrojs/vercel": "^7.8.2",
     "@supabase/supabase-js": "^2.46.1",
     "@types/react": "^18.3.12",
     "@types/react-dom": "^18.3.1",
-    "astro": "4.16.7",
+    "astro": "4.16.14",
     "flowbite": "^2.5.2",
     "flowbite-react": "^0.10.2",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "supabase": "^1.207.9",
-    "tailwindcss": "^3.4.14"
+    "supabase": "^1.223.10",
+    "tailwindcss": "^3.4.15"
   }
 }
