@@ -8,7 +8,14 @@ export default {
 		flowbite.content(),
 	],
 	theme: {
-		extend: {},
+		extend: {
+			colors: {
+				backgroundDark: '#09090b',
+				background: '#ffffff',
+				darkless: '#18181b',
+				divider: '#3f3f46'
+			},
+		},
 	},
 	plugins: [
 		require('flowbite/plugin'),

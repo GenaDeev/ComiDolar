@@ -1,32 +1,23 @@
 ---
-// Importaciones y configuración inicial
 import type { CollectionEntry } from "astro:content";
 import { getCollection } from "astro:content";
 import Layout from "../../layouts/layout.astro";
-
-// Función para obtener los caminos estáticos de los posts del blog
 export async function getStaticPaths() {
   const posts = await getCollection("blog");
-
   return posts.map((post) => ({
-    params: { slug: post.slug }, // Devuelve solo las rutas necesarias
+    params: { slug: post.slug },
     props: post,
   }));
 }
-
 type Props = CollectionEntry<"blog">;
-
 const post: Props = Astro.props;
 const { Content } = await post.render();
 const {
   data: { description, title, author, date, copyright, theme, tags, hideImage },
 } = post;
-
-const slug = post.slug; // Asegúrate de obtener el slug
+const slug = post.slug;
 const jsDate = new Date(date);
-
 const htmlDate = jsDate.toISOString().split("T")[0];
-
 const metadata = {
   title,
   description: {
@@ -47,15 +38,14 @@ const metadata = {
     copyright,
   },
 };
-
 const formattedDate = jsDate.toLocaleString("es-AR", {
   timeZone: "America/Argentina/Buenos_Aires",
-  weekday: "long", // Día de la semana
-  year: "numeric", // Año completo
-  month: "long", // Nombre del mes
-  day: "numeric", // Día del mes
-  hour: "numeric", // Hora
-  minute: "numeric", // Minuto
+  weekday: "long",
+  year: "numeric",
+  month: "long",
+  day: "numeric",
+  hour: "numeric",
+  minute: "numeric",
 });
 ---
 
@@ -77,10 +67,10 @@ const formattedDate = jsDate.toLocaleString("es-AR", {
       class="mb-4 p-4 flex items-center justify-between bg-white dark:bg-black/30 shadow-md rounded-lg"
     >
       <div>
-        <h3 class="text-sm font-semibold text-neutral-800 dark:text-white">
+        <h3 class="text-sm font-semibold text-zinc-800 dark:text-white">
           Escrito por: {metadata.blog.author}
         </h3>
-        <time class="block text text-neutral-600 dark:text-neutral-400"
+        <time class="block text text-zinc-600 dark:text-zinc-400"
           >{formattedDate}</time
         >
       </div>
@@ -92,100 +82,84 @@ const formattedDate = jsDate.toLocaleString("es-AR", {
     <Content />
   </main>
 </Layout>
-
 <style>
   :root {
-    --background-color: #f9f9f9; /* Color de fondo para modo claro */
-    --text-color: #2d2d2e; /* Color de texto para modo claro */
-    --link-color: #229ac5; /* Color de enlaces para modo claro */
-    --highlight-color: #22c55e; /* Color para texto en negrita en modo claro */
+    --background-color: #f9f9f9;
+    --text-color: #2d2d2e;
+    --link-color: #229ac5;
+    --highlight-color: #22c55e;
   }
-
   @media (prefers-color-scheme: dark) {
     :root {
-      --background-color: #1a1a1a; /* Color de fondo para modo oscuro */
-      --text-color: #f9f9f9; /* Color de texto para modo oscuro */
-      --italic-color: #e67e22; /* Color para texto en cursiva en modo oscuro */
+      --background-color: #18181b;
+      --text-color: #f9f9f9;
+      --italic-color: #e67e22;
     }
   }
-
   .markdown {
     font-family: Arial, sans-serif;
     line-height: 1.6;
-    margin: 0 auto; /* Centrar el artículo */
-    padding: 20px; /* Espacio interno */
-    background-color: var(--background-color); /* Color de fondo */
-    border-radius: 8px; /* Bordes redondeados */
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra */
-    color: var(--text-color); /* Color de texto */
-
+    margin: 0 auto;
+    padding: 20px;
+    background-color: var(--background-color);
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    color: var(--text-color);
     h1,
     h2,
     h3 {
-      color: var(--text-color); /* Color de los encabezados */
-      margin-bottom: 5px; /* Espaciado debajo de los encabezados */
+      color: var(--text-color);
+      margin-bottom: 5px;
     }
-
     h1 {
-      font-size: 2.25em; /* Tamaño del encabezado principal */
-      font-weight: bold; /* Negrita */
+      font-size: 2.25em;
+      font-weight: bold;
     }
-
     h2 {
       font-size: 1.8em;
       opacity: 0.9;
     }
-
     h3 {
-      font-size: 1.5em; /* Tamaño del tercer nivel de encabezado */
-      margin-top: 20px; /* Espaciado superior */
+      font-size: 1.5em;
+      margin-top: 20px;
       font-weight: bold;
       opacity: 0.8;
     }
-
     p {
-      margin-bottom: 20px; /* Espaciado debajo de los párrafos */
+      margin-bottom: 20px;
       font-size: 1.05em;
       opacity: 0.7;
     }
-
     ul {
-      list-style-type: disc; /* Estilo de lista */
-      margin-left: 20px; /* Espacio a la izquierda */
-      margin-bottom: 20px; /* Espaciado debajo de la lista */
+      list-style-type: disc;
+      margin-left: 20px;
+      margin-bottom: 20px;
     }
-
     li {
-      margin-bottom: 10px; /* Espaciado entre ítems de lista */
+      margin-bottom: 10px;
     }
-
     strong {
-      color: var(--highlight-color); /* Color para texto en negrita */
+      color: var(--highlight-color);
     }
-
     em {
-      color: var(--italic-color); /* Color para texto en cursiva */
+      color: var(--italic-color);
     }
-
     a {
-      color: var(--link-color); /* Color para enlaces */
-      text-decoration: none; /* Sin subrayado */
+      color: var(--link-color);
+      text-decoration: none;
     }
-
     a:hover {
-      text-decoration: underline; /* Subrayar al pasar el mouse */
+      text-decoration: underline;
     }
-
     img {
-      margin: 20px 0; /* Espaciado vertical */
+      margin: 20px 0;
     }
-
     blockquote {
-      border-left: 4px solid var(--highlight-color); /* Borde lateral */
-      padding-left: 20px; /* Espacio interno */
-      margin: 20px 0; /* Espaciado vertical */
-      color: var(--text-color); /* Color del texto */
-      font-style: italic; /* Cursiva */
+      border-left: 4px solid var(--highlight-color);
+      padding-left: 20px;
+      margin: 20px 0;
+      color: var(--text-color);
+      font-style: italic;
     }
   }
 </style>

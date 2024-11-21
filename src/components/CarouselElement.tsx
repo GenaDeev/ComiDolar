@@ -9,7 +9,7 @@ export default function CarouselElement() {
     ]
 
     return (
-        <Carousel className="bg-neutral-300 dark:bg-neutral-700 rounded-xl p-2 fb-carousel">
+        <Carousel className="bg-zinc-300 dark:bg-darkless rounded-xl p-2 fb-carousel">
             {
                 images.map(
                     image =>

@@ -2,28 +2,28 @@
 import Layout from "../layouts/layout.astro";
 import Lore from "../components/Lore.astro";
 const metadata = {
-    title: "Comi Dólar | Calculadora Dólar Tarjeta",
-    description: {
-        meta: "Calcula cuanto valdra tu compra con impuestos! Impuestos steam, Impuestos Juegos, Dolar Tarjeta, impuesto pais, percepciones. Todo lo que necesitas saber!",
-        og: "Calcula cuanto valdra tu compra con impuestos! Impuestos steam, Impuestos Juegos, Dolar Tarjeta, impuesto pais, percepciones. Todo lo que necesitas saber!",
-    },
-    canonical: "https://comidolar.com.ar/calculadora",
-    og: {
-    image: 'https://comidolar.com.ar/assets/img/opengraph/calculadora.png',
-    video: 'https://comidolar.com.ar/assets/img/opengraph/video.webm'
-  }
+  title: "Comi Dólar | Calculadora Dólar Tarjeta",
+  description: {
+    meta: "Calcula cuanto valdra tu compra con impuestos! Impuestos steam, Impuestos Juegos, Dolar Tarjeta, impuesto pais, percepciones. Todo lo que necesitas saber!",
+    og: "Calcula cuanto valdra tu compra con impuestos! Impuestos steam, Impuestos Juegos, Dolar Tarjeta, impuesto pais, percepciones. Todo lo que necesitas saber!",
+  },
+  canonical: "https://comidolar.com.ar/calculadora",
+  og: {
+    image: "https://comidolar.com.ar/assets/img/opengraph/calculadora.png",
+    video: "https://comidolar.com.ar/assets/img/opengraph/video.webm",
+  },
 };
 
 let dolares = [];
 
 try {
-    const response = await fetch("https://dolarapi.com/v1/dolares");
-    if (!response.ok) {
-        throw new Error(`Error fetching data: ${response.statusText}`);
-    }
-    dolares = await response.json();
+  const response = await fetch("https://dolarapi.com/v1/dolares");
+  if (!response.ok) {
+    throw new Error(`Error fetching data: ${response.statusText}`);
+  }
+  dolares = await response.json();
 } catch (error) {
-    console.error("Error fetching data:", error);
+  console.error("Error fetching data:", error);
 }
 
 const tarjeta = dolares[6].venta;
@@ -31,122 +31,118 @@ const oficial = dolares[0].venta;
 ---
 
 <Layout bodyclass="h-full" metadata={metadata}>
-    <main
-        class="flex flex-col pt-[48px] lg:pt-0 lg:flex-row mx-auto gap-4 lg:gap-0 w-full h-full items-center justify-center"
+  <main
+    class="flex flex-col pt-[48px] lg:pt-0 lg:flex-row mx-auto gap-4 lg:gap-0 w-full h-full items-center justify-center"
+  >
+    <section
+      id="calculadora"
+      class="flex flex-col items-center p-4 bg-zinc-100 dark:bg-darkless rounded-lg sm:rounded-l-lg shadow-lg max-w-md"
     >
-        <section
-            id="calculadora"
-            class="flex flex-col items-center p-4 bg-neutral-100 dark:bg-neutral-700 rounded-lg sm:rounded-l-lg shadow-lg max-w-md"
+      <h1 class="text-4xl font-bold mb-4 text-center">
+        Calculadora Dolar Tarjeta
+      </h1>
+      <h2 class="text-2xl mb-6 text-center">
+        Introduce los valores en USD que desees convertir a pesos argentinos y
+        la calculadora hará el resto!
+      </h2>
+      <form class="w-full space-y-4">
+        <div class="origin">
+          <label for="originalPrice" class="block text-lg font-medium mb-1"
+            >Precio en USD:</label
+          >
+          <input
+            id="originalPrice"
+            type="number"
+            value="1"
+            class="border border-zinc-300 dark:bg-zinc-700 rounded-lg w-full p-2 text-right appearance-none"
+            min="0.5"
+          />
+        </div>
+        <div
+          class="final flex flex-col gap-2 rounded-xl p-2 bg-zinc-400 dark:bg-backgroundDark"
         >
-            <h1 class="text-4xl font-bold mb-4 text-center">
-                Calculadora Dolar Tarjeta
-            </h1>
-            <h2 class="text-2xl mb-6 text-center">
-                Introduce los valores en USD que desees convertir a pesos
-                argentinos y la calculadora hará el resto!
-            </h2>
-            <form class="w-full space-y-4">
-                <div class="origin">
-                    <label
-                        for="originalPrice"
-                        class="block text-lg font-medium mb-1"
-                        >Precio en USD:</label
-                    >
-                    <input
-                        id="originalPrice"
-                        type="number"
-                        value="1"
-                        class="border border-neutral-300 dark:bg-neutral-600 rounded-lg w-full p-2 text-right appearance-none"
-                        min="0.5"
-                    />
-                </div>
-                <div
-                    class="final flex flex-col gap-2 rounded-xl p-2 bg-neutral-400 dark:bg-neutral-600"
-                >
-                    <label
-                        for="finalPrice"
-                        class="block text-lg font-medium mb-1"
-                        >Precio FINAL en ARS con Impuestos:</label
-                    >
-                    <input
-                        id="finalPrice"
-                        value={tarjeta}
-                        disabled
-                        class="border border-neutral-300 dark:bg-neutral-500 bg-neutral-200 rounded-lg w-full p-2 text-right"
-                    />
-                </div>
-            </form>
-        </section>
-        <section
-            id="taxes"
-            class="flex w-full flex-col gap-2 p-4 bg-neutral-200 dark:bg-neutral-600 rounded-lg sm:rounded-r-lg shadow-lg max-w-md"
+          <label for="finalPrice" class="block text-lg font-medium mb-1"
+            >Precio FINAL en ARS con Impuestos:</label
+          >
+          <input
+            id="finalPrice"
+            value={tarjeta}
+            disabled
+            class="border border-zinc-300 dark:bg-zinc-800 bg-zinc-200 rounded-lg w-full p-2 text-right"
+          />
+        </div>
+      </form>
+    </section>
+    <section
+      id="taxes"
+      class="flex w-full flex-col gap-2 p-4 bg-zinc-200 dark:bg-zinc-800 rounded-lg sm:rounded-r-lg shadow-lg max-w-md"
+    >
+      <h3 class="text-xl">
+        ¿Qué estoy pagando? <a
+          href="https://steamcito.com.ar/impuestos-hoy"
+          class="text-xs dark:text-green-400 dark:hover:text-green-500 hover:text-green-700 text-green-950"
+          >ℹ️ Mas info</a
         >
-            <h3 class="text-xl">
-                ¿Qué estoy pagando? <a
-                    href="https://steamcito.com.ar/impuestos-hoy"
-                    class="text-xs dark:text-green-400 dark:hover:text-green-500 hover:text-green-700 text-green-950"
-                    >ℹ️ Mas info</a
-                >
-            </h3>
-            <label for="pais">Impuesto Pais (30%)</label>
-            <input
-                disabled
-                class="border border-neutral-300 dark:bg-neutral-500 bg-neutral-100 rounded-lg w-full p-2 text-right"
-                id="pais"
-                value={(tarjeta * 0.3).toFixed(2)}
-            />
-            <label for="ganancias">Percepción de Ganancias (30%)</label>
-            <input
-                disabled
-                class="border border-neutral-300 dark:bg-neutral-500 bg-neutral-100 rounded-lg w-full p-2 text-right"
-                id="ganancias"
-                value={(tarjeta * 0.3).toFixed(2)}
-            />
-            <div
-                class="final flex flex-col gap-2 rounded-xl p-2 bg-neutral-400 dark:bg-neutral-700"
-            >
-                <label for="totaltax">Solo Impuestos (60%)</label>
-                <input
-                    disabled
-                    class="border border-neutral-300 dark:bg-neutral-600 bg-neutral-100 rounded-lg w-full p-2 text-right"
-                    id="totaltax"
-                    value={(tarjeta * 0.6).toFixed(2)}
-                />
-                <label for="notax">Sin impuestos</label>
-                <input
-                    disabled
-                    class="border border-neutral-300 dark:bg-neutral-600 bg-neutral-100 rounded-lg w-full p-2 text-right"
-                    id="notax"
-                    value="Escribe un valor primero..."
-                />
-            </div>
-        </section>
-    </main>
-    <Lore className="space-y-10" />
-    <script is:inline data-astro-rerun define:vars={{ tarjeta, oficial }}>
-        const originContainer = document.getElementById("originalPrice");
-        const finalContainer = document.getElementById("finalPrice");
-        const paisContainer = document.getElementById("pais");
-        const gananciasContainer = document.getElementById("ganancias");
-        const noTaxContainer = document.getElementById("notax");
-        const totalTaxContainer = document.getElementById("totaltax");
-        originContainer.addEventListener("input", handleInput);
+      </h3>
+      <label for="pais">Impuesto Pais (30%)</label>
+      <input
+        disabled
+        class="border border-zinc-300 dark:bg-zinc-700 bg-zinc-100 rounded-lg w-full p-2 text-right"
+        id="pais"
+        value={(tarjeta * 0.3).toFixed(2)}
+      />
+      <label for="ganancias">Percepción de Ganancias (30%)</label>
+      <input
+        disabled
+        class="border border-zinc-300 dark:bg-zinc-700 bg-zinc-100 rounded-lg w-full p-2 text-right"
+        id="ganancias"
+        value={(tarjeta * 0.3).toFixed(2)}
+      />
+      <div
+        class="final flex flex-col gap-2 rounded-xl p-2 bg-zinc-400 dark:bg-backgroundDark"
+      >
+        <label for="totaltax">Solo Impuestos (60%)</label>
+        <input
+          disabled
+          class="border border-zinc-300 dark:bg-zinc-700 bg-zinc-100 rounded-lg w-full p-2 text-right"
+          id="totaltax"
+          value={(tarjeta * 0.6).toFixed(2)}
+        />
+        <label for="notax">Sin impuestos</label>
+        <input
+          disabled
+          class="border border-zinc-300 dark:bg-zinc-700 bg-zinc-100 rounded-lg w-full p-2 text-right"
+          id="notax"
+          value="Escribe un valor primero..."
+        />
+      </div>
+    </section>
+  </main>
+  <Lore className="space-y-10" />
+  <script is:inline data-astro-rerun define:vars={{ tarjeta, oficial }}>
+    const originContainer = document.getElementById("originalPrice");
+    const finalContainer = document.getElementById("finalPrice");
+    const paisContainer = document.getElementById("pais");
+    const gananciasContainer = document.getElementById("ganancias");
+    const noTaxContainer = document.getElementById("notax");
+    const totalTaxContainer = document.getElementById("totaltax");
+    originContainer.addEventListener("input", handleInput);
 
-        function handleInput() {
-            const value = originContainer.value;
-            if (value === "1") {
-                finalContainer.value = `$${tarjeta}`;
-                noTaxContainer.value = `$${oficial}`;
-                paisContainer.value = `$${(oficial * 0.3).toFixed(2)}`;
-                gananciasContainer.value = `$${(oficial * 0.3).toFixed(2)}`;
-                totalTaxContainer.value = `$${(oficial * 0.6).toFixed(2)}`;
-            } else {
-                finalContainer.value = `$${(value * tarjeta).toFixed(2)}`;
-                noTaxContainer.value = `$${(value * oficial).toFixed(2)}`;
-                paisContainer.value = `$${(value * oficial * 0.3).toFixed(2)}`;
-                gananciasContainer.value = `$${(value * oficial * 0.3).toFixed(2)}`;
-                totalTaxContainer.value = `$${(value * oficial * 0.6).toFixed(2)}`;
-            }
-        }
-    </script>
+    function handleInput() {
+      const value = originContainer.value;
+      if (value === "1") {
+        finalContainer.value = `$${tarjeta}`;
+        noTaxContainer.value = `$${oficial}`;
+        paisContainer.value = `$${(oficial * 0.3).toFixed(2)}`;
+        gananciasContainer.value = `$${(oficial * 0.3).toFixed(2)}`;
+        totalTaxContainer.value = `$${(oficial * 0.6).toFixed(2)}`;
+      } else {
+        finalContainer.value = `$${(value * tarjeta).toFixed(2)}`;
+        noTaxContainer.value = `$${(value * oficial).toFixed(2)}`;
+        paisContainer.value = `$${(value * oficial * 0.3).toFixed(2)}`;
+        gananciasContainer.value = `$${(value * oficial * 0.3).toFixed(2)}`;
+        totalTaxContainer.value = `$${(value * oficial * 0.6).toFixed(2)}`;
+      }
+    }
+  </script>
 </Layout>
