@@ -12,14 +12,10 @@ export async function GET(context) {
     description: 'Todas las últimas publicaciones de ComiDólar a través de su blog oficial. Noticias del dólar, del CNBA y mucho más.',
     site: context.site,
     items: blog.map((post) => {
+      // Permitir todas las etiquetas y atributos
       const contentHtml = sanitizeHtml(parser.render(post.body), {
-        allowedTags: sanitizeHtml.defaults.allowedTags.concat(['img', 'h1', 'h2', 'h3', 'h4', 'p', 'a', 'strong', 'em', 'ul', 'ol', 'li', 'iframe', 'blockquote']),
-        allowedAttributes: {
-          ...sanitizeHtml.defaults.allowedAttributes,
-          a: ['href', 'name', 'target'],
-          img: ['src', 'alt', 'title', 'class'],
-          iframe: ['src', 'style', 'loading', 'allowfullscreen', 'allow']
-        },
+        allowedTags: false, // Permitir todas las etiquetas
+        allowedAttributes: false, // Permitir todos los atributos
       });
       return {
         title: post.data.title,
