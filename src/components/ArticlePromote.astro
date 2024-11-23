@@ -13,6 +13,6 @@ const newestPost = posts.sort((a, b) => {
     <div class="relative z-10">
         <p class="text-xl">Lee nuestro último artículo</p>
         <h2 class="font-bold text-2xl">{newestPost.data.title}</h2>
-        <a href={`/blog/${newestPost.data.slug}`} class="inline-block mt-2 w-full sm:w-auto text-center bg-green-500 hover:bg-green-600 text-white font-semibold py-1 px-3 rounded transition duration-200">Leer</a>
+        <a href={`/blog/${newestPost.slug}`} class="inline-block mt-2 w-full sm:w-auto text-center bg-green-500 hover:bg-green-600 text-white font-semibold py-1 px-3 rounded transition duration-200">Leer</a>
     </div>
 </article>
