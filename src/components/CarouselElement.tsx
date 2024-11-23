@@ -4,7 +4,7 @@ export default function CarouselElement() {
     const images: string[] = [
         "https://comidolar.com.ar/assets/img/wide.webp",
         "https://comidolar.com.ar/assets/img/colegio.webp",
-        "https://comidolar.com.ar/assets/img/mundiallogo.webp",
+        "https://comidolar.com.ar/assets/img/mundialbanner.webp",
         "https://comidolar.com.ar/assets/img/colegio2.webp"
     ]
 
