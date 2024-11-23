@@ -13,11 +13,12 @@ export async function GET(context) {
     site: context.site,
     items: blog.map((post) => {
       const contentHtml = sanitizeHtml(parser.render(post.body), {
-        allowedTags: sanitizeHtml.defaults.allowedTags.concat(['img', 'h1', 'h2', 'h3', 'h4', 'p', 'a', 'strong', 'em', 'ul', 'ol', 'li', 'blockquote']),
+        allowedTags: sanitizeHtml.defaults.allowedTags.concat(['img', 'h1', 'h2', 'h3', 'h4', 'p', 'a', 'strong', 'em', 'ul', 'ol', 'li', 'iframe', 'blockquote']),
         allowedAttributes: {
           ...sanitizeHtml.defaults.allowedAttributes,
           a: ['href', 'name', 'target'],
-          img: ['src', 'alt', 'title'],
+          img: ['src', 'alt', 'title', 'class'],
+          iframe: ['src', 'style', 'loading', 'allowfullscreen', 'allow']
         },
       });
       return {
