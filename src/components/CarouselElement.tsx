@@ -15,7 +15,7 @@ export default function CarouselElement() {
                     image =>
                         <img
                             key={'Imagen del carousel: ' + image.split('/')[3].split('.')[0]}
-                            className="carousel-image object-contain"
+                            className="carousel-image object-cover h-full"
                             src={image} alt="Imagen del Carousel de ComiDolar">
                         </img>
                 )
