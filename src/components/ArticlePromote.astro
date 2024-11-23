@@ -1,11 +1,18 @@
 ---
-const { title, slug } = Astro.props;
+import { getCollection } from "astro:content";
+const posts = await getCollection("blog");
+
+const newestPost = posts.sort((a, b) => {
+  const dateA = new Date(a.data.date).getTime();
+  const dateB = new Date(b.data.date).getTime();
+  return dateB - dateA;
+})[0];
 ---
-<article class="relative w-full h-48 flex flex-col items-center justify-center bg-cover bg-center text-white p-4 rounded-lg shadow-lg" style={{ backgroundImage: `url('/assets/img/opengraph/blog/${slug}.webp')` }}>
+<article class="relative w-full h-48 flex flex-col items-center justify-center bg-cover bg-center text-white p-4 rounded-lg shadow-lg" style={{ backgroundImage: `url('/assets/img/opengraph/blog/${newestPost.slug}.webp')` }}>
     <div class="absolute inset-0 bg-black opacity-50 rounded-lg"></div>
     <div class="relative z-10">
-        <p class="text-xl">Lee nuestro nuevo artículo</p>
-        <h2 class="font-bold text-2xl">{title}</h2>
-        <a href={`/blog/${slug}`} class="inline-block mt-2 w-full sm:w-auto text-center bg-green-500 hover:bg-green-600 text-white font-semibold py-1 px-3 rounded transition duration-200">Leer</a>
+        <p class="text-xl">Lee nuestro último artículo</p>
+        <h2 class="font-bold text-2xl">{newestPost.data.title}</h2>
+        <a href={`/blog/${newestPost.data.slug}`} class="inline-block mt-2 w-full sm:w-auto text-center bg-green-500 hover:bg-green-600 text-white font-semibold py-1 px-3 rounded transition duration-200">Leer</a>
     </div>
 </article>
