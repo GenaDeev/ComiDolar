@@ -22,5 +22,9 @@ export async function GET(context) {
         content: contentHtml,
       };
     }),
+    customData: [
+      '<language>es-es</language>',
+      `<atom:link href="${new URL('rss.xml', context.site)}" rel="self" type="application/rss+xml" />`
+    ].join(''),
   });
 }
