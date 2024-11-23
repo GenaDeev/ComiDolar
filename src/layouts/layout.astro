@@ -6,122 +6,109 @@ import { ViewTransitions } from "astro:transitions";
 ---
 
 <html class="h-full" lang="es">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>{metadata.title}</title>
-        <link type="image/webp" rel="icon" href="/assets/img/favicon.webp" />
-        <link rel="canonical" href={metadata.cannonical} />
-        <link rel="manifest" href="/manifest.json" />
-        <meta name="description" content={metadata.description.meta} />
-        <link
-            rel="apple-touch-icon"
-            sizes="180x180"
-            href="assets/img/atouch/180.png"
-        />
-        <link
-            rel="apple-touch-icon"
-            sizes="152x152"
-            href="assets/img/atouch/152.png"
-        />
-        <link
-            rel="apple-touch-icon"
-            sizes="120x120"
-            href="assets/img/atouch/120.png"
-        />
-        <link
-            rel="apple-touch-startup-image"
-            href="assets/img/atouch/atouch.png"
-        />
-        <meta name="mobile-web-app-capable" content="yes" />
-        <meta name="apple-mobile-web-app-status-bar-style" content="black" />
-        <meta name="apple-mobile-web-app-title" content="Comi Dólar" />
-        <meta name="theme-color" content="#14b54f" />
-        <meta
-            property="og:type"
-            content={metadata.blog ? "article" : "website"}
-        />
-        <meta property="og:url" content={metadata.cannonical} />
-        <meta property="og:title" content={metadata.title} />
-        <meta property="og:description" content={metadata.description.og} />
-        <meta property="og:image" content={metadata.og.image} />
-        <meta property="og:video" content={metadata.og.video} />
-        <meta property="twitter:card" content="summary_large_image" />
-        <meta property="twitter:url" content={metadata.cannonical} />
-        <meta property="twitter:title" content={metadata.title} />
-        <meta
-            property="twitter:description"
-            content={metadata.description.og}
-        />
-        <meta property="twitter:image" content={metadata.og.image} />
-        <meta property="twitter:site" content="@comidolar" />
-        <meta property="twitter:creator" content="@comidolar" />
-        {
-            metadata.blog && (
-                <>
-                    <meta name="author" content={metadata.blog.author} />
-                    <meta name="copyright" content={metadata.blog.copyright} />
-                    <meta name="date" content={metadata.blog.date} />
-                    <meta
-                        property="article:author"
-                        content={metadata.blog.author}
-                    />
-                    <meta
-                        property="article:published_time"
-                        content={metadata.og.date}
-                    />
-                    <meta
-                        property="article:section"
-                        content={metadata.og.theme}
-                    />
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{metadata.title}</title>
+    <link type="image/webp" rel="icon" href="/assets/img/favicon.webp" />
+    <link rel="canonical" href={metadata.cannonical} />
+    <link rel="manifest" href="/manifest.json" />
+    <meta name="description" content={metadata.description.meta} />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="assets/img/atouch/180.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="152x152"
+      href="assets/img/atouch/152.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="120x120"
+      href="assets/img/atouch/120.png"
+    />
+    <link rel="apple-touch-startup-image" href="assets/img/atouch/atouch.png" />
+    <link
+      rel="alternate"
+      type="application/rss+xml"
+      title="ComiDólar Blog"
+      href={new URL("rss.xml", Astro.site)}
+    />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="apple-mobile-web-app-title" content="Comi Dólar" />
+    <meta name="theme-color" content="#14b54f" />
+    <meta property="og:type" content={metadata.blog ? "article" : "website"} />
+    <meta property="og:url" content={metadata.cannonical} />
+    <meta property="og:title" content={metadata.title} />
+    <meta property="og:description" content={metadata.description.og} />
+    <meta property="og:image" content={metadata.og.image} />
+    <meta property="og:video" content={metadata.og.video} />
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content={metadata.cannonical} />
+    <meta property="twitter:title" content={metadata.title} />
+    <meta property="twitter:description" content={metadata.description.og} />
+    <meta property="twitter:image" content={metadata.og.image} />
+    <meta property="twitter:site" content="@comidolar" />
+    <meta property="twitter:creator" content="@comidolar" />
+    {
+      metadata.blog && (
+        <>
+          <meta name="author" content={metadata.blog.author} />
+          <meta name="copyright" content={metadata.blog.copyright} />
+          <meta name="date" content={metadata.blog.date} />
+          <meta property="article:author" content={metadata.blog.author} />
+          <meta property="article:published_time" content={metadata.og.date} />
+          <meta property="article:section" content={metadata.og.theme} />
 
-                    {metadata.og.tags.map((tag) => (
-                        <meta property="article:tag" content={tag} />
-                    ))}
-                </>
-            )
-        }
+          {metadata.og.tags.map((tag) => (
+            <meta property="article:tag" content={tag} />
+          ))}
+        </>
+      )
+    }
 
-        {metadata.noindex && <meta name="robots" content="noindex" />}
+    {metadata.noindex && <meta name="robots" content="noindex" />}
 
-        <ViewTransitions />
+    <ViewTransitions />
 
-        <script
-            src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js"
-            defer></script>
-    </head>
-    <body
-        transition:animate="fade"
-        class={`${bodyclass ? bodyclass : ""} bg-background dark:bg-backgroundDark`}
-    >
-        <Header>
-            <slot />
-            <Footer />
-        </Header>
-        <script defer>
-            window.OneSignalDeferred = window.OneSignalDeferred || [];
-            OneSignalDeferred.push(async function (OneSignal) {
-                OneSignal.SERVICE_WORKER_PARAM = { scope: "/sdk/onesignal/" };
-                OneSignal.SERVICE_WORKER_PATH = "sdk/onesignal/onesignal.js";
-                await OneSignal.init({
-                    appId: "8718ce03-c439-4a9f-b9a5-48ae91d60ac7",
-                });
-            });
-        </script>
-        <script
-            data-astro-rerun
-            is:inline
-            data-host="https://biasml.com"
-            data-dnt="false"
-            src="https://biasml.com/js/script.js"
-            id="ZwSg9rf6GA"
-            async
-            defer
-        ></script>
-        <style is:global>
-            * {
-                -webkit-tap-highlight-color: transparent;
-            }
-        </style>
-    </body>
+    <script
+      src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js"
+      defer></script>
+  </head>
+  <body
+    transition:animate="fade"
+    class={`${bodyclass ? bodyclass : ""} bg-background dark:bg-backgroundDark`}
+  >
+    <Header>
+      <slot />
+      <Footer />
+    </Header>
+    <script defer>
+      window.OneSignalDeferred = window.OneSignalDeferred || [];
+      OneSignalDeferred.push(async function (OneSignal) {
+        OneSignal.SERVICE_WORKER_PARAM = { scope: "/sdk/onesignal/" };
+        OneSignal.SERVICE_WORKER_PATH = "sdk/onesignal/onesignal.js";
+        await OneSignal.init({
+          appId: "8718ce03-c439-4a9f-b9a5-48ae91d60ac7",
+        });
+      });
+    </script>
+    <script
+      data-astro-rerun
+      is:inline
+      data-host="https://biasml.com"
+      data-dnt="false"
+      src="https://biasml.com/js/script.js"
+      id="ZwSg9rf6GA"
+      async
+      defer></script>
+    <style is:global>
+      * {
+        -webkit-tap-highlight-color: transparent;
+      }
+    </style>
+  </body>
 </html>
