@@ -3,7 +3,8 @@ title: Comprar en el exterior al menor precio en 2024 en Amazon! - ComiDolar
 description: Una serie de consejos para aprovechar la tarifa plana de envíos de Amazon durante este 2024 accediendo a productos importados a menor precio que comprados aquí.
 date: 2024-09-25T18:00:00.000-0300
 draft: false
-author: gena@comidolar.com.ar (Genaro Febbo Yapur)
+author: Gena
+rssauthor: gena@comidolar.com.ar (Genaro Febbo Yapur)
 copyright: 2024 ©️ComiDolar
 theme: Finanzas
 tags: [Dolar, Amazon, Argentina, Envio, Tecnologia, Ahorro]
