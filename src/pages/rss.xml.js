@@ -2,7 +2,8 @@ import rss from '@astrojs/rss';
 import { getCollection } from "astro:content";
 import sanitizeHtml from 'sanitize-html';
 import MarkdownIt from 'markdown-it';
-const parser = new MarkdownIt();
+
+const parser = new MarkdownIt({ html: true });
 
 export async function GET(context) {
   const blog = await getCollection('blog');
@@ -11,7 +12,11 @@ export async function GET(context) {
     description: 'Todas las últimas publicaciones de ComiDólar a través de su blog oficial. Noticias del dólar, del CNBA y mucho más.',
     site: context.site,
     items: blog.map((post) => {
-      const contentHtml = sanitizeHtml(parser.render(post.body));
+      // Permitir todas las etiquetas y atributos
+      const contentHtml = sanitizeHtml(parser.render(post.body), {
+        allowedTags: false, // Permitir todas las etiquetas
+        allowedAttributes: false, // Permitir todos los atributos
+      });
       return {
         title: post.data.title,
         pubDate: post.data.date,
