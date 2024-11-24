@@ -3,6 +3,7 @@ const { metadata, bodyclass } = Astro.props;
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import { ViewTransitions } from "astro:transitions";
+import LoadingIndicator from "astro-loading-indicator/component";
 ---
 
 <html class="h-full" lang="es">
@@ -73,7 +74,11 @@ import { ViewTransitions } from "astro:transitions";
     {metadata.noindex && <meta name="robots" content="noindex" />}
 
     <ViewTransitions />
-
+    <LoadingIndicator
+      color="#0e9f6e"
+      height="4px"
+      threshold={10}
+    />
     <script
       src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js"
       defer></script>
@@ -108,6 +113,15 @@ import { ViewTransitions } from "astro:transitions";
     <style is:global>
       * {
         -webkit-tap-highlight-color: transparent;
+      }
+      :root .astro-loading-indicator {
+        background: linear-gradient(
+          to right,
+          #12f6aa,
+          #0e9f6e,
+          #0e9f6e,
+          #12f6aa
+        );
       }
     </style>
   </body>
