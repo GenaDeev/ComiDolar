@@ -20,7 +20,7 @@ const metadata = {
 
 <Layout bodyclass="h-full pt-12" metadata={metadata}>
     <main class="grid grid-cols-1 lg:grid-cols-[70%_30%] gap-4 pr-4 items-start">
-        <section class="payment-methods grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 p-6">
+        <section class="payment-methods grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
             {PAYMENT_METHODS.map((method) => (
                 <div>
                     <PaymentMethod {...method} />

@@ -1,8 +1,10 @@
 ---
+import AtroposComponent from "../components/AtroposComponent.astro";
 import type { PaymentMethodType } from "../db/payment.ts";
 const { name, short, image, pallete, cbu, alias, isWallet, coffee }: PaymentMethodType = Astro.props as PaymentMethodType;
 const { background, gradientfrom, gradientto, border, shadow } = pallete;
 ---
+<AtroposComponent customClass=`paymethod-atropos-${short}`>
 <div class={`paymethod ${short}`}>
     <img alt={`Logo de ${name}`} src={image} />
     { !coffee ?
@@ -44,6 +46,9 @@ const { background, gradientfrom, gradientto, border, shadow } = pallete;
         <button class="bmcb">IR</button>
     </a>
     }
+
+</div>
+</AtroposComponent>
 <div id="notification" class="notification hidden">
     <span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
         <path fill="currentColor" d="M8 3.5A1.5 1.5 0 0 1 9.5 2h5A1.5 1.5 0 0 1 16 3.5v1A1.5 1.5 0 0 1 14.5 6h-5A1.5 1.5 0 0 1 8 4.5z" />
@@ -53,8 +58,6 @@ const { background, gradientfrom, gradientto, border, shadow } = pallete;
     <button class="close-btn"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 32 32">
         <path fill="currentColor" d="m24.778 21.42l-5.502-5.503l5.5-5.502l-2.827-2.83l-5.503 5.502l-5.502-5.502l-2.828 2.83l5.5 5.502l-5.5 5.502l2.83 2.828l5.5-5.502l5.5 5.502z" />
     </svg></button>
-</div>
-
 </div>
 <style define:vars={{ background, gradientfrom, gradientto, border, shadow }}>
     .paymethod {
@@ -68,7 +71,6 @@ const { background, gradientfrom, gradientto, border, shadow } = pallete;
         transition: 0.5s ease;
         width: 100%;
         max-width: 400px;
-        margin: 6px;
         border-radius: 8px;
         display: flex;
         flex-direction: column;
@@ -131,6 +133,7 @@ const { background, gradientfrom, gradientto, border, shadow } = pallete;
     position: fixed;
     bottom: 20px;
     right: 20px;
+    z-index: 100;
     background-color: #22c55e;
     color: white;
     padding: 10px 20px;
