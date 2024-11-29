@@ -1,4 +1,6 @@
 ---
+import AtroposComponent from "./AtroposComponent.astro";
+import type AtroposSettings from "../types/atropos";
 const { type, sell, buy, date, name } = Astro.props;
 let color;
 let url;
@@ -29,74 +31,88 @@ if (type === "oficial") {
   color = "#a39300";
   url = "https://dolarapi.com/docs/argentina/operations/get-dolar-blue.html";
 }
+const atroposCustomCss = {
+  "border-radius": "1rem",
+  "box-shadow": `0px 4px 6px -1px ${color}`,
+};
+
+const atroposSettings: AtroposSettings = {
+  highlight: true,
+  shadow: true,
+  activeOffset: 30,
+  rotateXMax: 15,
+  rotateYMax: 15,
+};
 ---
 
-<article
-  class="w-full sm:w-[300px] h-[250px] bg-white dark:bg-darkless text-zinc-700 dark:text-white border rounded-lg shadow"
-  style={`border-color: ${color}; box-shadow: 0 4px 6px -1px ${color}, 0 2px 4px -1px ${color};`}
+<AtroposComponent
+  settings={atroposSettings}
+  customCss={atroposCustomCss}
+  customClass=`dolar-card-${type}`
 >
-  <div
-    style={`background-color: ${color}; height: 10px; border-top-left-radius: 0.5rem; border-top-right-radius: 0.5rem`}
+  <article
+    class="w-full sm:w-[300px] h-[250px] bg-white dark:bg-darkless text-zinc-700 dark:text-white border rounded-lg shadow"
   >
-  </div>
-  <div class="p-5 flex flex-col justify-between h-full">
-    <section>
-      <a href={url}>
-        <h5 class="mb-2 text-4xl sm:text-2xl font-bold tracking-tight">
-          {type === "contadoconliqui" ? "Contado con Liqui" : name}
-        </h5>
-      </a>
-    </section>
-    <section class="space-y-1">
-      <p class="text-2xl sm:text-xl">
+    <div class="top-line"></div>
+    <div class="p-5 flex flex-col justify-between h-full">
+      <section>
+        <a href={url}>
+          <h5 class="mb-2 text-4xl sm:text-2xl font-bold tracking-tight">
+            {type === "contadoconliqui" ? "Contado con Liqui" : name}
+          </h5>
+        </a>
+      </section>
+      <section class="space-y-1">
+        <p class="text-2xl sm:text-xl">
+          {
+            type !== "brecha" ? (
+              <>
+                Venta&colon; <strong>{sell.toFixed(2)}</strong>
+              </>
+            ) : (
+              <strong>{sell.toFixed(2) + " %"}</strong>
+            )
+          }
+        </p>
         {
-          type !== "brecha" ? (
-            <>
-              Venta&colon; <strong>{sell.toFixed(2)}</strong>
-            </>
-          ) : (
-            <strong>{sell.toFixed(2) + " %"}</strong>
+          type !== "brecha" && (
+            <p class="text-lg sm:text-md">
+              Compra: <strong>{buy.toFixed(2)}</strong>
+            </p>
           )
         }
-      </p>
-      {
-        type !== "brecha" && (
-          <p class="text-lg sm:text-md">
-            Compra: <strong>{buy.toFixed(2)}</strong>
-          </p>
-        )
-      }
-    </section>
-    <section class="flex flex-col gap-1">
-      <span
-        class={`bg-green-500/25 px-3 py-1 rounded-full dolar-timestamp-${type}`}
-      >
-        Actualizado: {
-          new Date(date).toLocaleString("es-ES", {
-            day: "2-digit",
-            month: "2-digit",
-            year: "numeric",
-            hour: "2-digit",
-            minute: "2-digit",
-          })
-        }
-      </span>
+      </section>
+      <section class="flex flex-col gap-1">
+        <span
+          class={`bg-green-500/25 px-3 py-1 rounded-full dolar-timestamp-${type}`}
+        >
+          Actualizado: {
+            new Date(date).toLocaleString("es-ES", {
+              day: "2-digit",
+              month: "2-digit",
+              year: "numeric",
+              hour: "2-digit",
+              minute: "2-digit",
+            })
+          }
+        </span>
 
-      {
-        type === "tarjeta" ? (
-          <a
-            class="bg-[#1c2633] text-white px-3 py-1 rounded-full hover:bg-[#252c36] transition duration-200"
-            href="/calculadora"
-          >
-            Calculadora
-          </a>
-        ) : (
-          ""
-        )
-      }
-    </section>
-  </div>
-</article>
+        {
+          type === "tarjeta" ? (
+            <a
+              class="bg-[#1c2633] text-white px-3 py-1 rounded-full hover:bg-[#252c36] transition duration-200"
+              href="/calculadora"
+            >
+              Calculadora
+            </a>
+          ) : (
+            ""
+          )
+        }
+      </section>
+    </div>
+  </article>
+</AtroposComponent>
 
 <script is:inline define:vars={{ date, type }}>
   const timestamp = document.querySelector(".dolar-timestamp-" + type);
@@ -110,3 +126,15 @@ if (type === "oficial") {
     minute: "2-digit",
   })}`;
 </script>
+
+<style define:vars={{ color }}>
+  article {
+    border-color: var(--color);
+  }
+  .top-line {
+    background-color: var(--color);
+    height: 10px;
+    border-top-left-radius: 0.3rem;
+    border-top-right-radius: 0.3rem;
+  }
+</style>
