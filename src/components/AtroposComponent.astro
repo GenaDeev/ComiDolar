@@ -22,7 +22,7 @@ const {
 </div>
 <script type="module" define:vars={{ customClass, customCss, settings }}>
   import Atropos from "https://cdn.jsdelivr.net/npm/atropos@2.0.2/atropos.min.mjs";
-  document.addEventListener("DOMContentLoaded", () => {
+  document.addEventListener("astro:page-load", () => {
     if (!settings) {
       Atropos({
         el: `.${customClass}`,
