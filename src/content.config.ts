@@ -1,24 +1,16 @@
 import { defineCollection, z } from 'astro:content';
 const blogCollection = defineCollection({
     schema: z.object({
-      isDraft: z.boolean(),
       title: z.string(),
-      sortOrder: z.number(),
-      image: z.object({
-        src: z.string(),
-        alt: z.string(),
-      }),
-      author: z.string().default('Anonymous'),
-      language: z.enum(['en', 'es']),
-      tags: z.array(z.string()),
-      footnote: z.string().optional(),
-  
-      publishDate: z.date(),
-  
-      updatedDate: z.string().transform((str) => new Date(str)),
-  
-      authorContact: z.string().email(),
-      canonicalURL: z.string().url(),
+      description: z.string(),
+      date: z.date(),
+      draft: z.boolean(),
+      author: z.string().default('Anonimo'),
+      rssauthor: z.string().default('Anonimo'),
+      copyright: z.string().default('2024 ©️ComiDolar'),
+      theme: z.string(),
+      tags: z.array(z.string()).optional(),
+      hideImage: z.boolean().optional(),
     }),
   });
   
