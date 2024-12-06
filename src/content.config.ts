@@ -3,7 +3,7 @@ const blogCollection = defineCollection({
     schema: z.object({
       title: z.string(),
       description: z.string(),
-      date: z.date(),
+      date: z.string(),
       draft: z.boolean(),
       author: z.string().default('Anonimo'),
       rssauthor: z.string().default('Anonimo'),
