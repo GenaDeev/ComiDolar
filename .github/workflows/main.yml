@@ -7,7 +7,7 @@ env:
 on:
     schedule:
         - cron: '*/15 * * * 1-5'
-    workflow_dispatch:  # Permite ejecución manual del workflow
+    workflow_dispatch: 
 
 jobs:
     Deploy-Production:
@@ -17,7 +17,7 @@ jobs:
               uses: actions/checkout@v4
 
             - name: Installing Dependencies
-              run: npm install && npm install -g vercel
+              run: npm install --legacy-peer-deps && npm install -g vercel
 
             - name: Vercel Auth
               run: vercel pull --yes --environment=production --token=${{ secrets.VERCEL_TOKEN }}
