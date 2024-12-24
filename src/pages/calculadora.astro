@@ -26,7 +26,6 @@ try {
   console.error("Error fetching data:", error);
 }
 
-const tarjeta = dolares[6].venta;
 const oficial = dolares[0].venta;
 ---
 
@@ -36,9 +35,41 @@ const oficial = dolares[0].venta;
   >
     <section
       id="calculadora"
-      class="flex flex-col items-center p-4 bg-zinc-100 dark:bg-darkless rounded-lg sm:rounded-l-lg shadow-lg max-w-md"
+      class="flex flex-col items-center relative p-4 bg-zinc-100 dark:bg-darkless rounded-lg sm:rounded-l-lg shadow-lg max-w-md"
     >
-      <h1 class="text-4xl font-bold mb-4 text-center">
+      <header
+        class="p-2 bg-green-500 w-full absolute top-0 rounded-t-lg flex justify-between items-center"
+      >
+        <p class="font-semibold">Ahora sin impuesto pais!</p>
+        <a
+          title="Post de ComiDolar titulado El impuesto pais fue eliminado, calculá tus compras! - ComiDolar
+"
+          href="https://comidolar.com.ar/blog/eliminacion-impuesto-pais"
+          class="hover:scale-110 transition-transform duration-300 ease-in-out"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="18"
+            height="18"
+            viewBox="0 0 24 24"
+            ><g fill="none"
+              ><path
+                fill="currentColor"
+                fill-opacity="0.16"
+                d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2S2 6.477 2 12s4.477 10 10 10"
+              ></path><path
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-miterlimit="10"
+                stroke-width="1.5"
+                d="M12 8h.008M12 16v-5m10 1c0 5.523-4.477 10-10 10S2 17.523 2 12S6.477 2 12 2s10 4.477 10 10"
+              ></path></g
+            ></svg
+          >
+        </a>
+      </header>
+      <h1 class="text-4xl font-bold mt-8 mb-4 text-center">
         Calculadora Dolar Tarjeta
       </h1>
       <h2 class="text-2xl mb-6 text-center">
@@ -54,9 +85,24 @@ const oficial = dolares[0].venta;
             id="originalPrice"
             type="number"
             value="1"
-            class="border border-zinc-300 dark:bg-zinc-700 rounded-lg w-full p-2 text-right appearance-none"
+            class="border border-zinc-300 dark:bg-zinc-700 rounded-t-lg w-full p-2 text-right appearance-none"
             min="0.5"
           />
+          <div
+            class="flex items-center gap-2 w-full bg-zinc-200 dark:bg-zinc-800 rounded-b-lg p-2"
+          >
+            <input
+              id="isDigitalService"
+              type="checkbox"
+              checked
+              class="rounded-xl text-green-500 cursor-pointer hover:scale-110 hover:text-green-700 appeareance-none transition duration-300 ease-in-out"
+            />
+            Es un servicio digital? <a
+              class="text-green-500"
+              href="https://www.afip.gob.ar/iva/documentos/Prestadores-Servicios-Digitales-desde-diciembre-2023.txt"
+              >Lista completa</a
+            >
+          </div>
         </div>
         <div
           class="final flex flex-col gap-2 rounded-xl p-2 bg-zinc-400 dark:bg-backgroundDark"
@@ -66,7 +112,7 @@ const oficial = dolares[0].venta;
           >
           <input
             id="finalPrice"
-            value={tarjeta}
+            value=""
             disabled
             class="border border-zinc-300 dark:bg-zinc-800 bg-zinc-200 rounded-lg w-full p-2 text-right"
           />
@@ -84,29 +130,29 @@ const oficial = dolares[0].venta;
           >ℹ️ Mas info</a
         >
       </h3>
-      <label for="pais">Impuesto Pais (30%)</label>
-      <input
-        disabled
-        class="border border-zinc-300 dark:bg-zinc-700 bg-zinc-100 rounded-lg w-full p-2 text-right"
-        id="pais"
-        value={(tarjeta * 0.3).toFixed(2)}
-      />
       <label for="ganancias">Percepción de Ganancias (30%)</label>
       <input
         disabled
         class="border border-zinc-300 dark:bg-zinc-700 bg-zinc-100 rounded-lg w-full p-2 text-right"
         id="ganancias"
-        value={(tarjeta * 0.3).toFixed(2)}
+        value=""
+      />
+      <label for="iva">Iva Servicios Digitales (21%)</label>
+      <input
+        disabled
+        class="border border-zinc-300 dark:bg-zinc-700 bg-zinc-100 rounded-lg w-full p-2 text-right"
+        id="iva"
+        value=""
       />
       <div
         class="final flex flex-col gap-2 rounded-xl p-2 bg-zinc-400 dark:bg-backgroundDark"
       >
-        <label for="totaltax">Solo Impuestos (60%)</label>
+        <label for="totaltax">Solo Impuestos (51%)</label>
         <input
           disabled
           class="border border-zinc-300 dark:bg-zinc-700 bg-zinc-100 rounded-lg w-full p-2 text-right"
           id="totaltax"
-          value={(tarjeta * 0.6).toFixed(2)}
+          value=""
         />
         <label for="notax">Sin impuestos</label>
         <input
@@ -118,31 +164,60 @@ const oficial = dolares[0].venta;
       </div>
     </section>
   </main>
-  <Lore page="calculadora"/>
-  <script is:inline data-astro-rerun define:vars={{ tarjeta, oficial }}>
+  <Lore page="calculadora" />
+  <script is:inline data-astro-rerun define:vars={{ oficial }}>
     const originContainer = document.getElementById("originalPrice");
     const finalContainer = document.getElementById("finalPrice");
-    const paisContainer = document.getElementById("pais");
+    const ivaContainer = document.getElementById("iva");
     const gananciasContainer = document.getElementById("ganancias");
     const noTaxContainer = document.getElementById("notax");
     const totalTaxContainer = document.getElementById("totaltax");
-    originContainer.addEventListener("input", handleInput);
+    const isDigitalServiceElement = document.getElementById("isDigitalService");
 
-    function handleInput() {
-      const value = originContainer.value;
-      if (value === "1") {
-        finalContainer.value = `$${tarjeta}`;
-        noTaxContainer.value = `$${oficial}`;
-        paisContainer.value = `$${(oficial * 0.3).toFixed(2)}`;
-        gananciasContainer.value = `$${(oficial * 0.3).toFixed(2)}`;
-        totalTaxContainer.value = `$${(oficial * 0.6).toFixed(2)}`;
+    const handleInput = (value = 1) => {
+      value = parseFloat(value) || 0;
+      const isDigitalService = isDigitalServiceElement.checked;
+      const ganancias = value * oficial * 0.3;
+      const iva = value * oficial * (isDigitalService ? 0.21 : 0);
+      return {
+        original: value * oficial,
+        ganancias: ganancias,
+        iva: iva,
+        final: value * oficial + ganancias + iva,
+        tax: ganancias + iva,
+      };
+    };
+
+    const setData = (data) => {
+      const { original, ganancias, iva, final, tax } = data;
+      gananciasContainer.value = `$${ganancias.toFixed(2)}`;
+      ivaContainer.value = `$${iva.toFixed(2)}`;
+      finalContainer.value = `$${final.toFixed(2)}`;
+      noTaxContainer.value = `$${original.toFixed(2)}`;
+      totalTaxContainer.value = `$${tax.toFixed(2)}`;
+    };
+
+    originContainer.addEventListener("input", (e) =>
+      setData(handleInput(e.target.value))
+    );
+
+    isDigitalServiceElement.addEventListener("change", () => {
+      const elements = [
+        ivaContainer,
+        document.querySelector(`label[for="${ivaContainer.id}"]`),
+      ];
+      setData(handleInput(originContainer.value));
+      if (!isDigitalServiceElement.checked) {
+        elements.forEach((element) => element.classList.add("hidden"));
+        document.querySelector(`label[for="totaltax"]`).textContent =
+          "Solo Impuestos (30%)";
       } else {
-        finalContainer.value = `$${(value * tarjeta).toFixed(2)}`;
-        noTaxContainer.value = `$${(value * oficial).toFixed(2)}`;
-        paisContainer.value = `$${(value * oficial * 0.3).toFixed(2)}`;
-        gananciasContainer.value = `$${(value * oficial * 0.3).toFixed(2)}`;
-        totalTaxContainer.value = `$${(value * oficial * 0.6).toFixed(2)}`;
+        elements.forEach((element) => element.classList.remove("hidden"));
+        document.querySelector(`label[for="totaltax"]`).textContent =
+          "Solo Impuestos (51%)";
       }
-    }
+    });
+
+    setData(handleInput());
   </script>
 </Layout>
