@@ -2,7 +2,7 @@
 const { metadata, bodyclass } = Astro.props;
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
-import { ViewTransitions } from "astro:transitions";
+import { ClientRouter } from "astro:transitions";
 import LoadingIndicator from "astro-loading-indicator/component";
 ---
 
@@ -73,7 +73,7 @@ import LoadingIndicator from "astro-loading-indicator/component";
 
     {metadata.noindex && <meta name="robots" content="noindex" />}
 
-    <ViewTransitions />
+    <ClientRouter />
     <LoadingIndicator color="#0e9f6e" height="4px" threshold={10} />
     <script
       src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js"
