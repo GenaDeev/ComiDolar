@@ -74,14 +74,14 @@ import LoadingIndicator from "astro-loading-indicator/component";
     {metadata.noindex && <meta name="robots" content="noindex" />}
 
     <ViewTransitions />
-    <LoadingIndicator
-      color="#0e9f6e"
-      height="4px"
-      threshold={10}
-    />
+    <LoadingIndicator color="#0e9f6e" height="4px" threshold={10} />
     <script
       src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js"
       defer></script>
+    <script
+      async
+      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8853864974633365"
+      crossorigin="anonymous"></script>
   </head>
   <body
     transition:animate="fade"
