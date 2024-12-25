@@ -118,6 +118,18 @@ import LoadingIndicator from "astro-loading-indicator/component";
           #0e9f6e,
           #12f6aa
         );
+        background-size: 300% 300%;
+        animation: loadingBar 1s linear infinite;
+        box-shadow: 0px 0px 10px 2px #0e9f6e;
+      }
+      
+      @keyframes loadingBar {
+        from {
+          background-position: 0%;
+        }
+        to {
+          background-position: 100%;
+        }
       }
     </style>
   </body>
