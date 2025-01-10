@@ -15,6 +15,9 @@ export default {
 				darkless: '#18181b',
 				divider: '#3f3f46'
 			},
+			aspectRatio {
+				'og': '40 / 21'
+			}
 		},
 	},
 	plugins: [
