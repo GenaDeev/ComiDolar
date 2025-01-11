@@ -172,11 +172,11 @@ import AsideLink from "./AsideLink.astro";
   }
 </style>
 
-<script>
+<script is:inline>
   let isAsideVisible;
-  let target = document.getElementById("logo-sidebar");
-  let toggle = document.getElementById("toggle-sidebar");
-  let outside = document.getElementById("page-content");
+  let target;
+  let toggle;
+  let outside;
 
   const getStatus = () => {
     if (target.classList.contains("-translate-x-full")) {
@@ -189,22 +189,42 @@ import AsideLink from "./AsideLink.astro";
   const showSidebar = () => {
     target.classList.remove("-translate-x-full");
     isAsideVisible = true;
-    return;
   };
 
   const hideSidebar = () => {
     target.classList.add("-translate-x-full");
     isAsideVisible = false;
-    return;
   };
 
-  toggle.addEventListener("click", () => {
+  const setupListeners = () => {
+    toggle?.removeEventListener("click", toggleSidebar);
+    outside?.removeEventListener("click", handleOutsideClick);
+
+    target = document.getElementById("logo-sidebar");
+    toggle = document.getElementById("toggle-sidebar");
+    outside = document.getElementById("page-content");
+
+    toggle?.addEventListener("click", toggleSidebar);
+    outside?.addEventListener("click", handleOutsideClick);
+
+    getStatus();
+  };
+
+  const toggleSidebar = () => {
     isAsideVisible ? hideSidebar() : showSidebar();
-  });
+  };
 
-  outside.addEventListener("click", () => {
-    isAsideVisible && hideSidebar();
-  });
+  const handleOutsideClick = (event) => {
+    if (
+      isAsideVisible &&
+      !target.contains(event.target) &&
+      event.target !== toggle
+    ) {
+      hideSidebar();
+    }
+  };
 
-  document.addEventListener("astro:page-load", getStatus);
+  document.addEventListener("astro:page-load", setupListeners);
+
+  setupListeners();
 </script>
