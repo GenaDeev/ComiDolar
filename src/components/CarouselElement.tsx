@@ -57,7 +57,7 @@ const CarouselElement: React.FC = () => {
         >
           {slides.map((slide, index) => (
             <div
-              className="embla__slide"
+              className="embla__slide cursor-grab active:cursor-grabbing"
               style={{ position: "relative", flex: "0 0 100%" }}
               key={`slide-${index}`}
             >
@@ -89,7 +89,7 @@ const CarouselElement: React.FC = () => {
               className={`embla__dot border-2 ${
                 index === selectedIndex
                   ? "embla__dot--selected border-green-500"
-                  : " border-zinc-200 dark:border-darkless"
+                  : " border-zinc-200 hover:border-zinc-300 dark:border-zinc-800 dark:hover:border-zinc-700"
               }`}
               style={{
                 width: "20px",
