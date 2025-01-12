@@ -8,11 +8,22 @@ const newestPost = posts.sort((a, b) => {
   return dateB - dateA;
 })[0];
 ---
-<article class="relative w-full h-48 flex flex-col items-center justify-center bg-cover bg-center text-white p-4 rounded-lg shadow-lg" style={{ backgroundImage: `url('/assets/img/opengraph/blog/${newestPost.slug}.webp')` }}>
-    <div class="absolute inset-0 bg-black opacity-50 rounded-lg"></div>
-    <div class="relative z-10">
-        <p class="text-xl">Lee nuestro último artículo</p>
-        <h2 class="font-bold text-2xl">{newestPost.data.title}</h2>
-        <a href={`/blog/${newestPost.slug}`} class="inline-block mt-2 w-full sm:w-auto text-center bg-green-500 hover:bg-green-600 text-white font-semibold py-1 px-3 rounded transition duration-200">Leer</a>
-    </div>
+
+<article
+  class="relative w-full h-48 flex flex-col items-center justify-center bg-cover bg-center text-white p-4 rounded-lg shadow-lg"
+  style={{
+    backgroundImage: `url('/assets/img/opengraph/blog/${newestPost.slug}.webp')`,
+  }}
+>
+  <div class="absolute inset-0 bg-black opacity-50 rounded-lg"></div>
+  <div class="relative z-10">
+    <p class="text-xl">Lee nuestro último artículo</p>
+    <h2 class="font-bold text-2xl">{newestPost.data.title}</h2>
+    <a
+      href={`/blog/${newestPost.slug}`}
+      class="inline-block border-2 border-white mt-2 w-full sm:w-auto text-center bg-green-700 hover:bg-green-800 py-1 px-3 rounded transition duration-200"
+    >
+      <span class="text-white font-bold">Leer</span>
+    </a>
+  </div>
 </article>
