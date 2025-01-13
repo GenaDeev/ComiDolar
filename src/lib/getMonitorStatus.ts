@@ -51,7 +51,7 @@ export async function fetchMonitors(): Promise<Statuses> {
         monitor.attributes.url === "https://mndgyahtssypdtwwusoj.supabase.co/"
     );
 
-    if (apiMonitor && !backendMonitor && databaseMonitor) {
+    if (apiMonitor && backendMonitor && databaseMonitor) {
       const apiStatus: Status = apiMonitor.attributes.status;
       const backendStatus: Status = backendMonitor.attributes.status;
       const databaseStatus: Status = databaseMonitor.attributes.status;
