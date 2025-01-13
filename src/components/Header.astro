@@ -3,7 +3,8 @@ import AsideLink from "./AsideLink.astro";
 import { fetchMonitors } from "../lib/getMonitorStatus";
 const statuses = await fetchMonitors();
 
-const { api, backend, database, final, lore } = statuses;
+
+const { api, backend, database, final, lore, ts } = statuses;
 
 const isApiOnline = api === "up";
 const isBackendOnline = backend === "up";
@@ -112,9 +113,10 @@ const isEverythingDown = final === "down";
                   class="w-full h-32 object-cover rounded-lg"
                 />
                 <p class="text-xs opacity-50 font-mono">
-                  Actualizado {new Date().toLocaleTimeString()} ARG 🇦🇷
+                  Actualizado {ts} ARG 🇦🇷
                 </p>
                 <p>{lore}</p>
+                {lore === "Error fetching monitor status" ? (<></>) : (
                 <p>
                   <strong>API Dólares:</strong>
                   <span
@@ -155,7 +157,8 @@ const isEverythingDown = final === "down";
                       d="M14.25 1.5H1.75A1.25 1.25 0 0 0 .5 2.75v7.5a1.25 1.25 0 0 0 1.25 1.25H6.1v1.75H4v1.25h8v-1.25H9.91V11.5h4.34a1.25 1.25 0 0 0 1.25-1.25v-7.5a1.25 1.25 0 0 0-1.25-1.25M8.66 13.25H7.35V11.5h1.31zm5.59-3H1.75v-7.5h12.5z"
                     ></path></svg
                   >
-                </a>
+                </a>)
+                }
               </div>
             </div>
           </div>

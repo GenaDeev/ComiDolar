@@ -1,8 +1,27 @@
-const { BETTERSTACK_API_KEY } = process.env;
+const { BETTERSTACK_API_KEY } = import.meta.env;
 
-export async function fetchMonitors() {
+type Status = "up" | "mid" | "down" | undefined;
+
+class Statuses {
+  api: Status;
+  backend: Status;
+  database: Status;
+  final: Status;
+  lore: string;
+  ts: string;
+  constructor(api, backend, database, final, lore, ts) {
+    this.api = api;
+    this.backend = backend;
+    this.database = database;
+    this.final = final;
+    this.lore = lore;
+    this.ts = ts;
+  }
+}
+
+export async function fetchMonitors(): Promise<Statuses> {
   const url = "https://uptime.betterstack.com/api/v2/monitors";
-  const token = "efPLAho5Cf2sF4RhSfGeActo";
+  const token = BETTERSTACK_API_KEY;
 
   try {
     const response = await fetch(url, {
@@ -32,30 +51,49 @@ export async function fetchMonitors() {
         monitor.attributes.url === "https://mndgyahtssypdtwwusoj.supabase.co/"
     );
 
-    const apiStatus = apiMonitor.attributes.status;
-    const backendStatus = backendMonitor.attributes.status;
-    const databaseStatus = databaseMonitor.attributes.status;
+    if (apiMonitor && !backendMonitor && databaseMonitor) {
+      const apiStatus: Status = apiMonitor.attributes.status;
+      const backendStatus: Status = backendMonitor.attributes.status;
+      const databaseStatus: Status = databaseMonitor.attributes.status;
 
-    const final =
-      apiStatus === "down" &&
-      backendStatus === "down" &&
-      databaseStatus === "down"
-        ? "down"
-        : apiStatus === "up" &&
-          backendStatus === "up" &&
-          databaseStatus === "up"
-        ? "up"
-        : "mid";
+      const final: Status =
+        apiStatus === "down" &&
+        backendStatus === "down" &&
+        databaseStatus === "down"
+          ? "down"
+          : apiStatus === "up" &&
+            backendStatus === "up" &&
+            databaseStatus === "up"
+          ? "up"
+          : "mid";
 
-    const lore = final === "up" ? "Todos los servicios están en línea" : final === "mid" ? "Algunos servicios estan caídos" : "Todos los servicios están caídos";
-    return {
-      api: apiStatus,
-      backend: backendStatus,
-      database: databaseStatus,
-      final,
-      lore,
-    };
+      const lore: string =
+        final === "up"
+          ? "Todos los servicios están en línea"
+          : final === "mid"
+          ? "Algunos servicios están caídos"
+          : "Todos los servicios están caídos";
+
+      return new Statuses(
+        apiStatus,
+        backendStatus,
+        databaseStatus,
+        final,
+        lore,
+        new Date().toLocaleTimeString()
+      );
+    } else {
+      throw new Error("Missing monitors in response");
+    }
   } catch (error) {
     console.error("Error fetching monitors:", error);
+    return new Statuses(
+      undefined,
+      undefined,
+      undefined,
+      undefined,
+      "Error fetching monitor status",
+      new Date().toLocaleTimeString(),
+    );
   }
 }
