@@ -14,7 +14,7 @@ const newestPost = posts.sort((a, b) => {
 >
   <img
     src={`/assets/img/opengraph/blog/lowres/${newestPost.slug}.webp`}
-    alt=""
+    alt={newestPost.data.title}
     class="absolute inset-0 w-full h-full object-cover blur-[1px] sm:blur-[3px] z-0 rounded-lg"
   />
   <div class="absolute inset-0 bg-black opacity-50 rounded-lg z-0"></div>
