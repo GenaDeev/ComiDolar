@@ -12,7 +12,6 @@ export interface PaymentMethodType {
     cbu?: string,
     alias?: string,
     isWallet?: boolean,
-    coffee?: string
 }
 
 export const PAYMENT_METHODS: PaymentMethodType[] = [
@@ -101,18 +100,5 @@ export const PAYMENT_METHODS: PaymentMethodType[] = [
         cbu: "4530000800016413921560",
         alias: "el.gena.nja",
         isWallet: true,
-    },
-    {
-        name: "Buy Me A Coffee",
-        short: "bmc",
-        image: "/assets/img/bmc.webp",
-        pallete: {
-            background: "rgb(250, 188, 0)",
-            gradientfrom: "rgb(250, 188, 0)",
-            gradientto: "rgb(233, 233, 152)",
-            border: "rgb(207, 190, 29)",
-            shadow: "rgb(250, 188, 0)",
-        },
-        coffee: "https://www.buymeacoffee.com/genadev",
     },
 ];
