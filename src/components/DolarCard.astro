@@ -57,7 +57,7 @@ const atroposSettings: AtroposSettings = {
     <div class="p-5 flex flex-col justify-between h-full">
       <section>
         <a href={url}>
-          <h3 class="mb-2 text-4xl sm:text-2xl font-bold tracking-tight">
+          <h3 class=`mb-2 text-4xl sm:text-2xl font-bold tracking-tight ${type === "contadoconliqui" && "text-lg"}`>  
             {type === "contadoconliqui" ? "Contado con Liqui" : name}
           </h3>
         </a>
