@@ -80,7 +80,10 @@ export async function fetchMonitors(): Promise<Statuses> {
         databaseStatus,
         final,
         lore,
-        new Date().toLocaleTimeString()
+        new Date().toLocaleTimeString('es-AR', { 
+          timeZone: 'America/Argentina/Buenos_Aires', 
+          hour12: false 
+        })
       );
     } else {
       throw new Error("Missing monitors in response");
@@ -93,7 +96,10 @@ export async function fetchMonitors(): Promise<Statuses> {
       undefined,
       undefined,
       "Error fetching monitor status",
-      new Date().toLocaleTimeString(),
+      new Date().toLocaleTimeString('es-AR', { 
+        timeZone: 'America/Argentina/Buenos_Aires', 
+        hour12: false 
+      })
     );
   }
 }

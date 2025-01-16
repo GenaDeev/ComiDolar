@@ -74,9 +74,6 @@ import LoadingIndicator from "astro-loading-indicator/component";
 
     <ClientRouter />
     <LoadingIndicator color="#0e9f6e" height="4px" threshold={10} />
-    <script
-      src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js"
-      defer></script>
   </head>
   <body
     transition:animate="fade"
@@ -86,16 +83,6 @@ import LoadingIndicator from "astro-loading-indicator/component";
       <slot />
       <Footer />
     </Header>
-    <script defer>
-      window.OneSignalDeferred = window.OneSignalDeferred || [];
-      OneSignalDeferred.push(async function (OneSignal) {
-        OneSignal.SERVICE_WORKER_PARAM = { scope: "/sdk/onesignal/" };
-        OneSignal.SERVICE_WORKER_PATH = "sdk/onesignal/onesignal.js";
-        await OneSignal.init({
-          appId: "8718ce03-c439-4a9f-b9a5-48ae91d60ac7",
-        });
-      });
-    </script>
     <script
       data-astro-rerun
       is:inline
