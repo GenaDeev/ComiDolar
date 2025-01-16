@@ -19,7 +19,7 @@ let lore =
   {
     lore.map((section, index) => (
       <section class={(index === 0 && "mt-24") + ' space-y-2'}>
-        {section.h2 && <h2 class="text-3xl font-bold">{section.h2}</h2>}
+        {section.h3 && <h3 class="text-3xl font-bold">{section.h3}</h3>}
         {section.p && section.p.map((p) => <p>{p}</p>)}
         {section.ul && section.ul.length > 0 && (
           <ul>
