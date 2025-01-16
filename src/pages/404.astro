@@ -1,0 +1,42 @@
+---
+import Layout from "../layouts/layout.astro";
+
+const metadata = {
+  title: "Comi Dólar | Página no encontrada",
+  description: {
+    meta: "La página que estás buscando no existe en el sitio web de Comi Dólar, la comisión de dólar del Colegio Nacional de Buenos Aires.",
+    og: "La página que estás buscando no existe en el sitio web de Comi Dólar, la comisión de dólar del Colegio Nacional de Buenos Aires.",
+  },
+  og: {
+    image: "https://comidolar.com.ar/assets/img/opengraph/404.webp",
+    video: "https://comidolar.com.ar/assets/img/opengraph/video.webm",
+  },
+};
+---
+
+<Layout bodyclass="h-full" metadata={metadata}>
+  <main class="flex flex-col items-center justify-center text-center">
+    <svg
+      class="w-32 h-32 text-red-500"
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+    >
+      <path
+        fill="none"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        d="m13 19l-4-2l-6 3V7l6-3l6 3l6-3v6.5M9 4v13m6-10v5m6 3h-2.5a1.5 1.5 0 0 0 0 3h1a1.5 1.5 0 0 1 0 3H17m2 0v1m0-8v1"
+      ></path>
+    </svg>
+    <h1 class="text-4xl font-bold mt-8 mb-4 text-center">
+      La página que estás buscando no existe
+    </h1>
+    <p class="text-lg">
+      La página que estás buscando no existe en el sitio web de Comi Dólar, la
+      comisión de dólar del Colegio Nacional de Buenos Aires.
+    </p>
+    <a href="/" class="bg-red-500 p-3 rounded-xl hover:scale-110 transition-transform duration-300 ease-in-out">Volver al inicio</a>
+  </main>
+</Layout>
