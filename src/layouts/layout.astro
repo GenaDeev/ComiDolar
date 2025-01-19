@@ -42,16 +42,51 @@ import LoadingIndicator from "astro-loading-indicator/component";
     <meta name="apple-mobile-web-app-title" content="Comi Dólar" />
     <meta name="theme-color" content="#14b54f" />
     <meta property="og:type" content={metadata.blog ? "article" : "website"} />
-    {metadata.cannonical && <meta property="og:url" content={metadata.cannonical} />}
+    {
+      metadata.cannonical && (
+        <meta property="og:url" content={metadata.cannonical} />
+      )
+    }
     {metadata.title && <meta property="og:title" content={metadata.title} />}
-    {metadata.description.og && <meta property="og:description" content={metadata.description.og} />}
-    {metadata.og.image && <meta property="og:image" content={metadata.og.image} />}
-    {metadata.og.video && <meta property="og:video" content={metadata.og.video} />}
+    {
+      metadata.description.og && (
+        <meta property="og:description" content={metadata.description.og} />
+      )
+    }
+    {
+      metadata.og.image && (
+        <meta property="og:image" content={metadata.og.image} />
+      )
+    }
+    {
+      metadata.og.video && (
+        <meta property="og:video" content={metadata.og.video} />
+      )
+    }
     <meta property="twitter:card" content="summary_large_image" />
-    {metadata.cannonical && <meta property="twitter:url" content={metadata.cannonical} />}
-    {metadata.title && <meta property="twitter:title" content={metadata.title} />}
-    {metadata.description.og && <meta property="twitter:description" content={metadata.description.og} />}
-    {metadata.og.image && <meta property="twitter:image" content={metadata.og.image} />}
+    {
+      metadata.cannonical && (
+        <meta property="twitter:url" content={metadata.cannonical} />
+      )
+    }
+    {
+      metadata.title && (
+        <meta property="twitter:title" content={metadata.title} />
+      )
+    }
+    {
+      metadata.description.og && (
+        <meta
+          property="twitter:description"
+          content={metadata.description.og}
+        />
+      )
+    }
+    {
+      metadata.og.image && (
+        <meta property="twitter:image" content={metadata.og.image} />
+      )
+    }
     <meta property="twitter:site" content="@comidolar" />
     <meta property="twitter:creator" content="@comidolar" />
     {
@@ -61,11 +96,19 @@ import LoadingIndicator from "astro-loading-indicator/component";
           <meta name="copyright" content={metadata.blog.copyright} />
           <meta name="date" content={metadata.blog.date} />
           <meta property="article:author" content={metadata.blog.author} />
-          {metadata.og.date && <meta property="article:published_time" content={metadata.og.date} />}
-          {metadata.og.theme && <meta property="article:section" content={metadata.og.theme} />}
-          {metadata.og && metadata.og.tags.map((tag) => (
-            <meta property="article:tag" content={tag} />
-          ))}
+          {metadata.og.date && (
+            <meta
+              property="article:published_time"
+              content={metadata.og.date}
+            />
+          )}
+          {metadata.og.theme && (
+            <meta property="article:section" content={metadata.og.theme} />
+          )}
+          {metadata.og &&
+            metadata.og.tags.map((tag) => (
+              <meta property="article:tag" content={tag} />
+            ))}
         </>
       )
     }
@@ -88,10 +131,54 @@ import LoadingIndicator from "astro-loading-indicator/component";
       is:inline
       data-host="https://biasml.com"
       data-dnt="false"
-      src="https://biasml.com/js/script.js"
       id="ZwSg9rf6GA"
       async
-      defer></script>
+      defer
+    >
+      !(function (e) {
+        "use strict";
+        function t(t, n) {
+          var r = document.getElementById("ZwSg9rf6GA");
+          if ("true" === r.getAttribute("data-dnt") && navigator.doNotTrack)
+            return !1;
+          var a = {};
+          (a.referrer = n || e.document.referrer),
+            (a.user_agent_string = navigator.userAgent),
+            (a.page = e.location.href.replace(/#.+$/, "")),
+            (a.screen_resolution = screen.width + "x" + screen.height),
+            (a.screen_size = screen.width + "x" + screen.height),
+            (a.viewport_size =
+              document.documentElement.clientWidth +
+              "x" +
+              document.documentElement.clientHeight),
+            (a.user_agent_string = navigator.userAgent),
+            t && (a.event = t);
+          var i = new XMLHttpRequest();
+          console.log("."),
+            i.open("POST", r.getAttribute("data-host") + "/api/event", !0),
+            i.setRequestHeader(
+              "Content-Type",
+              "application/json; charset=utf-8"
+            ),
+            i.send(JSON.stringify(a));
+        }
+        try {
+          var n = history.pushState;
+          (history.pushState = function () {
+            var r = e.location.href.replace(/#.+$/, "");
+            n.apply(history, arguments), t(null, r);
+          }),
+            (e.onpopstate = function (e) {
+              t(null);
+            }),
+            (e.pa = {}),
+            (e.pa.track = t),
+            t(null);
+        } catch (r) {
+          console.log(r.message);
+        }
+      })(window);
+    </script>
     <style is:global>
       * {
         -webkit-tap-highlight-color: transparent;
@@ -107,7 +194,7 @@ import LoadingIndicator from "astro-loading-indicator/component";
         background-size: 300% 300%;
         animation: loadingBar 1s linear infinite;
       }
-      
+
       @keyframes loadingBar {
         from {
           background-position: 0%;
