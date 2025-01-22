@@ -4,8 +4,8 @@
   "description": "Consulta el valor del dólar oficial y el dólar blue a diario mediante el sitio de la Comisión de Dólar del Colegio Nacional de Buenos Aires.",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#ffffff",
-  "theme_color": "#6fb463",
+  "background_color": "#dddddd",
+  "theme_color": "#22c55e",
   "icons": [
     {
       "src": "assets/img/appicon.png",
