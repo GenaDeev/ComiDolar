@@ -12,7 +12,7 @@ import LoadingIndicator from "astro-loading-indicator/component";
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{metadata.title}</title>
     <link type="image/webp" rel="icon" href="/assets/img/favicon.webp" />
-    {metadata.cannonical && <link rel="canonical" href={metadata.cannonical} />}
+    {metadata.canonical && <link rel="canonical" href={metadata.canonical} />}
     <link rel="manifest" href="/manifest.json" />
     <meta name="description" content={metadata.description.meta} />
     <link
