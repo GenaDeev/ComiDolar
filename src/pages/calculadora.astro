@@ -197,8 +197,20 @@ const oficial = dolares[0].venta;
       totalTaxContainer.value = `$${tax.toFixed(2)}`;
     };
 
+    const debounce = (func, wait) => {
+      let timeout;
+      return (...args) => {
+        clearTimeout(timeout);
+        timeout = setTimeout(() => func.apply(this, args), wait);
+      };
+    };
+
+    const debouncedSetData = debounce((value) => {
+      requestAnimationFrame(() => setData(handleInput(value)));
+    }, 100);
+
     originContainer.addEventListener("input", (e) =>
-      setData(handleInput(e.target.value))
+      debouncedSetData(e.target.value)
     );
 
     isDigitalServiceElement.addEventListener("change", () => {
@@ -206,7 +218,7 @@ const oficial = dolares[0].venta;
         ivaContainer,
         document.querySelector(`label[for="${ivaContainer.id}"]`),
       ];
-      setData(handleInput(originContainer.value));
+      debouncedSetData(originContainer.value);
       if (!isDigitalServiceElement.checked) {
         elements.forEach((element) => element.classList.add("hidden"));
         document.querySelector(`label[for="totaltax"]`).textContent =
