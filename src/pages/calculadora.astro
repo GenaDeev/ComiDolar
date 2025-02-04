@@ -168,69 +168,69 @@ const oficial = dolares[0].venta;
   <Lore page="calculadora" />
   <script is:inline data-astro-rerun define:vars={{ oficial }}>
     const originContainer = document.getElementById("originalPrice");
-    const finalContainer = document.getElementById("finalPrice");
-    const ivaContainer = document.getElementById("iva");
-    const gananciasContainer = document.getElementById("ganancias");
-    const noTaxContainer = document.getElementById("notax");
-    const totalTaxContainer = document.getElementById("totaltax");
-    const isDigitalServiceElement = document.getElementById("isDigitalService");
+const finalContainer = document.getElementById("finalPrice");
+const ivaContainer = document.getElementById("iva");
+const gananciasContainer = document.getElementById("ganancias");
+const noTaxContainer = document.getElementById("notax");
+const totalTaxContainer = document.getElementById("totaltax");
+const isDigitalServiceElement = document.getElementById("isDigitalService");
 
-    const handleInput = (value = 1) => {
-      value = parseFloat(value) || 0;
-      const isDigitalService = isDigitalServiceElement.checked;
-      const ganancias = value * oficial * 0.3;
-      const iva = value * oficial * (isDigitalService ? 0.21 : 0);
-      return {
-        original: value * oficial,
-        ganancias: ganancias,
-        iva: iva,
-        final: value * oficial + ganancias + iva,
-        tax: ganancias + iva,
-      };
-    };
+let lastValues = {}; // Cache para evitar actualizaciones innecesarias
 
-    const setData = (data) => {
-      const { original, ganancias, iva, final, tax } = data;
-      gananciasContainer.value = `$${ganancias.toFixed(2)}`;
-      ivaContainer.value = `$${iva.toFixed(2)}`;
-      finalContainer.value = `$${final.toFixed(2)}`;
-      noTaxContainer.value = `$${original.toFixed(2)}`;
-      totalTaxContainer.value = `$${tax.toFixed(2)}`;
-    };
+const handleInput = (value = 1) => {
+  value = parseFloat(value) || 0;
+  const isDigitalService = isDigitalServiceElement.checked;
+  const ganancias = value * oficial * 0.3;
+  const iva = value * oficial * (isDigitalService ? 0.21 : 0);
+  return {
+    original: value * oficial,
+    ganancias,
+    iva,
+    final: value * oficial + ganancias + iva,
+    tax: ganancias + iva,
+  };
+};
 
-    const debounce = (func, wait) => {
-      let timeout;
-      return (...args) => {
-        clearTimeout(timeout);
-        timeout = setTimeout(() => func.apply(this, args), wait);
-      };
-    };
+const setData = (data) => {
+  const { original, ganancias, iva, final, tax } = data;
 
-    const debouncedSetData = debounce((value) => {
-      requestAnimationFrame(() => setData(handleInput(value)));
-    }, 100);
+  // Evitar cambios innecesarios
+  if (JSON.stringify(data) === JSON.stringify(lastValues)) return;
+  lastValues = data;
 
-    originContainer.addEventListener("input", (e) =>
-      debouncedSetData(e.target.value)
-    );
+  gananciasContainer.textContent = `$${ganancias.toFixed(2)}`;
+  ivaContainer.textContent = `$${iva.toFixed(2)}`;
+  finalContainer.textContent = `$${final.toFixed(2)}`;
+  noTaxContainer.textContent = `$${original.toFixed(2)}`;
+  totalTaxContainer.textContent = `$${tax.toFixed(2)}`;
+};
 
-    isDigitalServiceElement.addEventListener("change", () => {
-      const elements = [
-        ivaContainer,
-        document.querySelector(`label[for="${ivaContainer.id}"]`),
-      ];
-      debouncedSetData(originContainer.value);
-      if (!isDigitalServiceElement.checked) {
-        elements.forEach((element) => element.classList.add("hidden"));
-        document.querySelector(`label[for="totaltax"]`).textContent =
-          "Solo Impuestos (30%)";
-      } else {
-        elements.forEach((element) => element.classList.remove("hidden"));
-        document.querySelector(`label[for="totaltax"]`).textContent =
-          "Solo Impuestos (51%)";
-      }
-    });
+const debounce = (func, wait) => {
+  let timeout;
+  return (...args) => {
+    clearTimeout(timeout);
+    timeout = setTimeout(() => func(...args), wait);
+  };
+};
 
-    setData(handleInput());
+const debouncedSetData = debounce((value) => setData(handleInput(value)), 50);
+
+originContainer.addEventListener("input", (e) => {
+  debouncedSetData(e.target.value);
+});
+
+isDigitalServiceElement.addEventListener("change", () => {
+  debouncedSetData(originContainer.value);
+  const isHidden = !isDigitalServiceElement.checked;
+
+  ivaContainer.style.visibility = isHidden ? "hidden" : "visible";
+  ivaContainer.style.position = isHidden ? "absolute" : "static";
+
+  document.querySelector(`label[for="totaltax"]`).textContent = isHidden
+    ? "Solo Impuestos (30%)"
+    : "Solo Impuestos (51%)";
+});
+
+setData(handleInput());
   </script>
 </Layout>
