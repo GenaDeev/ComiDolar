@@ -167,7 +167,7 @@ const oficial = dolares[0].venta;
   </main>
   <Lore page="calculadora" />
   <script is:inline data-astro-rerun define:vars={{ oficial }}>
-  document.addEventListener("DOMContentLoaded", () => {
+  document.addEventListener("astro:page-load", () => {
     const originContainer = document.getElementById("originalPrice");
     const finalContainer = document.getElementById("finalPrice");
     const ivaContainer = document.getElementById("iva");
