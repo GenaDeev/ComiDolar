@@ -1,6 +1,6 @@
 ---
-import AtroposComponent from "../components/AtroposComponent.astro";
-import type { PaymentMethodType } from "../db/payment.ts";
+import AtroposComponent from "@/components/AtroposComponent.astro";
+import type { PaymentMethodType } from "@/db/payment.ts";
 const { name, short, image, pallete, cbu, alias, isWallet }: PaymentMethodType =
   Astro.props as PaymentMethodType;
 const { background, gradientfrom, gradientto, border, shadow } = pallete;

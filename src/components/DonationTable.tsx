@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { supabase } from "../lib/supabaseClient";
+import { supabase } from "@/lib/supabaseClient";
 export default function DonationGrid() {
     const [donationTable, setDonationTable] = useState([]);
     const [visibleCount, setVisibleCount] = useState(7);
