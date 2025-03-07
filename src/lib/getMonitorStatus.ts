@@ -38,17 +38,17 @@ export async function fetchMonitors(): Promise<Statuses> {
     const data = await response.json();
 
     const apiMonitor = data.data.find(
-      (monitor) => monitor.attributes.url === "https://dolarapi.com/v1/dolares"
+      (monitor) => monitor.attributes.pronounceable_name === "dolarapi.com"
     );
 
     const backendMonitor = data.data.find(
       (monitor) =>
-        monitor.attributes.url === "https://filehost.comidolar.com.ar/"
+        monitor.attributes.pronounceable_name === "api.comidolar.com.ar"
     );
 
     const databaseMonitor = data.data.find(
       (monitor) =>
-        monitor.attributes.url === "https://mndgyahtssypdtwwusoj.supabase.co/"
+        monitor.attributes.pronounceable_name === "db.comidolar.com.ar"
     );
 
     if (apiMonitor && backendMonitor && databaseMonitor) {
