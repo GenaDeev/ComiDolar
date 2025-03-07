@@ -127,58 +127,8 @@ import "@/styles/global.css";
       <slot />
       <Footer />
     </Header>
-    <script
-      data-astro-rerun
-      is:inline
-      data-host="https://biasml.com"
-      data-dnt="false"
-      id="ZwSg9rf6GA"
-      async
-      defer
-    >
-      !(function (e) {
-        "use strict";
-        function t(t, n) {
-          var r = document.getElementById("ZwSg9rf6GA");
-          if ("true" === r.getAttribute("data-dnt") && navigator.doNotTrack)
-            return !1;
-          var a = {};
-          (a.referrer = n || e.document.referrer),
-            (a.user_agent_string = navigator.userAgent),
-            (a.page = e.location.href.replace(/#.+$/, "")),
-            (a.screen_resolution = screen.width + "x" + screen.height),
-            (a.screen_size = screen.width + "x" + screen.height),
-            (a.viewport_size =
-              document.documentElement.clientWidth +
-              "x" +
-              document.documentElement.clientHeight),
-            (a.user_agent_string = navigator.userAgent),
-            t && (a.event = t);
-          var i = new XMLHttpRequest();
-            i.open("POST", r.getAttribute("data-host") + "/api/event", !0),
-            i.setRequestHeader(
-              "Content-Type",
-              "application/json; charset=utf-8"
-            ),
-            i.send(JSON.stringify(a));
-        }
-        try {
-          var n = history.pushState;
-          (history.pushState = function () {
-            var r = e.location.href.replace(/#.+$/, "");
-            n.apply(history, arguments), t(null, r);
-          }),
-            (e.onpopstate = function (e) {
-              t(null);
-            }),
-            (e.pa = {}),
-            (e.pa.track = t),
-            t(null);
-        } catch (r) {
-          console.log(r.message);
-        }
-      })(window);
-    </script>
+    <script src='/analytics/biasml.min.js' data-astro-rerun is:inline data-host="https://biasml.com" data-dnt="false" id="ZwSg9rf6GA" async defer></script>>
+    <script src='/analytics/beacon.min.js' data-astro-rerun is:inline data-cf-beacon='{"token": "4536a67fe2714c37845c5aaadcd0f4d2"}' defer></script>
     <style is:global>
       * {
         -webkit-tap-highlight-color: transparent;
