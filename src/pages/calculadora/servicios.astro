@@ -40,12 +40,10 @@ const metadata = {
         >Resolución General N° 4240/2018 de AFIP</a
       >.
     </p>
-    <section class="flex flex-col bg-white dark:bg-black p-2 mt-2 gap-2 rounded-xl">
+    <section class="flex flex-col bg-white dark:bg-black p-2 mt-2 gap-2 rounded-xl font-mono text-black dark:text-white">
       {
         digitalServices.map((service) => (
-          <p class="font-mono text-black dark:text-white">
-            {service}
-          </p>
+          <p>{service}</p>
         ))
       }
     </section>
