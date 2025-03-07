@@ -10,6 +10,7 @@ export async function GET(context: APIContext) {
     { url: `${siteUrl}/`, changefreq: "hourly", priority: 1.0 },
     { url: `${siteUrl}/whatsapp`, changefreq: "never", priority: 0.5 },
     { url: `${siteUrl}/calculadora`, changefreq: "never", priority: 0.5 },
+    { url: `${siteUrl}/calculadora/servicios`, changefreq: "yearly", priority: 0.5 },
     { url: `${siteUrl}/blog`, changefreq: "weekly", priority: 0.5 },
     { url: `${siteUrl}/donaciones`, changefreq: "never", priority: 0.5 },
 
