@@ -97,13 +97,13 @@ const oficial = dolares[0].venta;
               checked
               class="rounded-xl accent-green-500 cursor-pointer hover:scale-110 hover:accent-green-700 transition duration-300 ease-in-out"
             />
-            <label for="isDigitalService">Es un servicio digital? 
-              <span class="inline-block font-bold">--></span> 
+            <label for="isDigitalService"
+              >Es un servicio digital?
+              <span class="inline-block font-bold">--></span>
             </label>
             <a
               class="text-green-700 dark:text-green-500"
-              href="/calculadora/servicios"
-              >Lista completa</a
+              href="/calculadora/servicios">Lista completa</a
             >
           </div>
         </div>
@@ -115,7 +115,7 @@ const oficial = dolares[0].venta;
           >
           <input
             id="finalPrice"
-            value=""
+            value={'$'+ (oficial * 1.51).toFixed(2)}
             disabled
             class="border border-zinc-300 dark:bg-zinc-800 bg-zinc-200 rounded-lg w-full p-2 text-right"
           />
@@ -138,14 +138,14 @@ const oficial = dolares[0].venta;
         disabled
         class="border border-zinc-300 dark:bg-zinc-700 bg-zinc-100 rounded-lg w-full p-2 text-right"
         id="ganancias"
-        value=""
+        value={'$'+ (oficial * 0.30).toFixed(2)}
       />
       <label for="iva">Iva Servicios Digitales (21%)</label>
       <input
         disabled
         class="border border-zinc-300 dark:bg-zinc-700 bg-zinc-100 rounded-lg w-full p-2 text-right"
         id="iva"
-        value=""
+        value={'$'+ (oficial * 0.21).toFixed(2)}
       />
       <div
         class="final flex flex-col gap-2 rounded-xl p-2 bg-zinc-400 dark:bg-backgroundDark"
@@ -155,87 +155,102 @@ const oficial = dolares[0].venta;
           disabled
           class="border border-zinc-300 dark:bg-zinc-700 bg-zinc-100 rounded-lg w-full p-2 text-right"
           id="totaltax"
-          value=""
+          value={'$'+ (oficial * 0.51).toFixed(2)}
         />
         <label for="notax">Sin impuestos</label>
         <input
           disabled
           class="border border-zinc-300 dark:bg-zinc-700 bg-zinc-100 rounded-lg w-full p-2 text-right"
           id="notax"
-          value="Escribe un valor primero..."
+          value={'$' + oficial.toFixed(2)}
         />
       </div>
     </section>
   </main>
   <Lore page="calculadora" />
   <script is:inline data-astro-rerun define:vars={{ oficial }}>
-  document.addEventListener("astro:page-load", () => {
-    const originContainer = document.getElementById("originalPrice");
-    const finalContainer = document.getElementById("finalPrice");
-    const ivaContainer = document.getElementById("iva");
-    const gananciasContainer = document.getElementById("ganancias");
-    const noTaxContainer = document.getElementById("notax");
-    const totalTaxContainer = document.getElementById("totaltax");
-    const isDigitalServiceElement = document.getElementById("isDigitalService");
+    document.addEventListener("astro:page-load", () => {
+      if (window.location.pathname === "/calculadora") {
+        const originContainer = document.getElementById("originalPrice");
+        const finalContainer = document.getElementById("finalPrice");
+        const ivaContainer = document.getElementById("iva");
+        const gananciasContainer = document.getElementById("ganancias");
+        const noTaxContainer = document.getElementById("notax");
+        const totalTaxContainer = document.getElementById("totaltax");
+        const isDigitalServiceElement =
+          document.getElementById("isDigitalService");
 
-    if (!originContainer || !finalContainer || !ivaContainer || !gananciasContainer || !noTaxContainer || !totalTaxContainer || !isDigitalServiceElement) {
-      console.error("🚨 Error: No se encontraron algunos elementos del DOM.");
-      return;
-    }
+        if (
+          !originContainer ||
+          !finalContainer ||
+          !ivaContainer ||
+          !gananciasContainer ||
+          !noTaxContainer ||
+          !totalTaxContainer ||
+          !isDigitalServiceElement
+        ) {
+          console.error(
+            "🚨 Error: No se encontraron algunos elementos del DOM.",
+          );
+          return;
+        }
 
-    const handleInput = (value = 1) => {
-      value = parseFloat(value) || 0;
-      const isDigitalService = isDigitalServiceElement.checked;
-      const ganancias = value * oficial * 0.3;
-      const iva = value * oficial * (isDigitalService ? 0.21 : 0);
-      return {
-        original: value * oficial,
-        ganancias: ganancias,
-        iva: iva,
-        final: value * oficial + ganancias + iva,
-        tax: ganancias + iva,
-      };
-    };
+        const handleInput = (value = 1) => {
+          value = parseFloat(value) || 0;
+          const isDigitalService = isDigitalServiceElement.checked;
+          const ganancias = value * oficial * 0.3;
+          const iva = value * oficial * (isDigitalService ? 0.21 : 0);
+          return {
+            original: value * oficial,
+            ganancias: ganancias,
+            iva: iva,
+            final: value * oficial + ganancias + iva,
+            tax: ganancias + iva,
+          };
+        };
 
-    const setData = (data) => {
-      const { original, ganancias, iva, final, tax } = data;
-      gananciasContainer.value = `$${ganancias.toFixed(2)}`;
-      ivaContainer.value = `$${iva.toFixed(2)}`;
-      finalContainer.value = `$${final.toFixed(2)}`;
-      noTaxContainer.value = `$${original.toFixed(2)}`;
-      totalTaxContainer.value = `$${tax.toFixed(2)}`;
-    };
+        const setData = (data) => {
+          const { original, ganancias, iva, final, tax } = data;
+          gananciasContainer.value = `$${ganancias.toFixed(2)}`;
+          ivaContainer.value = `$${iva.toFixed(2)}`;
+          finalContainer.value = `$${final.toFixed(2)}`;
+          noTaxContainer.value = `$${original.toFixed(2)}`;
+          totalTaxContainer.value = `$${tax.toFixed(2)}`;
+        };
 
-    const debounce = (func, wait) => {
-      let timeout;
-      return (...args) => {
-        clearTimeout(timeout);
-        timeout = setTimeout(() => func.apply(this, args), wait);
-      };
-    };
+        const debounce = (func, wait) => {
+          let timeout;
+          return (...args) => {
+            clearTimeout(timeout);
+            timeout = setTimeout(() => func.apply(this, args), wait);
+          };
+        };
 
-    const debouncedSetData = debounce((value) => {
-      setData(handleInput(value));
-    }, 50);
+        const debouncedSetData = debounce((value) => {
+          setData(handleInput(value));
+        }, 50);
 
-    setData(handleInput(originContainer.value || 1));
+        originContainer.addEventListener("input", (e) =>
+          debouncedSetData(e.target.value),
+        );
 
-    originContainer.addEventListener("input", (e) => debouncedSetData(e.target.value));
-
-    isDigitalServiceElement.addEventListener("change", () => {
-      const elements = [
-        ivaContainer,
-        document.querySelector(`label[for="${ivaContainer.id}"]`),
-      ];
-      debouncedSetData(originContainer.value);
-      if (!isDigitalServiceElement.checked) {
-        elements.forEach((element) => element.classList.add("hidden"));
-        document.querySelector(`label[for="totaltax"]`).textContent = "Solo Impuestos (30%)";
-      } else {
-        elements.forEach((element) => element.classList.remove("hidden"));
-        document.querySelector(`label[for="totaltax"]`).textContent = "Solo Impuestos (51%)";
+        isDigitalServiceElement.addEventListener("change", () => {
+          const elements = [
+            ivaContainer,
+            document.querySelector(`label[for="${ivaContainer.id}"]`),
+          ];
+          debouncedSetData(originContainer.value);
+          if (!isDigitalServiceElement.checked) {
+            elements.forEach((element) => element.classList.add("hidden"));
+            document.querySelector(`label[for="totaltax"]`).textContent =
+              "Solo Impuestos (30%)";
+          } else {
+            elements.forEach((element) => element.classList.remove("hidden"));
+            document.querySelector(`label[for="totaltax"]`).textContent =
+              "Solo Impuestos (51%)";
+          }
+        });
       }
     });
-  });
-</script>
+  </script>
 </Layout>
