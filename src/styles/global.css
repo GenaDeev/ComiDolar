@@ -10,6 +10,11 @@
     --aspect-og: 40 / 21;
 }
 
+/* Global Styles */
+:root {
+    font-family: Inter, "Segoe Ui", Arial, sans-serif;
+}
+
 /* Atropos Styles */
 .atropos {
     position: relative;
