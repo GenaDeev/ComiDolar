@@ -82,7 +82,7 @@ export default function DonationGrid() {
         <>
             <h2 className="text-xl font-bold mb-4">Tabla de Donaciones</h2>
             <h3 className="text-lg font-semibold mb-4">
-                Total:
+                Total:{" "}
                 <span className="text-green-500">
                     {donationTable
                         .reduce((acc, donor) => acc + donor.total, 0)
@@ -96,46 +96,48 @@ export default function DonationGrid() {
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
             />
-            <div className="flex flex-col bg-zinc-300 dark:bg-backgroundDark text-zinc-800 dark:text-zinc-200 uppercase text-sm mb-2">
-                <div className="flex items-center px-3 gap-7">
+            <div className="flex flex-col bg-zinc-300 dark:bg-backgroundDark text-zinc-800 dark:text-zinc-200 uppercase mb-2">
+                <div className="flex px-3 gap-7">
                     <img
                         src="/assets/img/favicon.webp"
                         className="h-8 w-8 mr-2"
-                        alt="Logo de Mercado Pago"
+                        alt="Logo de ComiDolar"
                     />
-                    <span
-                        className="flex-grow text-left cursor-pointer"
-                        onClick={() => handleSort("name")}
-                    >
-                        Nombre{" "}
-                        <span className="text-green-500">
-                            {sortConfig.key === "name"
-                                ? sortConfig.direction === "ascending"
-                                    ? "▲"
-                                    : "▼"
-                                : ""}
+                    <div className="flex items-center justify-between gap-2 w-full xl:text-[10px]">
+                        <span
+                            className="flex items-center justify-center text-center cursor-pointer w-full border-r border-green-500"
+                            onClick={() => handleSort("name")}
+                        >
+                            Nombre{" "}
+                            <span className="ml-[3px] text-green-500 xl:text-[8px]">
+                                {sortConfig.key === "name"
+                                    ? sortConfig.direction === "ascending"
+                                        ? "▲"
+                                        : "▼"
+                                    : ""}
+                            </span>
                         </span>
-                    </span>
-                    <span
-                        className="flex flex-wrap items-center justify-center text-right cursor-pointer"
-                        onClick={() => handleSort("total")}
-                    >
-                        Total Donaciones
-                        <span className="text-green-500 block">
-                            {sortConfig.key === "total"
-                                ? sortConfig.direction === "ascending"
-                                    ? "▲"
-                                    : "▼"
-                                : ""}
+                        <span
+                            className="flex items-center justify-center text-center cursor-pointer w-full"
+                            onClick={() => handleSort("total")}
+                        >
+                            Total Donaciones
+                            <span className="ml-[3px] text-green-500 xl:text-[8px]">
+                                {sortConfig.key === "total"
+                                    ? sortConfig.direction === "ascending"
+                                        ? "▲"
+                                        : "▼"
+                                    : ""}
+                            </span>
                         </span>
-                    </span>
+                    </div>
                 </div>
             </div>
             <div className="flex flex-col">
                 {sortedDonations.slice(0, visibleCount).map((donor) => (
                     <div
                         key={donor.name}
-                        className="flex items-center border-b border-zinc-300 dark:border-zinc-600 hover:bg-zinc-100 dark:hover:bg-darkless p-2"
+                        className="flex items-center xl:text-[10px] border-b border-zinc-300 dark:border-zinc-600 hover:bg-zinc-100 dark:hover:bg-darkless p-2"
                     >
                         <span className="flex items-center justify-center bg-zinc-300 dark:bg-black min-w-12 min-h-12 rounded-full text-lg font-semibold text-center">
                             {donor.name.split(" ")[0][0] +
