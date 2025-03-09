@@ -51,7 +51,7 @@ Para consultar la cotización actual del dólar MEP, visita la **página princip
 
 #### Comparamos el mismo producto, una placa de video RTX 4060, en MercadoLibre (izquierda) y Amazon con el envio de 5$ y usando el Dolar MEP (derecha).
 
-<img class="rounded-xl" src="https://i.ibb.co/5BNxGFy/comparacion.png" alt="Comparacion MercadoLibre - Amazon">
+<img class="rounded-lg" src="https://i.ibb.co/5BNxGFy/comparacion.png" alt="Comparacion MercadoLibre - Amazon">
 
 Podemos ver lo ampliamente conveniente que es esta modalidad.
 

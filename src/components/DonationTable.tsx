@@ -92,11 +92,11 @@ export default function DonationGrid() {
             <input
                 type="text"
                 placeholder="Buscar donante..."
-                className="mb-4 w-full p-2 ring-0 rounded border ring-green-500 border-zinc-300 dark:border-zinc-600 bg-zinc-100 dark:bg-darkless text-zinc-800 dark:text-white dark:placeholder-white"
+                className="mb-4 w-full p-2 ring-0 rounded border ring-green-500 border-zinc-300 dark:border-zinc-600 bg-zinc-100/50 dark:bg-darkless/50 text-zinc-800 dark:text-white dark:placeholder-white"
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
             />
-            <div className="flex flex-col bg-zinc-300 dark:bg-backgroundDark text-zinc-800 dark:text-zinc-200 uppercase mb-2">
+            <div className="flex flex-col bg-zinc-300/50 dark:bg-backgroundDark/50 text-zinc-800 dark:text-zinc-200 uppercase mb-2">
                 <div className="flex px-3 gap-7">
                     <img
                         src="/assets/img/favicon.webp"
@@ -137,9 +137,9 @@ export default function DonationGrid() {
                 {sortedDonations.slice(0, visibleCount).map((donor) => (
                     <div
                         key={donor.name}
-                        className="flex items-center xl:text-[10px] border-b border-zinc-300 dark:border-zinc-600 hover:bg-zinc-100 dark:hover:bg-darkless p-2"
+                        className="flex items-center xl:text-[10px] border-b border-zinc-300 dark:border-zinc-600 hover:bg-green-500/50 transition duration-200 p-2"
                     >
-                        <span className="flex items-center justify-center bg-zinc-300 dark:bg-black min-w-12 min-h-12 rounded-full text-lg font-semibold text-center">
+                        <span className="flex items-center justify-center bg-zinc-300/50 dark:bg-black/50 min-w-12 min-h-12 rounded-full text-lg font-semibold text-center">
                             {donor.name.split(" ")[0][0] +
                                 (donor.name.split(" ")[1] ? donor.name.split(" ")[1][0] : "")}
                         </span>

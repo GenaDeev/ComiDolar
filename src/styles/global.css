@@ -5,7 +5,8 @@
     --color-backgroundDark: #09090b;
     --color-background: #ffffff;
     --color-darkless: #18181b;
-    --color-divider: #3f3f46;
+    --color-whiteless: #f5f5f7;
+    --color-divider: #696975;
 
     --aspect-og: 40 / 21;
 }
@@ -13,6 +14,20 @@
 /* Global Styles */
 :root {
     font-family: Inter, "Segoe Ui", Arial, sans-serif;
+}
+
+body {
+    background-color: hsla(0, 0%, 100%, 1);
+    background-image:
+        radial-gradient(at 0% 99%, hsla(100, 0%, 15%, 1) 0px, transparent 50%),
+        radial-gradient(at 88% 100%, hsla(102, 0%, 28%, 1) 0px, transparent 50%),
+        radial-gradient(at 100% 97%, hsla(63, 0%, 95%, 1) 0px, transparent 50%),
+        radial-gradient(at 100% 5%, hsla(0, 0%, 86%, 1) 0px, transparent 50%),
+        radial-gradient(at 50% 13%, hsla(277, 2%, 77%, 1) 0px, transparent 50%),
+        radial-gradient(at 0% 0%, hsla(0, 0%, 46%, 1) 0px, transparent 50%);
+    background-repeat: repeat;
+    background-size: 100% 100%;
+    background-attachment: fixed;
 }
 
 /* Atropos Styles */
@@ -118,4 +133,20 @@
 ::slotted([data-atropos-offset][data-atropos-opacity]),
 [data-atropos-offset][data-atropos-opacity] {
     transition-property: transform, opacity;
+}
+
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: hsla(0, 0%, 0%, 1);
+        background-image:
+            radial-gradient(at 0% 99%, hsla(98, 0%, 42%, 1) 0px, transparent 50%),
+            radial-gradient(at 88% 100%, hsla(0, 0%, 14%, 1) 0px, transparent 50%),
+            radial-gradient(at 100% 97%, hsla(277, 1%, 23%, 1) 0px, transparent 50%),
+            radial-gradient(at 100% 5%, hsla(0, 0%, 14%, 1) 0px, transparent 50%),
+            radial-gradient(at 50% 13%, hsla(277, 1%, 23%, 1) 0px, transparent 50%),
+            radial-gradient(at 0% 0%, hsla(0, 0%, 54%, 1) 0px, transparent 50%);
+        background-repeat: repeat;
+        background-size: 100% 100%;
+        background-attachment: fixed;
+    }
 }

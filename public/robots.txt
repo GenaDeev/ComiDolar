@@ -12,6 +12,8 @@ Allow: /assets/img/
 Disallow: /blog/tag/
 Disallow: /blog/autor/
 Disallow: /blog/tema/
+Disallow: /terminos
+Disallow: /privacidad
 
 User-agent: Twitterbot
 Allow: /

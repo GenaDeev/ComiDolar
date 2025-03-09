@@ -57,14 +57,14 @@ const formattedDate = jsDate.toLocaleString("es-AR", {
           <img
             src={metadata.og.image}
             alt={`Post de ComiDolar titulado ${metadata.title}`}
-            class="sm:h-[400px] w-full object-cover rounded-lg shadow-lg"
+            class="sm:h-[400px] w-full object-cover rounded-lg border border-divider shadow-lg"
           />
           <div class="absolute inset-0 bg-black opacity-30 rounded-lg" />
         </div>
       )
     }
     <header
-      class="mb-4 p-4 flex items-center justify-between bg-white dark:bg-black/30 shadow-md rounded-lg"
+      class="mb-4 p-4 flex items-center justify-between bg-white/50 dark:bg-black/30 shadow-md rounded-lg"
     >
       <div>
         <h3 class="text-sm font-semibold text-zinc-800 dark:text-white">
@@ -84,14 +84,14 @@ const formattedDate = jsDate.toLocaleString("es-AR", {
 </Layout>
 <style>
   :root {
-    --background-color: #f9f9f9;
+    --background-color: rgb(249, 249, 249, .5);
     --text-color: #2d2d2e;
     --link-color: #229ac5;
     --highlight-color: #22c55e;
   }
   @media (prefers-color-scheme: dark) {
     :root {
-      --background-color: #18181b;
+      --background-color: rgb(24, 24, 27, .5);
       --text-color: #f9f9f9;
       --italic-color: #e67e22;
     }

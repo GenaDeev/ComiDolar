@@ -15,7 +15,7 @@ const isEverythingDown = final === "down";
 
 <nav
   transition:persist
-  class="fixed top-0 z-50 w-full bg-background border-b border-zinc-200 dark:bg-backgroundDark dark:border-zinc-700"
+  class="fixed top-0 z-50 w-full bg-background/50 backdrop-blur-2xl border-b border-zinc-200 dark:bg-backgroundDark/50 dark:border-zinc-700"
 >
   <div class="px-3 py-3 lg:px-5 lg:pl-3">
     <div class="flex items-center justify-between">
@@ -105,7 +105,7 @@ const isEverythingDown = final === "down";
                 } rounded-full`}></span>
             </div>
             <div
-              class="opacity-0 scale-95 invisible group-hover:opacity-100 group-hover:scale-100 group-hover:visible group-focus-within:opacity-100 group-focus-within:scale-100 group-focus-within:visible transition-all duration-300 absolute top-10 -left-24 w-56 transform -translate-x-1/2 mt-2 bg-neutral-100 border-green-500 border dark:bg-darkless dark:text-white rounded-xl shadow-lg p-4 z-10"
+              class="opacity-0 scale-95 invisible group-hover:opacity-100 group-hover:scale-100 group-hover:visible group-focus-within:opacity-100 group-focus-within:scale-100 group-focus-within:visible transition-all duration-300 absolute top-10 -left-24 w-56 transform -translate-x-1/2 mt-2 bg-neutral-100 border-green-500 border dark:bg-darkless dark:text-white rounded-lg shadow-lg p-4 z-10"
             >
               <div class="relative flex flex-col gap-3">
                 <img
@@ -149,7 +149,7 @@ const isEverythingDown = final === "down";
                 }
                 <a
                   title="Estado de los servicios de ComiDolar"
-                  class="bg-green-500 flex items-center justify-between p-3 rounded-xl hover:bg-green-600 transition-colors duration-300 text-white"
+                  class="bg-green-500 flex items-center justify-between p-3 rounded-lg hover:bg-green-600 transition-colors duration-300 text-white"
                   href="https://status.comidolar.com.ar"
                 >
                   Ver detalles
@@ -177,11 +177,11 @@ const isEverythingDown = final === "down";
 <aside
   transition:persist
   id="logo-sidebar"
-  class="fixed top-0 left-0 z-40 w-64 h-screen pt-20 transition-transform -translate-x-full bg-background border-r border-zinc-200 sm:translate-x-0 dark:bg-backgroundDark dark:border-divider dark:text-white"
+  class="fixed top-0 left-0 z-40 w-64 h-screen pt-20 transition-transform -translate-x-full bg-background/50 backdrop-blur-2xl border-r border-zinc-200 sm:translate-x-0 dark:bg-backgroundDark/50 dark:border-divider dark:text-white"
   aria-label="Sidebar"
 >
   <div
-    class="h-full flex flex-col justify-between px-3 pb-4 overflow-y-hidden bg-background dark:bg-backgroundDark"
+    class="h-full flex flex-col justify-between px-3 pb-4 overflow-y-hidden dark:text-white"
   >
     <ul class="space-y-2 font-medium">
       <AsideLink
@@ -246,7 +246,7 @@ const isEverythingDown = final === "down";
 <div class="p-4 sm:ml-64">
   <div
     id="page-content"
-    class="p-4 text-zinc-900 bg-background rounded-lg border border-zinc-200 shadow-sm dark:text-white dark:bg-backgroundDark dark:border-zinc-700 mt-14"
+    class="p-4 text-zinc-900 bg-transparent rounded-lg border border-zinc-200 shadow-sm dark:text-white backdrop-blur-2xl dark:border-zinc-700 mt-14"
   >
     <slot />
   </div>

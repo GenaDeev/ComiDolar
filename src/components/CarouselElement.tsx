@@ -34,7 +34,7 @@ const CarouselElement: React.FC = () => {
 
   return (
     <section
-      className="embla"
+      className="embla border rounded-lg border-divider"
       style={{
         width: "100%",
         height: "200px",
@@ -62,7 +62,7 @@ const CarouselElement: React.FC = () => {
               key={`slide-${index}`}
             >
               <img
-                className="w-full h-full object-cover bg-zinc-200 dark:bg-darkless rounded-xl"
+                className="w-full h-full object-cover bg-zinc-200 dark:bg-darkless rounded-lg"
                 src={slide}
                 alt={`Imagen número ${index + 1} del carrusel`}
                 loading="lazy"

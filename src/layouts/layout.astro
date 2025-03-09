@@ -55,12 +55,12 @@ import "@/styles/global.css";
       )
     }
     {
-      metadata.og.image && (
+      metadata.og && (
         <meta property="og:image" content={metadata.og.image} />
       )
     }
     {
-      metadata.og.video && (
+      metadata.og && (
         <meta property="og:video" content={metadata.og.video} />
       )
     }
@@ -84,7 +84,7 @@ import "@/styles/global.css";
       )
     }
     {
-      metadata.og.image && (
+      metadata.og && (
         <meta property="twitter:image" content={metadata.og.image} />
       )
     }
@@ -121,7 +121,7 @@ import "@/styles/global.css";
   </head>
   <body
     transition:animate="fade"
-    class={`${bodyclass ? bodyclass : ""} bg-background dark:bg-backgroundDark`}
+    class={`${bodyclass ? bodyclass : ""} bg-light-mesh dark:bg-dark-mesh`}
   >
     <Header>
       <slot />

@@ -35,10 +35,10 @@ const oficial = dolares[0].venta;
   >
     <section
       id="calculadora"
-      class="flex flex-col items-center relative p-4 bg-zinc-100 dark:bg-darkless rounded-lg sm:rounded-l-lg shadow-lg max-w-md"
+      class="flex flex-col items-center relative p-4 bg-zinc-100/50 backdrop-blur-2xl dark:bg-darkless/50 rounded-lg sm:rounded-l-lg shadow-lg max-w-md"
     >
       <header
-        class="p-2 bg-green-500 w-full absolute top-0 rounded-t-lg flex justify-between items-center"
+        class="p-2 bg-green-500/50 w-full absolute top-0 rounded-t-lg flex justify-between items-center"
       >
         <p class="font-semibold">Ahora sin impuesto pais!</p>
         <a
@@ -85,17 +85,17 @@ const oficial = dolares[0].venta;
             id="originalPrice"
             type="number"
             value="1"
-            class="border border-zinc-300 dark:bg-zinc-700 rounded-t-lg w-full p-2 text-right appearance-none"
+            class="border border-zinc-300 dark:bg-zinc-700/50 rounded-t-lg w-full p-2 text-right appearance-none"
             min="0.5"
           />
           <div
-            class="flex items-center gap-2 w-full bg-zinc-200 dark:bg-zinc-800 rounded-b-lg p-2"
+            class="flex items-center gap-2 w-full bg-zinc-200/50 dark:bg-zinc-800/50 rounded-b-lg p-2"
           >
             <input
               id="isDigitalService"
               type="checkbox"
               checked
-              class="rounded-xl accent-green-500 cursor-pointer hover:scale-110 hover:accent-green-700 transition duration-300 ease-in-out"
+              class="rounded-lg accent-green-500 cursor-pointer hover:scale-110 hover:accent-green-700 transition duration-300 ease-in-out"
             />
             <label for="isDigitalService"
               >Es un servicio digital?
@@ -108,7 +108,7 @@ const oficial = dolares[0].venta;
           </div>
         </div>
         <div
-          class="final flex flex-col gap-2 rounded-xl p-2 bg-zinc-400 dark:bg-backgroundDark"
+          class="final flex flex-col gap-2 rounded-lg p-2 bg-zinc-400/50 dark:bg-backgroundDark/50"
         >
           <label for="finalPrice" class="block text-lg font-medium mb-1"
             >Precio FINAL en ARS con Impuestos:</label
@@ -117,14 +117,14 @@ const oficial = dolares[0].venta;
             id="finalPrice"
             value={'$'+ (oficial * 1.51).toFixed(2)}
             disabled
-            class="border border-zinc-300 dark:bg-zinc-800 bg-zinc-200 rounded-lg w-full p-2 text-right"
+            class="border border-zinc-300 dark:bg-zinc-800/50 bg-zinc-200/50 rounded-lg w-full p-2 text-right"
           />
         </div>
       </form>
     </section>
     <section
       id="taxes"
-      class="flex w-full flex-col gap-2 p-4 bg-zinc-200 dark:bg-zinc-800 rounded-lg sm:rounded-r-lg shadow-lg max-w-md"
+      class="flex w-full flex-col gap-2 p-4 bg-zinc-200/50 dark:bg-zinc-800/50 rounded-lg sm:rounded-r-lg shadow-lg max-w-md"
     >
       <h3 class="text-xl">
         ¿Qué estoy pagando? <a
@@ -136,31 +136,31 @@ const oficial = dolares[0].venta;
       <label for="ganancias">Percepción de Ganancias (30%)</label>
       <input
         disabled
-        class="border border-zinc-300 dark:bg-zinc-700 bg-zinc-100 rounded-lg w-full p-2 text-right"
+        class="border border-zinc-300 dark:bg-zinc-700/50 bg-zinc-100/50 rounded-lg w-full p-2 text-right"
         id="ganancias"
         value={'$'+ (oficial * 0.30).toFixed(2)}
       />
       <label for="iva">Iva Servicios Digitales (21%)</label>
       <input
         disabled
-        class="border border-zinc-300 dark:bg-zinc-700 bg-zinc-100 rounded-lg w-full p-2 text-right"
+        class="border border-zinc-300 dark:bg-zinc-700/50 bg-zinc-100/50 rounded-lg w-full p-2 text-right"
         id="iva"
         value={'$'+ (oficial * 0.21).toFixed(2)}
       />
       <div
-        class="final flex flex-col gap-2 rounded-xl p-2 bg-zinc-400 dark:bg-backgroundDark"
+        class="final flex flex-col gap-2 rounded-lg p-2 bg-zinc-400/50 dark:bg-backgroundDark/50"
       >
         <label for="totaltax">Solo Impuestos (51%)</label>
         <input
           disabled
-          class="border border-zinc-300 dark:bg-zinc-700 bg-zinc-100 rounded-lg w-full p-2 text-right"
+          class="border border-zinc-300 dark:bg-zinc-700/50 bg-zinc-100/50 rounded-lg w-full p-2 text-right"
           id="totaltax"
           value={'$'+ (oficial * 0.51).toFixed(2)}
         />
         <label for="notax">Sin impuestos</label>
         <input
           disabled
-          class="border border-zinc-300 dark:bg-zinc-700 bg-zinc-100 rounded-lg w-full p-2 text-right"
+          class="border border-zinc-300 dark:bg-zinc-700/50 bg-zinc-100/50 rounded-lg w-full p-2 text-right"
           id="notax"
           value={'$' + oficial.toFixed(2)}
         />
