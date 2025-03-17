@@ -40,6 +40,7 @@ export default function InstallApp() {
             }
             setDeferredPrompt(null);
             setIsAppInstalled(true);
+            setShowPopover(false);
         }
     };
 
