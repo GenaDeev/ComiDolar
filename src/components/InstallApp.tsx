@@ -9,12 +9,10 @@ export default function InstallApp() {
     useEffect(() => {
         if (!window.matchMedia("(display-mode: standalone)").matches) {
             setIsAppInstalled(false);
+            if (!localStorage.getItem("pwaOptIn")) {
+                setShowPopover(true);
+            }
         }
-        if (!localStorage.getItem("pwaOptIn")) {
-            setShowPopover(true);
-        }
-
-        // Retraso para animación del botón
         setTimeout(() => setShowButton(true), 200);
     }, []);
 
@@ -52,7 +50,7 @@ export default function InstallApp() {
     return (
         <div className="relative">
             {!isAppInstalled && showButton && (
-                <button 
+                <button
                     className="flex w-8 h-8 md:w-auto items-center gap-2 p-2 dark:border-zinc-300 dark:hover:border-white dark:focus:border-white 
                     border-zinc-900 cursor-pointer hover:border-zinc-300 focus:border-zinc-300 border text-zinc-900 dark:text-zinc-300 dark:hover:text-white 
                     hover:text-zinc-100 bg-zinc-300 rounded-full transition duration-200 hover:scale-105 hover:bg-zinc-500 focus:ring-4 focus:bg-zinc-700 
