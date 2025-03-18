@@ -86,8 +86,7 @@
   "related_applications": [
     {
       "platform": "webapp",
-      "url": "https://comidolar.com.ar/manifest.json",
-      "id": "cdwapp"
+      "url": "https://comidolar.com.ar/"
     }
   ],
   "prefer_related_applications": false,
