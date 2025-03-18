@@ -41,11 +41,13 @@ export default function InstallApp() {
             if (outcome !== "accepted") {
                 setIsAppInstalled(false);
                 window.pa.track({ name: 'Rechazó instalación' })
+                localStorage.setItem("pwaOptIn", "false");
             } else {
                 setDeferredPrompt(null);
                 setIsAppInstalled(true);
                 setShowPopover(false);
                 window.pa.track({ name: 'Finalizó instalación' })
+                localStorage.setItem("pwaOptIn", "false");
             }
         }
     };
