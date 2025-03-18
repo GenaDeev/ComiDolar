@@ -27,10 +27,7 @@
   "dir": "ltr",
   "lang": "es",
   "orientation": "portrait",
-  "display_override": [
-    "standalone",
-    "window-controls-overlay"
-  ],
+  "display_override": ["standalone", "window-controls-overlay"],
   "shortcuts": [
     {
       "name": "Inicio ",
@@ -86,6 +83,12 @@
     "politics",
     "utilities"
   ],
+  "related_applications": [
+    {
+      "platform": "webapp",
+      "url": "https://comidolar.com.ar/manifest.json"
+    }
+  ],
   "prefer_related_applications": false,
   "edge_side_panel": {
     "preferred_width": 200
@@ -106,48 +109,48 @@
       }
     }
   },
-  "screenshots" : [
-  {
-    "src": "/assets/img/screenshot1.webp",
-    "sizes": "444x896",
-    "type": "image/webp",
-    "form_factor": "narrow",
-    "label": "Captura de pantalla de la pagina de inicio de Comi Dólar"
-  },
-  {
-    "src": "/assets/img/screenshot2.webp",
-    "sizes": "444x896",
-    "type": "image/webp",
-    "form_factor": "narrow",
-    "label": "Captura de pantalla de la calculadora del dólar tarjeta"
-  },
-  {
-    "src": "/assets/img/screenshot3.webp",
-    "sizes": "444x896",
-    "type": "image/webp",
-    "form_factor": "narrow",
-    "label": "Captura de pantalla de la pagina de donaciones"
-  },
-  {
-    "src": "/assets/img/screenshot1-wide.webp",
-    "sizes": "1400x804",
-    "type": "image/webp",
-    "form_factor": "wide",
-    "label": "Captura de pantalla de la pagina de inicio de Comi Dólar"
-  },
-  {
-    "src": "/assets/img/screenshot2-wide.webp",
-    "sizes": "1400x804",
-    "type": "image/webp",
-    "form_factor": "wide",
-    "label": "Captura de pantalla de la calculadora del dólar tarjeta"
-  },
-  {
-    "src": "/assets/img/screenshot3-wide.webp",
-    "sizes": "1400x804",
-    "type": "image/webp",
-    "form_factor": "wide",
-    "label": "Captura de pantalla de la pagina de donaciones"
-  }
-]
+  "screenshots": [
+    {
+      "src": "/assets/img/screenshot1.webp",
+      "sizes": "444x896",
+      "type": "image/webp",
+      "form_factor": "narrow",
+      "label": "Captura de pantalla de la pagina de inicio de Comi Dólar"
+    },
+    {
+      "src": "/assets/img/screenshot2.webp",
+      "sizes": "444x896",
+      "type": "image/webp",
+      "form_factor": "narrow",
+      "label": "Captura de pantalla de la calculadora del dólar tarjeta"
+    },
+    {
+      "src": "/assets/img/screenshot3.webp",
+      "sizes": "444x896",
+      "type": "image/webp",
+      "form_factor": "narrow",
+      "label": "Captura de pantalla de la pagina de donaciones"
+    },
+    {
+      "src": "/assets/img/screenshot1-wide.webp",
+      "sizes": "1400x804",
+      "type": "image/webp",
+      "form_factor": "wide",
+      "label": "Captura de pantalla de la pagina de inicio de Comi Dólar"
+    },
+    {
+      "src": "/assets/img/screenshot2-wide.webp",
+      "sizes": "1400x804",
+      "type": "image/webp",
+      "form_factor": "wide",
+      "label": "Captura de pantalla de la calculadora del dólar tarjeta"
+    },
+    {
+      "src": "/assets/img/screenshot3-wide.webp",
+      "sizes": "1400x804",
+      "type": "image/webp",
+      "form_factor": "wide",
+      "label": "Captura de pantalla de la pagina de donaciones"
+    }
+  ]
 }

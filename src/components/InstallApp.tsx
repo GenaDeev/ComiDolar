@@ -3,6 +3,14 @@ declare global {
     interface Window {
         pa?: { track: (event: { name: string }) => void };
     }
+    interface Navigator {
+        getInstalledRelatedApps?: () => Promise<{
+            id?: string;
+            platform: "chrome_web_store" | "play" | "chromeos_play" | "webapp" | "windows" | "f-droid" | "amazon";
+            url?: string;
+            version?: string;
+        }[]>;
+    }
 }
 export default function InstallApp() {
     const [isAppInstalled, setIsAppInstalled] = useState(true);
@@ -11,12 +19,28 @@ export default function InstallApp() {
     const [showButton, setShowButton] = useState(false);
 
     useEffect(() => {
-        if (!window.matchMedia("(display-mode: standalone)").matches) {
-            setIsAppInstalled(false);
-            if (!localStorage.getItem("pwaOptIn")) {
-                setShowPopover(true);
+        const checkInstallation = async () => {
+            try {
+                const relatedApps = await navigator.getInstalledRelatedApps();
+                const PWAisInstalled = relatedApps.length > 0;
+                
+                if (!PWAisInstalled && !window.matchMedia("(display-mode: standalone)").matches) {
+                    setIsAppInstalled(false);
+                    if (!localStorage.getItem("pwaOptIn")) {
+                        setShowPopover(true);
+                    }
+                }
+            } catch (error) {
+                if (!window.matchMedia("(display-mode: standalone)").matches) {
+                    setIsAppInstalled(false);
+                    if (!localStorage.getItem("pwaOptIn")) {
+                        setShowPopover(true);
+                    }
+                }
             }
-        }
+        };
+
+        checkInstallation();
         setTimeout(() => setShowButton(true), 200);
     }, []);
 
