@@ -54,16 +54,8 @@ import "@/styles/global.css";
         <meta property="og:description" content={metadata.description.og} />
       )
     }
-    {
-      metadata.og && (
-        <meta property="og:image" content={metadata.og.image} />
-      )
-    }
-    {
-      metadata.og && (
-        <meta property="og:video" content={metadata.og.video} />
-      )
-    }
+    {metadata.og && <meta property="og:image" content={metadata.og.image} />}
+    {metadata.og && <meta property="og:video" content={metadata.og.video} />}
     <meta property="twitter:card" content="summary_large_image" />
     {
       metadata.cannonical && (
@@ -127,8 +119,33 @@ import "@/styles/global.css";
       <slot />
       <Footer />
     </Header>
-    <script src='/analytics/biasml.min.js' data-astro-rerun data-host="https://biasml.com" data-dnt="false" id="ZwSg9rf6GA" async defer></script>>
-    <script src='/analytics/beacon.min.js' data-astro-rerun data-cf-beacon='{"token": "4536a67fe2714c37845c5aaadcd0f4d2"}' defer></script>
+    <script data-astro-rerun is:inline>
+      if ("serviceWorker" in navigator) {
+        window.addEventListener("load", () => {
+          navigator.serviceWorker
+            .register("/comidolar-worker.js")
+            .then((registration) => {
+              console.log("ComiDolar Worker Inicializado:", registration);
+            })
+            .catch((error) => {
+              console.log("Error al iniciar ComiDolar Worker:", error);
+            });
+        });
+      }
+    </script>
+    <script
+      src="/analytics/biasml.min.js"
+      data-astro-rerun
+      data-host="https://biasml.com"
+      data-dnt="false"
+      id="ZwSg9rf6GA"
+      async
+      defer></script>>
+    <script
+      src="/analytics/beacon.min.js"
+      data-astro-rerun
+      data-cf-beacon='{"token": "4536a67fe2714c37845c5aaadcd0f4d2"}'
+      defer></script>
     <style is:global>
       * {
         -webkit-tap-highlight-color: transparent;
