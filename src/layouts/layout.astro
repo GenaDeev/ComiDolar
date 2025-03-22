@@ -119,20 +119,6 @@ import "@/styles/global.css";
       <slot />
       <Footer />
     </Header>
-    <script data-astro-rerun is:inline>
-      if ("serviceWorker" in navigator) {
-        window.addEventListener("load", () => {
-          navigator.serviceWorker
-            .register("/comidolar-worker.js")
-            .then((registration) => {
-              console.log("ComiDolar Worker Inicializado:", registration);
-            })
-            .catch((error) => {
-              console.log("Error al iniciar ComiDolar Worker:", error);
-            });
-        });
-      }
-    </script>
     <script
       src="/analytics/biasml.min.js"
       data-astro-rerun
