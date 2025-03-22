@@ -1,5 +1,6 @@
 const CACHE_NAME = "offline-cache-v1";
 const IMAGES_CACHE = "images-cache-v1";
+const CSS_CACHE = "css-cache-v1";
 
 const OFFLINE_PAGES = {
   "/": "/offline/index.html",
@@ -24,6 +25,8 @@ const CACHED_IMAGES = [
   "/assets/img/nx.webp",
 ];
 
+const CACHED_CSS = ["/offline/offline.css"];
+
 self.addEventListener("install", (event) => {
   event.waitUntil(
     Promise.all([
@@ -32,6 +35,9 @@ self.addEventListener("install", (event) => {
       }),
       caches.open(IMAGES_CACHE).then((cache) => {
         return cache.addAll(CACHED_IMAGES);
+      }),
+      caches.open(CSS_CACHE).then((cache) => {
+        return cache.addAll(CACHED_CSS);
       }),
     ])
   );
@@ -57,6 +63,21 @@ self.addEventListener("fetch", (event) => {
     return;
   }
 
+  if (event.request.destination === "style") {
+    event.respondWith(
+      caches.open(CSS_CACHE).then((cache) => {
+        return cache.match(event.request).then((cachedResponse) => {
+          const fetchPromise = fetch(event.request).then((networkResponse) => {
+            cache.put(event.request, networkResponse.clone());
+            return networkResponse;
+          });
+          return cachedResponse || fetchPromise;
+        });
+      })
+    );
+    return;
+  }
+
   event.respondWith(
     fetch(event.request).catch(() => {
       return caches.match(OFFLINE_PAGES[url.pathname] || "/offline/index.html");
@@ -69,7 +90,11 @@ self.addEventListener("activate", (event) => {
     caches.keys().then((cacheNames) => {
       return Promise.all(
         cacheNames.map((cache) => {
-          if (cache !== CACHE_NAME && cache !== IMAGES_CACHE) {
+          if (
+            cache !== CACHE_NAME &&
+            cache !== IMAGES_CACHE &&
+            cache !== CSS_CACHE
+          ) {
             return caches.delete(cache);
           }
         })
