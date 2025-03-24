@@ -20,7 +20,7 @@ export default function DonationGrid() {
                 .from("donors")
                 .select("*")
                 .eq('year', selectedYear);
-            
+
             if (error) {
                 console.error("Error fetching data:", error);
             } else {
@@ -41,7 +41,7 @@ export default function DonationGrid() {
             const { data, error } = await supabase
                 .from("donors")
                 .select('year');
-            
+
             if (error) {
                 console.error("Error fetching years:", error);
             } else {
@@ -84,6 +84,18 @@ export default function DonationGrid() {
     const toggleExpand = () => {
         setVisibleCount(isExpanded ? 7 : sortedDonations.length);
     };
+
+    const getInitials = (name) => {
+        const segments = name.match(/\b\w/g) || [];
+        const length = segments.length;
+
+        if (length === 2) return segments.slice(0, 2);
+        if (length === 3) return segments.slice(0, 2);
+        if (length > 3) return [segments[0], segments[2]];
+
+        return segments;
+    };
+
     if (loading) {
         return (
             <div className="w-full h-[500px] flex items-center justify-center text-green-500">
@@ -186,8 +198,7 @@ export default function DonationGrid() {
                         className="flex items-center xl:text-[10px] border-b border-zinc-300 dark:border-zinc-600 hover:bg-green-500/50 transition duration-200 p-2"
                     >
                         <span className="flex items-center justify-center bg-zinc-300/50 dark:bg-black/50 min-w-12 min-h-12 rounded-full text-lg font-semibold text-center">
-                            {donor.name.split(" ")[0][0] +
-                                (donor.name.split(" ")[1] ? donor.name.split(" ")[1][0] : "")}
+                            {getInitials(donor.name)}
                         </span>
                         <span className="flex-grow py-2 px-4">{donor.name}</span>
                         <span className="flex-none py-2 px-4 text-right">
