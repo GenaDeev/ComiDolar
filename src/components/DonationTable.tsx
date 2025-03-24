@@ -2,8 +2,10 @@ import { useEffect, useState } from "react";
 import { supabase } from "@/lib/supabaseClient";
 export default function DonationGrid() {
     const [donationTable, setDonationTable] = useState([]);
-    const [visibleCount, setVisibleCount] = useState(7);
+    const [visibleCount, setVisibleCount] = useState(10);
     const [searchTerm, setSearchTerm] = useState("");
+    const [selectedYear, setSelectedYear] = useState(new Date().getFullYear().toString());
+    const [availableYears, setAvailableYears] = useState([]);
     const [sortConfig, setSortConfig] = useState({
         key: "total",
         direction: "descending",
@@ -14,7 +16,11 @@ export default function DonationGrid() {
     useEffect(() => {
         const fetchDonations = async () => {
             setLoading(true);
-            const { data, error } = await supabase.from("donors").select("*");
+            const { data, error } = await supabase
+                .from("donors")
+                .select("*")
+                .eq('year', selectedYear);
+            
             if (error) {
                 console.error("Error fetching data:", error);
             } else {
@@ -28,6 +34,26 @@ export default function DonationGrid() {
         };
 
         fetchDonations();
+    }, [selectedYear]);
+
+    useEffect(() => {
+        const fetchYears = async () => {
+            const { data, error } = await supabase
+                .from("donors")
+                .select('year');
+            
+            if (error) {
+                console.error("Error fetching years:", error);
+            } else {
+                const years = [...new Set(data.map(item => item.year))].sort().reverse();
+                setAvailableYears(years);
+                if (years.length > 0 && !years.includes(selectedYear)) {
+                    setSelectedYear(years[0]);
+                }
+            }
+        };
+
+        fetchYears();
     }, []);
 
     const handleSort = (key) => {
@@ -81,6 +107,26 @@ export default function DonationGrid() {
     return (
         <>
             <h2 className="text-xl font-bold mb-4">Tabla de Donaciones</h2>
+            <div className="flex flex-col gap-4 mb-4">
+                <select
+                    value={selectedYear}
+                    onChange={(e) => setSelectedYear(e.target.value)}
+                    className="p-2 ring-0 rounded border ring-green-500 border-zinc-300 dark:border-zinc-600 bg-zinc-100/50 dark:bg-darkless/50 text-zinc-800 dark:text-white"
+                >
+                    {availableYears.map((year) => (
+                        <option key={year} value={year}>
+                            {year}
+                        </option>
+                    ))}
+                </select>
+                <input
+                    type="text"
+                    placeholder="Buscar donante..."
+                    className="flex-1 p-2 ring-0 rounded border ring-green-500 border-zinc-300 dark:border-zinc-600 bg-zinc-100/50 dark:bg-darkless/50 text-zinc-800 dark:text-white dark:placeholder-white"
+                    value={searchTerm}
+                    onChange={(e) => setSearchTerm(e.target.value)}
+                />
+            </div>
             <h3 className="text-lg font-semibold mb-4">
                 Total:{" "}
                 <span className="text-green-500">
