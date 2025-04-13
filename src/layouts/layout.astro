@@ -44,8 +44,8 @@ import "@/styles/global.css";
     <meta name="theme-color" content="#14b54f" />
     <meta property="og:type" content={metadata.blog ? "article" : "website"} />
     {
-      metadata.cannonical && (
-        <meta property="og:url" content={metadata.cannonical} />
+      metadata.canonical && (
+        <meta property="og:url" content={metadata.canonical} />
       )
     }
     {metadata.title && <meta property="og:title" content={metadata.title} />}
@@ -56,6 +56,7 @@ import "@/styles/global.css";
     }
     {metadata.og && <meta property="og:image" content={metadata.og.image} />}
     {metadata.og && <meta property="og:video" content={metadata.og.video} />}
+    <meta property="fb:app_id" content="3122887071196448" />
     <meta property="twitter:card" content="summary_large_image" />
     {
       metadata.cannonical && (
