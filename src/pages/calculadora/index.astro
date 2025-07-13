@@ -30,183 +30,208 @@ const oficial = dolares[0].venta;
 ---
 
 <Layout metadata={metadata}>
-  <main
-    class="flex flex-col pt-[48px] lg:pt-0 lg:flex-row mx-auto gap-4 lg:gap-0 w-full h-full items-center justify-center"
-  >
-    <ins
-      class="adsbygoogle"
-      style="display:block"
-      data-ad-client="ca-pub-8853864974633365"
-      data-ad-slot="4837249855"
-      data-ad-format="auto"
-      data-full-width-responsive="true"></ins>
-    <script is:inline>
-      (adsbygoogle = window.adsbygoogle || []).push({});
-    </script>
-    <section
-      id="calculadora"
-      class="flex flex-col items-center relative p-4 bg-zinc-100/50 backdrop-blur-2xl dark:bg-darkless/50 rounded-lg sm:rounded-l-lg shadow-lg max-w-md"
-    >
-      <header
-        class="p-2 bg-green-500/50 w-full absolute top-0 rounded-t-lg flex justify-between items-center"
+  <div class="flex items-center justify-center">
+    <div class="hidden sm:block">
+      <ins
+        class="adsbygoogle"
+        style="display:inline-block;width:120px;height:768px"
+        data-ad-client="ca-pub-8853864974633365"
+        data-ad-slot="8423742279"></ins>
+      <script is:inline>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
+    </div>
+    <div>
+      <main
+        class="flex flex-col pt-[48px] lg:pt-0 lg:flex-row mx-auto gap-4 lg:gap-0 w-full h-full items-center justify-center"
       >
-        <p class="font-semibold">Ahora sin impuesto pais!</p>
-        <a
-          title="Post de ComiDolar titulado El impuesto pais fue eliminado, calculá tus compras! - ComiDolar
-"
-          href="https://comidolar.com.ar/blog/eliminacion-impuesto-pais"
-          class="hover:scale-110 transition-transform duration-300 ease-in-out"
+        <ins
+          class="adsbygoogle"
+          style="display:block"
+          data-ad-client="ca-pub-8853864974633365"
+          data-ad-slot="4837249855"
+          data-ad-format="auto"
+          data-full-width-responsive="true"></ins>
+        <script is:inline>
+          (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+        <section
+          id="calculadora"
+          class="flex flex-col items-center relative p-4 bg-zinc-100/50 backdrop-blur-2xl dark:bg-darkless/50 rounded-lg sm:rounded-l-lg shadow-lg max-w-md"
         >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="18"
-            height="18"
-            viewBox="0 0 24 24"
-            ><g fill="none"
-              ><path
-                fill="currentColor"
-                fill-opacity="0.16"
-                d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2S2 6.477 2 12s4.477 10 10 10"
-              ></path><path
-                stroke="currentColor"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-miterlimit="10"
-                stroke-width="1.5"
-                d="M12 8h.008M12 16v-5m10 1c0 5.523-4.477 10-10 10S2 17.523 2 12S6.477 2 12 2s10 4.477 10 10"
-              ></path></g
-            ></svg
+          <header
+            class="p-2 bg-green-500/50 w-full absolute top-0 rounded-t-lg flex justify-between items-center"
           >
-        </a>
-      </header>
-      <h1 class="text-4xl font-bold mt-8 mb-4 text-center">
-        Calculadora Dolar Tarjeta
-      </h1>
-      <h2 class="text-2xl mb-6 text-center">
-        Introduce los valores en USD que desees convertir a pesos argentinos y
-        la calculadora hará el resto!
-      </h2>
-      <form class="w-full space-y-4">
-        <div class="origin">
-          <label for="originalPrice" class="block text-lg font-medium mb-1"
-            >Precio en USD:</label
-          >
+            <p class="font-semibold">Ahora sin impuesto pais!</p>
+            <a
+              title="Post de ComiDolar titulado El impuesto pais fue eliminado, calculá tus compras! - ComiDolar
+"
+              href="https://comidolar.com.ar/blog/eliminacion-impuesto-pais"
+              class="hover:scale-110 transition-transform duration-300 ease-in-out"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                ><g fill="none"
+                  ><path
+                    fill="currentColor"
+                    fill-opacity="0.16"
+                    d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2S2 6.477 2 12s4.477 10 10 10"
+                  ></path><path
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-miterlimit="10"
+                    stroke-width="1.5"
+                    d="M12 8h.008M12 16v-5m10 1c0 5.523-4.477 10-10 10S2 17.523 2 12S6.477 2 12 2s10 4.477 10 10"
+                  ></path></g
+                ></svg
+              >
+            </a>
+          </header>
+          <h1 class="text-4xl font-bold mt-8 mb-4 text-center">
+            Calculadora Dolar Tarjeta
+          </h1>
+          <h2 class="text-2xl mb-6 text-center">
+            Introduce los valores en USD que desees convertir a pesos argentinos
+            y la calculadora hará el resto!
+          </h2>
+          <form class="w-full space-y-4">
+            <div class="origin">
+              <label for="originalPrice" class="block text-lg font-medium mb-1"
+                >Precio en USD:</label
+              >
+              <input
+                id="originalPrice"
+                type="number"
+                value="1"
+                class="border border-zinc-300 dark:bg-zinc-700/50 rounded-t-lg w-full p-2 text-right appearance-none"
+                min="0.5"
+              />
+              <div
+                class="flex items-center gap-2 w-full bg-zinc-200/50 dark:bg-zinc-800/50 rounded-b-lg p-2"
+              >
+                <input
+                  id="isDigitalService"
+                  type="checkbox"
+                  checked
+                  class="rounded-lg accent-green-500 cursor-pointer hover:scale-110 hover:accent-green-700 transition duration-300 ease-in-out"
+                />
+                <label for="isDigitalService"
+                  >Es un servicio digital?
+                  <span class="inline-block font-bold">--></span>
+                </label>
+                <a
+                  class="font-bold text-green-950 dark:text-green-500"
+                  href="/calculadora/servicios">Lista completa</a
+                >
+              </div>
+            </div>
+            <div
+              class="final flex flex-col gap-2 rounded-lg p-2 bg-zinc-400/50 dark:bg-backgroundDark/50"
+            >
+              <label for="finalPrice" class="block text-lg font-medium mb-1"
+                >Precio FINAL en ARS con Impuestos:</label
+              >
+              <input
+                id="finalPrice"
+                value={"$" + (oficial * 1.51).toFixed(2)}
+                disabled
+                class="border border-zinc-300 dark:bg-zinc-800/50 bg-zinc-200/50 rounded-lg w-full p-2 text-right"
+              />
+            </div>
+          </form>
+        </section>
+        <section
+          id="taxes"
+          class="flex w-full flex-col gap-2 p-4 bg-zinc-200/50 dark:bg-zinc-800/50 rounded-lg sm:rounded-r-lg shadow-lg max-w-md"
+        >
+          <h3 class="text-xl">
+            ¿Qué estoy pagando? <a
+              href="https://steamcito.com.ar/impuestos-hoy"
+              class="text-xs dark:text-green-400 dark:hover:text-green-500 hover:text-green-700 text-green-950"
+              >ℹ️ Mas info</a
+            >
+          </h3>
+          <label for="ganancias">Percepción de Ganancias (30%)</label>
           <input
-            id="originalPrice"
-            type="number"
-            value="1"
-            class="border border-zinc-300 dark:bg-zinc-700/50 rounded-t-lg w-full p-2 text-right appearance-none"
-            min="0.5"
+            disabled
+            class="border border-zinc-300 dark:bg-zinc-700/50 bg-zinc-100/50 rounded-lg w-full p-2 text-right"
+            id="ganancias"
+            value={"$" + (oficial * 0.3).toFixed(2)}
+          />
+          <label for="iva">Iva Servicios Digitales (21%)</label>
+          <input
+            disabled
+            class="border border-zinc-300 dark:bg-zinc-700/50 bg-zinc-100/50 rounded-lg w-full p-2 text-right"
+            id="iva"
+            value={"$" + (oficial * 0.21).toFixed(2)}
           />
           <div
-            class="flex items-center gap-2 w-full bg-zinc-200/50 dark:bg-zinc-800/50 rounded-b-lg p-2"
+            class="final flex flex-col gap-2 rounded-lg p-2 bg-zinc-400/50 dark:bg-backgroundDark/50"
           >
+            <label for="totaltax">Solo Impuestos (51%)</label>
             <input
-              id="isDigitalService"
-              type="checkbox"
-              checked
-              class="rounded-lg accent-green-500 cursor-pointer hover:scale-110 hover:accent-green-700 transition duration-300 ease-in-out"
+              disabled
+              class="border border-zinc-300 dark:bg-zinc-700/50 bg-zinc-100/50 rounded-lg w-full p-2 text-right"
+              id="totaltax"
+              value={"$" + (oficial * 0.51).toFixed(2)}
             />
-            <label for="isDigitalService"
-              >Es un servicio digital?
-              <span class="inline-block font-bold">--></span>
-            </label>
-            <a
-              class="font-bold text-green-950 dark:text-green-500"
-              href="/calculadora/servicios">Lista completa</a
-            >
+            <label for="notax">Sin impuestos</label>
+            <input
+              disabled
+              class="border border-zinc-300 dark:bg-zinc-700/50 bg-zinc-100/50 rounded-lg w-full p-2 text-right"
+              id="notax"
+              value={"$" + oficial.toFixed(2)}
+            />
           </div>
-        </div>
-        <div
-          class="final flex flex-col gap-2 rounded-lg p-2 bg-zinc-400/50 dark:bg-backgroundDark/50"
-        >
-          <label for="finalPrice" class="block text-lg font-medium mb-1"
-            >Precio FINAL en ARS con Impuestos:</label
-          >
-          <input
-            id="finalPrice"
-            value={"$" + (oficial * 1.51).toFixed(2)}
-            disabled
-            class="border border-zinc-300 dark:bg-zinc-800/50 bg-zinc-200/50 rounded-lg w-full p-2 text-right"
-          />
-        </div>
-      </form>
-    </section>
-    <section
-      id="taxes"
-      class="flex w-full flex-col gap-2 p-4 bg-zinc-200/50 dark:bg-zinc-800/50 rounded-lg sm:rounded-r-lg shadow-lg max-w-md"
-    >
-      <h3 class="text-xl">
-        ¿Qué estoy pagando? <a
-          href="https://steamcito.com.ar/impuestos-hoy"
-          class="text-xs dark:text-green-400 dark:hover:text-green-500 hover:text-green-700 text-green-950"
-          >ℹ️ Mas info</a
-        >
-      </h3>
-      <label for="ganancias">Percepción de Ganancias (30%)</label>
-      <input
-        disabled
-        class="border border-zinc-300 dark:bg-zinc-700/50 bg-zinc-100/50 rounded-lg w-full p-2 text-right"
-        id="ganancias"
-        value={"$" + (oficial * 0.3).toFixed(2)}
-      />
-      <label for="iva">Iva Servicios Digitales (21%)</label>
-      <input
-        disabled
-        class="border border-zinc-300 dark:bg-zinc-700/50 bg-zinc-100/50 rounded-lg w-full p-2 text-right"
-        id="iva"
-        value={"$" + (oficial * 0.21).toFixed(2)}
-      />
-      <div
-        class="final flex flex-col gap-2 rounded-lg p-2 bg-zinc-400/50 dark:bg-backgroundDark/50"
-      >
-        <label for="totaltax">Solo Impuestos (51%)</label>
-        <input
-          disabled
-          class="border border-zinc-300 dark:bg-zinc-700/50 bg-zinc-100/50 rounded-lg w-full p-2 text-right"
-          id="totaltax"
-          value={"$" + (oficial * 0.51).toFixed(2)}
-        />
-        <label for="notax">Sin impuestos</label>
-        <input
-          disabled
-          class="border border-zinc-300 dark:bg-zinc-700/50 bg-zinc-100/50 rounded-lg w-full p-2 text-right"
-          id="notax"
-          value={"$" + oficial.toFixed(2)}
-        />
-      </div>
-    </section>
-  </main>
-  <ins
-    class="adsbygoogle"
-    style="display:block"
-    data-ad-format="autorelaxed"
-    data-ad-client="ca-pub-8853864974633365"
-    data-ad-slot="7216001187"></ins>
-  <script is:inline>
-    (adsbygoogle = window.adsbygoogle || []).push({});
-  </script>
-  <ins
-    class="adsbygoogle"
-    style="display:block"
-    data-ad-client="ca-pub-8853864974633365"
-    data-ad-slot="4837249855"
-    data-ad-format="auto"
-    data-full-width-responsive="true"></ins>
-  <script is:inline>
-    (adsbygoogle = window.adsbygoogle || []).push({});
-  </script>
-  <Lore page="calculadora" />
-  <ins
-    class="adsbygoogle"
-    style="display:block"
-    data-ad-client="ca-pub-8853864974633365"
-    data-ad-slot="4837249855"
-    data-ad-format="auto"
-    data-full-width-responsive="true"></ins>
-  <script is:inline>
-    (adsbygoogle = window.adsbygoogle || []).push({});
-  </script>
+        </section>
+        <ins
+          class="adsbygoogle"
+          style="display:block"
+          data-ad-format="autorelaxed"
+          data-ad-client="ca-pub-8853864974633365"
+          data-ad-slot="7216001187"></ins>
+        <script is:inline>
+          (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+        <ins
+          class="adsbygoogle"
+          style="display:block"
+          data-ad-client="ca-pub-8853864974633365"
+          data-ad-slot="4837249855"
+          data-ad-format="auto"
+          data-full-width-responsive="true"></ins>
+        <script is:inline>
+          (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+        <Lore page="calculadora" />
+        <ins
+          class="adsbygoogle"
+          style="display:block"
+          data-ad-client="ca-pub-8853864974633365"
+          data-ad-slot="4837249855"
+          data-ad-format="auto"
+          data-full-width-responsive="true"></ins>
+        <script is:inline>
+          (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+      </main>
+    </div>
+    <div class="hidden sm:block">
+      <ins
+        class="adsbygoogle"
+        style="display:inline-block;width:120px;height:768px"
+        data-ad-client="ca-pub-8853864974633365"
+        data-ad-slot="8423742279"></ins>
+      <script is:inline>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
+    </div>
+  </div>
+
   <script is:inline data-astro-rerun define:vars={{ oficial }}>
     document.addEventListener("astro:page-load", () => {
       if (window.location.pathname === "/calculadora") {
