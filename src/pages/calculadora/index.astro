@@ -33,6 +33,16 @@ const oficial = dolares[0].venta;
   <main
     class="flex flex-col pt-[48px] lg:pt-0 lg:flex-row mx-auto gap-4 lg:gap-0 w-full h-full items-center justify-center"
   >
+    <ins
+      class="adsbygoogle"
+      style="display:block"
+      data-ad-client="ca-pub-8853864974633365"
+      data-ad-slot="4837249855"
+      data-ad-format="auto"
+      data-full-width-responsive="true"></ins>
+    <script is:inline>
+      (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
     <section
       id="calculadora"
       class="flex flex-col items-center relative p-4 bg-zinc-100/50 backdrop-blur-2xl dark:bg-darkless/50 rounded-lg sm:rounded-l-lg shadow-lg max-w-md"
@@ -115,7 +125,7 @@ const oficial = dolares[0].venta;
           >
           <input
             id="finalPrice"
-            value={'$'+ (oficial * 1.51).toFixed(2)}
+            value={"$" + (oficial * 1.51).toFixed(2)}
             disabled
             class="border border-zinc-300 dark:bg-zinc-800/50 bg-zinc-200/50 rounded-lg w-full p-2 text-right"
           />
@@ -138,14 +148,14 @@ const oficial = dolares[0].venta;
         disabled
         class="border border-zinc-300 dark:bg-zinc-700/50 bg-zinc-100/50 rounded-lg w-full p-2 text-right"
         id="ganancias"
-        value={'$'+ (oficial * 0.30).toFixed(2)}
+        value={"$" + (oficial * 0.3).toFixed(2)}
       />
       <label for="iva">Iva Servicios Digitales (21%)</label>
       <input
         disabled
         class="border border-zinc-300 dark:bg-zinc-700/50 bg-zinc-100/50 rounded-lg w-full p-2 text-right"
         id="iva"
-        value={'$'+ (oficial * 0.21).toFixed(2)}
+        value={"$" + (oficial * 0.21).toFixed(2)}
       />
       <div
         class="final flex flex-col gap-2 rounded-lg p-2 bg-zinc-400/50 dark:bg-backgroundDark/50"
@@ -155,19 +165,48 @@ const oficial = dolares[0].venta;
           disabled
           class="border border-zinc-300 dark:bg-zinc-700/50 bg-zinc-100/50 rounded-lg w-full p-2 text-right"
           id="totaltax"
-          value={'$'+ (oficial * 0.51).toFixed(2)}
+          value={"$" + (oficial * 0.51).toFixed(2)}
         />
         <label for="notax">Sin impuestos</label>
         <input
           disabled
           class="border border-zinc-300 dark:bg-zinc-700/50 bg-zinc-100/50 rounded-lg w-full p-2 text-right"
           id="notax"
-          value={'$' + oficial.toFixed(2)}
+          value={"$" + oficial.toFixed(2)}
         />
       </div>
     </section>
   </main>
+  <ins
+    class="adsbygoogle"
+    style="display:block"
+    data-ad-format="autorelaxed"
+    data-ad-client="ca-pub-8853864974633365"
+    data-ad-slot="7216001187"></ins>
+  <script is:inline>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+  <ins
+    class="adsbygoogle"
+    style="display:block"
+    data-ad-client="ca-pub-8853864974633365"
+    data-ad-slot="4837249855"
+    data-ad-format="auto"
+    data-full-width-responsive="true"></ins>
+  <script is:inline>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
   <Lore page="calculadora" />
+  <ins
+    class="adsbygoogle"
+    style="display:block"
+    data-ad-client="ca-pub-8853864974633365"
+    data-ad-slot="4837249855"
+    data-ad-format="auto"
+    data-full-width-responsive="true"></ins>
+  <script is:inline>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
   <script is:inline data-astro-rerun define:vars={{ oficial }}>
     document.addEventListener("astro:page-load", () => {
       if (window.location.pathname === "/calculadora") {
