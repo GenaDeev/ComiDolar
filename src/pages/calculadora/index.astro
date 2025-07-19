@@ -19,7 +19,7 @@ let dolares = [];
 try {
   const response = await fetch("https://dolarapi.com/v1/dolares");
   if (!response.ok) {
-    throw new Error(`Error fetching data: ${response.statusText}`);
+    throw new Error(Error fetching data: ${response.statusText});
   }
   dolares = await response.json();
 } catch (error) {
@@ -30,7 +30,7 @@ const oficial = dolares[0].venta;
 ---
 
 <Layout metadata={metadata}>
-  <div class="flex w-full min-w-full justify-center overflow-x-hidden gap-1">
+  <div class="flex justify-center overflow-x-hidden gap-1">
     <div class="hidden lg:block">
       <ins
         class="adsbygoogle"
@@ -41,7 +41,7 @@ const oficial = dolares[0].venta;
         (adsbygoogle = window.adsbygoogle || []).push({});
       </script>
     </div>
-    <div>
+    <div class="w-full">
       <main class="flex flex-col lg:flex-row items-start justify-center w-full gap-4 max-w-screen-xl mx-auto px-2 pt-[48px] lg:pt-0">
         <ins
           class="adsbygoogle"
@@ -55,76 +55,76 @@ const oficial = dolares[0].venta;
         </script>
 
         <section
-  id="calculadora"
-  class="flex flex-col items-center relative p-3 sm:p-4 bg-zinc-100/50 backdrop-blur-2xl dark:bg-darkless/50 rounded-lg sm:rounded-l-lg shadow-lg w-full sm:max-w-md"
->
-  <header
-    class="p-2 bg-green-500/50 w-full absolute top-0 rounded-t-lg flex justify-between items-center text-sm sm:text-base"
-  >
-    <p class="font-semibold">Ahora sin impuesto pais!</p>
-    <a
-      title="Post de ComiDolar titulado El impuesto pais fue eliminado, calculá tus compras! - ComiDolar"
-      href="https://comidolar.com.ar/blog/eliminacion-impuesto-pais"
-      class="hover:scale-110 transition-transform duration-300 ease-in-out"
-    >
-      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24">
-        <g fill="none">
-          <path fill="currentColor" fill-opacity="0.16" d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2S2 6.477 2 12s4.477 10 10 10"/>
-          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="1.5" d="M12 8h.008M12 16v-5m10 1c0 5.523-4.477 10-10 10S2 17.523 2 12S6.477 2 12 2s10 4.477 10 10"/>
-        </g>
-      </svg>
-    </a>
-  </header>
-  <h1 class="text-2xl sm:text-4xl font-bold mt-10 mb-4 text-center">Calculadora Dolar Tarjeta</h1>
-  <h2 class="text-xl sm:text-2xl mb-6 text-center">
-    Introduce los valores en USD que desees convertir a pesos argentinos y la calculadora hará el resto!
-  </h2>
-  <form class="w-full space-y-3 sm:space-y-4">
-    <div class="origin">
-      <label for="originalPrice" class="block text-base sm:text-lg font-medium mb-1">Precio en USD:</label>
-      <input
-        id="originalPrice"
-        type="number"
-        value="1"
-        class="border border-zinc-300 dark:bg-zinc-700/50 rounded-t-lg w-full p-2 text-right appearance-none"
-        min="0.5"
-      />
-      <div class="flex items-center gap-2 w-full bg-zinc-200/50 dark:bg-zinc-800/50 rounded-b-lg p-2 text-sm sm:text-base">
-        <input
-          id="isDigitalService"
-          type="checkbox"
-          checked
-          class="rounded-lg accent-green-500 cursor-pointer hover:scale-110 hover:accent-green-700 transition duration-300 ease-in-out"
-        />
-        <label for="isDigitalService">
-          Es un servicio digital? <span class="inline-block font-bold">--></span>
-        </label>
-        <a class="font-bold text-green-950 dark:text-green-500" href="/calculadora/servicios">Lista completa</a>
-      </div>
-    </div>
-    <div class="final flex flex-col gap-2 rounded-lg p-2 bg-zinc-400/50 dark:bg-backgroundDark/50">
-      <label for="finalPrice" class="block text-base sm:text-lg font-medium mb-1">Precio FINAL en ARS con Impuestos:</label>
-      <input
-        id="finalPrice"
-        value={"$" + (oficial * 1.51).toFixed(2)}
-        disabled
-        class="border border-zinc-300 dark:bg-zinc-800/50 bg-zinc-200/50 rounded-lg w-full p-2 text-right"
-      />
-    </div>
-  </form>
-</section>
+          id="calculadora"
+          class="flex flex-col items-center relative p-4 bg-zinc-100/50 backdrop-blur-2xl dark:bg-darkless/50 rounded-lg sm:rounded-l-lg shadow-lg w-full max-w-md"
+        >
+          <header
+            class="p-2 bg-green-500/50 w-full absolute top-0 rounded-t-lg flex justify-between items-center"
+          >
+            <p class="font-semibold">Ahora sin impuesto pais!</p>
+            <a
+              title="Post de ComiDolar titulado El impuesto pais fue eliminado, calculá tus compras! - ComiDolar"
+              href="https://comidolar.com.ar/blog/eliminacion-impuesto-pais"
+              class="hover:scale-110 transition-transform duration-300 ease-in-out"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24">
+                <g fill="none">
+                  <path fill="currentColor" fill-opacity="0.16" d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2S2 6.477 2 12s4.477 10 10 10"/>
+                  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="1.5" d="M12 8h.008M12 16v-5m10 1c0 5.523-4.477 10-10 10S2 17.523 2 12S6.477 2 12 2s10 4.477 10 10"/>
+                </g>
+              </svg>
+            </a>
+          </header>
+          <h1 class="text-4xl font-bold mt-8 mb-4 text-center">Calculadora Dolar Tarjeta</h1>
+          <h2 class="text-2xl mb-6 text-center">
+            Introduce los valores en USD que desees convertir a pesos argentinos y la calculadora hará el resto!
+          </h2>
+          <form class="w-full space-y-4">
+            <div class="origin">
+              <label for="originalPrice" class="block text-lg font-medium mb-1">Precio en USD:</label>
+              <input
+                id="originalPrice"
+                type="number"
+                value="1"
+                class="border border-zinc-300 dark:bg-zinc-700/50 rounded-t-lg w-full p-2 text-right appearance-none"
+                min="0.5"
+              />
+              <div class="flex items-center gap-2 w-full bg-zinc-200/50 dark:bg-zinc-800/50 rounded-b-lg p-2">
+                <input
+                  id="isDigitalService"
+                  type="checkbox"
+                  checked
+                  class="rounded-lg accent-green-500 cursor-pointer hover:scale-110 hover:accent-green-700 transition duration-300 ease-in-out"
+                />
+                <label for="isDigitalService">
+                  Es un servicio digital? <span class="inline-block font-bold">--></span>
+                </label>
+                <a class="font-bold text-green-950 dark:text-green-500" href="/calculadora/servicios">Lista completa</a>
+              </div>
+            </div>
+            <div class="final flex flex-col gap-2 rounded-lg p-2 bg-zinc-400/50 dark:bg-backgroundDark/50">
+              <label for="finalPrice" class="block text-lg font-medium mb-1">Precio FINAL en ARS con Impuestos:</label>
+              <input
+                id="finalPrice"
+                value={"$" + (oficial * 1.51).toFixed(2)}
+                disabled
+                class="border border-zinc-300 dark:bg-zinc-800/50 bg-zinc-200/50 rounded-lg w-full p-2 text-right"
+              />
+            </div>
+          </form>
+        </section>
 
         <!-- NUEVO BANNER ENTRE SECCIONES EN MOBILE -->
-<!-- Mobile Graphic Center -->
-<ins class="adsbygoogle block lg:hidden w-full my-2"
-     style="display:block"
-     data-ad-client="ca-pub-8853864974633365"
-     data-ad-slot="4926795481"
-     data-ad-format="auto"
-     data-full-width-responsive="true"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
+        <ins
+          class="adsbygoogle block lg:hidden w-full my-2"
+          style="display:block"
+          data-ad-client="ca-pub-8853864974633365"
+          data-ad-slot="4837249855"
+          data-ad-format="auto"
+          data-full-width-responsive="true"></ins>
+        <script is:inline>
+          (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
 
         <section
           id="taxes"
@@ -272,11 +272,11 @@ const oficial = dolares[0].venta;
 
         const setData = (data) => {
           const { original, ganancias, iva, final, tax } = data;
-          gananciasContainer.value = `$${ganancias.toFixed(2)}`;
-          ivaContainer.value = `$${iva.toFixed(2)}`;
-          finalContainer.value = `$${final.toFixed(2)}`;
-          noTaxContainer.value = `$${original.toFixed(2)}`;
-          totalTaxContainer.value = `$${tax.toFixed(2)}`;
+          gananciasContainer.value = $${ganancias.toFixed(2)};
+          ivaContainer.value = $${iva.toFixed(2)};
+          finalContainer.value = $${final.toFixed(2)};
+          noTaxContainer.value = $${original.toFixed(2)};
+          totalTaxContainer.value = $${tax.toFixed(2)};
         };
 
         const debounce = (func, wait) => {
@@ -298,16 +298,16 @@ const oficial = dolares[0].venta;
         isDigitalServiceElement.addEventListener("change", () => {
           const elements = [
             ivaContainer,
-            document.querySelector(`label[for="${ivaContainer.id}"]`),
+            document.querySelector(label[for="${ivaContainer.id}"]),
           ];
           debouncedSetData(originContainer.value);
           if (!isDigitalServiceElement.checked) {
             elements.forEach((element) => element.classList.add("hidden"));
-            document.querySelector(`label[for="totaltax"]`).textContent =
+            document.querySelector(label[for="totaltax"]).textContent =
               "Solo Impuestos (30%)";
           } else {
             elements.forEach((element) => element.classList.remove("hidden"));
-            document.querySelector(`label[for="totaltax"]`).textContent =
+            document.querySelector(label[for="totaltax"]).textContent =
               "Solo Impuestos (51%)";
           }
         });
