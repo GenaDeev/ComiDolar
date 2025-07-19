@@ -170,7 +170,7 @@ const oficial = dolares[0].venta;
       </main>
 
       <!-- BANNERS EXTRA PARA MOBILE -->
-      <div class="block lg:hidden w-full flex flex-col items-center gap-2 mt-4">
+      <div class="lg:hidden w-full flex flex-col items-center gap-2 mt-4">
         <ins
           class="adsbygoogle"
           style="display:block"
@@ -272,11 +272,11 @@ const oficial = dolares[0].venta;
 
         const setData = (data) => {
           const { original, ganancias, iva, final, tax } = data;
-          gananciasContainer.value = $${ganancias.toFixed(2)};
-          ivaContainer.value = $${iva.toFixed(2)};
-          finalContainer.value = $${final.toFixed(2)};
-          noTaxContainer.value = $${original.toFixed(2)};
-          totalTaxContainer.value = $${tax.toFixed(2)};
+          gananciasContainer.value = `$${ganancias.toFixed(2)}`;
+          ivaContainer.value = `$${iva.toFixed(2)}`;
+          finalContainer.value = `$${final.toFixed(2)}`;
+          noTaxContainer.value = `$${original.toFixed(2)}`;
+          totalTaxContainer.value = `$${tax.toFixed(2)}`;
         };
 
         const debounce = (func, wait) => {
@@ -296,19 +296,26 @@ const oficial = dolares[0].venta;
         );
 
         isDigitalServiceElement.addEventListener("change", () => {
-          const elements = [
-            ivaContainer,
-            document.querySelector(label[for="${ivaContainer.id}"]),
-          ];
+          const ivaLabel = document.querySelector(`label[for="${ivaContainer.id}"]`);
+          const elements = [ivaContainer, ivaLabel];
+          
           debouncedSetData(originContainer.value);
+          
+          const totalTaxLabel = document.querySelector(`label[for="totaltax"]`);
           if (!isDigitalServiceElement.checked) {
-            elements.forEach((element) => element.classList.add("hidden"));
-            document.querySelector(label[for="totaltax"]).textContent =
-              "Solo Impuestos (30%)";
+            elements.forEach(element => {
+              if (element) element.classList.add("hidden");
+            });
+            if (totalTaxLabel) {
+              totalTaxLabel.textContent = "Solo Impuestos (30%)";
+            }
           } else {
-            elements.forEach((element) => element.classList.remove("hidden"));
-            document.querySelector(label[for="totaltax"]).textContent =
-              "Solo Impuestos (51%)";
+            elements.forEach(element => {
+              if (element) element.classList.remove("hidden");
+            });
+            if (totalTaxLabel) {
+              totalTaxLabel.textContent = "Solo Impuestos (51%)";
+            }
           }
         });
       }
