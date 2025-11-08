@@ -4,6 +4,7 @@ import Header from "@/components/Header.astro";
 import Footer from "@/components/Footer.astro";
 import { ClientRouter } from "astro:transitions";
 import LoadingIndicator from "astro-loading-indicator/component";
+import PostHog from "@/components/posthog.astro";
 import "@/styles/global.css";
 ---
 
@@ -111,6 +112,7 @@ import "@/styles/global.css";
 
     <ClientRouter />
     <LoadingIndicator color="#0e9f6e" height="4px" threshold={10} />
+    <PostHog />
     {
       metadata.canonical === "https://comidolar.com.ar/calculadora" && (
         <script
@@ -123,8 +125,7 @@ import "@/styles/global.css";
   </head>
   <body
     transition:animate="fade"
-    class={`${bodyclass ? bodyclass : ""} bg-light-mesh dark:bg-dark-mesh`}
-  >
+    class={`${bodyclass ? bodyclass : ""} bg-light-mesh dark:bg-dark-mesh`}>
     <Header>
       <slot />
       <Footer />
