@@ -10,10 +10,10 @@ type Project = {
 
 export const featuredProjects: Project[] = [
     {
-        url: "https://blackmaps.com.ar",
+        url: "https://blackmaps.vercel.app",
         title: "BlackMaps Web Oficial",
         description: "Sitio web oficial de Black Maps, una cuenta de X (antes Twitter) que se dedica a publicar mapas sobre todo tipo de temas.",
-        favicon: { url: "https://blackmaps.com.ar/image/blackmaps_transparent.webp", scheme: "light" }
+        favicon: { url: "https://comidolar.com.ar/assets/img/favicon.webp", scheme: "light" }
     },
     {
         url: "https://yourprofiles.vercel.app",
