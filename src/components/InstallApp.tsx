@@ -1,9 +1,11 @@
 import { useState, useEffect } from "react";
+
 declare global {
   interface Window {
     pa?: { track: (event: { name: string }) => void };
   }
 }
+
 export default function InstallApp() {
   const [isAppInstalled, setIsAppInstalled] = useState(true);
   const [deferredPrompt, setDeferredPrompt] = useState(null);
@@ -44,19 +46,19 @@ export default function InstallApp() {
 
   const installPWA = async () => {
     if (deferredPrompt) {
-      window.pa.track({ name: "Inició instalación" });
+      window.pa?.track({ name: "Inició instalación" });
       deferredPrompt.prompt();
       const { outcome } = await deferredPrompt.userChoice;
       if (outcome !== "accepted") {
         setIsAppInstalled(false);
-        window.pa.track({ name: "Rechazó instalación" });
+        window.pa?.track({ name: "Rechazó instalación" });
         localStorage.setItem("pwaInstalled", "false");
         localStorage.setItem("pwaOptIn", "false");
       } else {
         setDeferredPrompt(null);
         setIsAppInstalled(true);
         setShowPopover(false);
-        window.pa.track({ name: "Finalizó instalación" });
+        window.pa?.track({ name: "Finalizó instalación" });
         localStorage.setItem("pwaInstalled", "true");
         localStorage.setItem("pwaOptIn", "false");
       }
@@ -65,7 +67,7 @@ export default function InstallApp() {
 
   const closePopover = () => {
     localStorage.setItem("pwaOptIn", "false");
-    window.pa.track({ name: "Cerro popup instalación" });
+    window.pa?.track({ name: "Cerro popup instalación" });
     setShowPopover(false);
   };
 
