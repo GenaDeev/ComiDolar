@@ -19,6 +19,7 @@ export async function GET(context: APIContext) {
       changefreq: "never",
       priority: 0.1,
     })),
+    { url: "https://prode.comidolar.com.ar/", changefreq: "never", priority: 0.5 },
   ];
 
   const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
