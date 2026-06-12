@@ -46,6 +46,7 @@ La estructura de directorios sigue los estándares de Astro con aliases definido
 │   │   └── blog/               # Entradas del blog del sitio
 │   ├── content.config.ts       # Esquema y definición de tipos para colecciones
 │   ├── db/                     # Archivos de datos estáticos y lógica de mockeo/pagos
+│   │   └── carrerasUba.ts      # Base de datos de materias del CBC y equivalencias de carreras
 │   ├── layouts/                # Plantillas HTML base para las páginas
 │   │   └── layout.astro        # Layout global del sitio con soporte SEO y transiciones
 │   ├── lib/                    # Utilidades de código y configuraciones de clientes (Supabase)
@@ -105,12 +106,18 @@ El enrutamiento es estático y dinámico, estructurado de la siguiente forma:
      - `eliminacion-impuesto-pais.md`: Detalle del impacto de la eliminación del Impuesto PAIS a fines de 2024.
      - `resultados-encuesta-cenba-2024.md` / `resultados-encuesta-cenba-2025.md`: Resultados de las encuestas electorales del Centro de Estudiantes del CNBA.
      - `sugerencias-comidolar-2026.md`: Formulario interactivo para sugerencias e ideas de cara al 2026.
+     - `lanzamiento-herramienta-futuro.md`: Anuncio y guía interactiva sobre la nueva herramienta de equivalencias del CBC y comparación con 6to año.
 
 6. **Páginas Institucionales y SEO:**
    - `privacidad.astro` (Políticas de privacidad y tratamiento de datos).
    - `terminos.astro` (Términos y condiciones de uso del portal).
    - `404.astro` (Página de error personalizada).
    - Generación automática de feeds y mapas de sitio en `rss.xml.ts` y `sitemap.xml.ts`.
+
+7. **Página de Articulación del CBC ("Tu Futuro" - `/futuro` - `src/pages/futuro.astro`):**
+   - Compara las materias necesarias para cualquier carrera de la UBA con las aprobadas de forma automática al egresar de 5to año (resolución `RESCS-2026-890-E-UBA-REC`).
+   - Muestra las opciones y estimaciones temporales del CBC regular frente al 6to año de CNBA o Pellegrini.
+   - Enlace directo a los documentos PDF oficiales de los planes y resoluciones.
 
 ---
 
@@ -121,7 +128,9 @@ El enrutamiento es estático y dinámico, estructurado de la siguiente forma:
   - Habilita `ClientRouter` (View Transitions) para navegación instantánea sin recarga de página.
   - Implementa la inyección de PostHog para analíticas y scripts de AdSense condicionales para monetización.
 - **`Header.astro` y `Footer.astro`:**
-  - El Header controla el menú de navegación adaptativo y el switch de tema (modo oscuro / claro).
+  - El Header controla el menú de navegación adaptativo, el switch de tema (modo oscuro / claro) e inyecta la opción "Tu Futuro" apuntando a `/futuro`.
+- **`LinkIcon.astro`:**
+  - Componente que asocia de forma dinámica los iconos en SVG a cada enlace de navegación en base al título (por ejemplo, incorporando un gorro de graduado en SVG para "Tu Futuro").
 - **`Lore.astro`:**
   - Componente que obtiene textos del archivo estático `src/db/lores.ts` y los renderiza según la sección actual para otorgar profundidad histórica al portal.
 - **`CarouselElement.tsx` (React):**
@@ -133,6 +142,9 @@ El enrutamiento es estático y dinámico, estructurado de la siguiente forma:
   - Se suscribe o consulta Supabase para mostrar el listado histórico y en tiempo real de donantes.
 - **`PaymentMethod.astro`:**
   - Renderiza cada opción de transferencia bancaria, aplicando degradados de color específicos adaptados a la marca visual de cada banco (Mercado Pago, Provincia, Nación, Ciudad, Santander, NaranjaX).
+- **`FutureCalculator.tsx` (React):**
+  - Componente interactivo que permite seleccionar el colegio de egreso (CNBA o Pelle), la facultad y la carrera deseada.
+  - Calcula automáticamente porcentajes de avance del CBC, materias restantes, estimación del tiempo de egreso y compara de forma pedagógica el camino de egresar en 5to vs hacer 6to año.
 
 ---
 
