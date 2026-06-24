@@ -21,6 +21,9 @@ Antes de dar por finalizada cualquier tarea o proponer cambios, debés seguir es
      - Formateo con Prettier: `bunx prettier --write <archivo>` o sobre todo el repositorio.
      - Linter con ESLint: `bunx eslint .` (y corregir los errores/warnings que surjan antes de reportar la tarea como completada).
 
+4. **Actualización de Versión:**
+   - Si se te solicita actualizar la versión de ComiDólar, **únicamente** debés modificar el texto plano dentro del componente [`src/components/Release.astro`](./src/components/Release.astro). No modifiques la versión en otros lados; este componente actúa como la fuente única de verdad y se renderiza automáticamente donde corresponda.
+
 ---
 
 ## 2. Todo Sobre el Proyecto ComiDólar (Contexto y Lore)

@@ -1,5 +1,6 @@
 ---
 import { featuredProjects } from "@/db/featuredProjects";
+import Release from "./Release.astro"
 ---
 
 <section
@@ -79,7 +80,7 @@ import { featuredProjects } from "@/db/featuredProjects";
     <span
       class="text-sm flex flex-col text-zinc-600 sm:text-center dark:text-zinc-400"
     >
-      ComiDolar Bundle Version 3.4.5 (stable)
+      ComiDolar Bundle Version <Release/> (stable)
       <div class="text-zinc-600 dark:text-zinc-200 mt-2 sm:hidden">
         <p>
           <a

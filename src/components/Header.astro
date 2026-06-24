@@ -1,6 +1,7 @@
 ---
 import AsideLink from "./AsideLink.astro";
 import InstallApp from "./InstallApp.tsx";
+import Release from "./Release.astro"
 import { fetchMonitors } from "@/lib/getMonitorStatus";
 const statuses = await fetchMonitors();
 
@@ -59,7 +60,7 @@ const isEverythingDown = final === "down";
           >
             Comi Dólar <span
               class="text-xs text-green-900 bg-green-200 rounded-full p-1"
-              >v4.0.0</span
+              ><Release/></span
             >
           </span>
         </a>

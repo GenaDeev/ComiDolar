@@ -42,6 +42,7 @@ La estructura de directorios sigue los estándares de Astro con aliases definido
 │   └── assets/img/             # Assets visuales del sitio y favicons
 ├── src/
 │   ├── components/             # Componentes de interfaz (Astro y React)
+│   │   └── Release.astro       # Componente de versión única del sitio (fuente de verdad)
 │   ├── content/                # Colecciones de contenido Markdown (Blog)
 │   │   └── blog/               # Entradas del blog del sitio
 │   ├── content.config.ts       # Esquema y definición de tipos para colecciones
@@ -145,6 +146,8 @@ El enrutamiento es estático y dinámico, estructurado de la siguiente forma:
 - **`FutureCalculator.tsx` (React):**
   - Componente interactivo que permite seleccionar el colegio de egreso (CNBA o Pelle), la facultad y la carrera deseada.
   - Calcula automáticamente porcentajes de avance del CBC, materias restantes, estimación del tiempo de egreso y compara de forma pedagógica el camino de egresar en 5to vs hacer 6to año.
+- **`Release.astro`:**
+  - Componente minimalista que almacena únicamente el número de versión actual de ComiDólar en texto plano. Funciona como la fuente única de verdad para el control de versiones y es consumido por otros componentes como el pie de página para renderizar la versión.
 
 ---
 
