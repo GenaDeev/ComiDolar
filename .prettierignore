@@ -1,0 +1,7 @@
+# Ignore agent files
+.agents/
+skills-lock.json
+
+# Ignore build files
+dist/
+node_modules/
