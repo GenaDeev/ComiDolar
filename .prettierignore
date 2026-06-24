@@ -2,6 +2,29 @@
 .agents/
 skills-lock.json
 
-# Ignore build files
+# Ignore build and cache files
 dist/
 node_modules/
+.astro/
+
+# Ignore assets, media and documents
+public/assets/
+public/docs/
+**/*.png
+**/*.jpg
+**/*.jpeg
+**/*.webp
+**/*.svg
+**/*.ico
+**/*.webm
+**/*.pdf
+
+# Ignore lockfiles and environment configuration files
+bun.lock
+bun.lockb
+.env
+.env.*
+
+# Ignore minified and compiled third-party scripts
+*.min.js
+public/analytics/

@@ -18,8 +18,9 @@ Antes de dar por finalizada cualquier tarea o proponer cambios, debés seguir es
 
 3. **Formatear y Lintear:**
    - Tras realizar cualquier modificación en los archivos del código fuente, debés correr:
-     - Formateo con Prettier: `bunx prettier --write <archivo>` o sobre todo el repositorio.
-     - Linter con ESLint: `bunx eslint .` (y corregir los errores/warnings que surjan antes de reportar la tarea como completada).
+     - Formateo del repositorio completo: `bun run format` (no uses `prettier .` o similares para todo el repositorio).
+     - Linter del repositorio completo: `bun run lint` (no uses `eslint .` o similares para todo el repositorio).
+     - Formateo o linter de archivo/s específico/s: Usar `bunx prettier --write <archivo>` o `bunx eslint <archivo>` únicamente cuando se quiera formatear o lintear un archivo o conjunto de archivos en particular (y corregir los errores/warnings que surjan antes de reportar la tarea como completada).
 
 4. **Actualización de Versión:**
    - Si se te solicita actualizar la versión de ComiDólar, **únicamente** debés modificar el texto plano dentro del componente [`src/components/Release.astro`](./src/components/Release.astro). No modifiques la versión en otros lados; este componente actúa como la fuente única de verdad y se renderiza automáticamente donde corresponda.
