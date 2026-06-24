@@ -9,6 +9,7 @@ copyright: 2024 ©️ComiDolar
 theme: Finanzas
 tags: [Impuestos, Dolar, Argentina, Compras, Impuesto]
 ---
+
 # 💳 El impuesto pais fue eliminado, calculá tus compras!
 
 ## El impuesto pais fue eliminado, conoce todos los cambios que están surgiendo en tus compras en moneda extranjera, y cómo podés calcularlo.
@@ -22,7 +23,7 @@ Aunque el Impuesto PAIS ya no aplica, las transacciones seguirán sujetas al **i
 En el caso de los **servicios digitales registrados ante AFIP** (como Netflix, Spotify, Steam, Epic Games, etc.), se suma el **IVA Servicios Digitales (21%)** al otro **30%**, resultando en un total de **51%**, 9% menos que antes de la medida.
 
 > **Consulta el listado de servicios digitales registrados en AFIP:**  
-[https://www.afip.gob.ar/iva/documentos/Prestadores-Servicios-Digitales-desde-diciembre-2023.txt](https://www.afip.gob.ar/iva/documentos/Prestadores-Servicios-Digitales-desde-diciembre-2023.txt)
+> [https://www.afip.gob.ar/iva/documentos/Prestadores-Servicios-Digitales-desde-diciembre-2023.txt](https://www.afip.gob.ar/iva/documentos/Prestadores-Servicios-Digitales-desde-diciembre-2023.txt)
 
 ### Comparación con otros tipos de cambio
 
@@ -34,7 +35,7 @@ Según estimaciones oficiales, **11 millones de personas** dejarán de pagar el 
 
 ### 📊 Calculadora de dólar tarjeta actualizada de ComiDolar
 
-Con estos cambios, **ComiDolar ha actualizado su calculadora del dólar tarjeta** para reflejar la eliminación del Impuesto PAIS y facilitar el cálculo exacto del costo de tus compras internacionales o servicios digitales.  
+Con estos cambios, **ComiDolar ha actualizado su calculadora del dólar tarjeta** para reflejar la eliminación del Impuesto PAIS y facilitar el cálculo exacto del costo de tus compras internacionales o servicios digitales.
 
 Accede ahora y aprovecha las nuevas condiciones para calcular tus gastos:  
 [**Ir a la calculadora de dólar tarjeta**](https://comidolar.com.ar/calculadora)

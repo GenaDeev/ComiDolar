@@ -5,6 +5,8 @@ import Lore from "@/components/Lore.astro";
 import CarouselElement from "@/components/CarouselElement";
 import ArticlePromote from "@/components/ArticlePromote.astro";
 
+import { fetchDolares } from "@/lib/dolarApi";
+
 const metadata = {
   title: "Comi Dólar | Comisión de Dólar del CNBA",
   description: {
@@ -18,16 +20,7 @@ const metadata = {
   },
 };
 
-let dolares = [];
-try {
-  const response = await fetch("https://dolarapi.com/v1/dolares");
-  if (!response.ok) {
-    throw new Error(`Error fetching data: ${response.statusText}`);
-  }
-  dolares = await response.json();
-} catch (error) {
-  console.error("Error fetching data:", error);
-}
+const dolares = await fetchDolares();
 
 const brecha = ((dolares[1].venta - dolares[0].venta) / dolares[0].venta) * 100;
 ---

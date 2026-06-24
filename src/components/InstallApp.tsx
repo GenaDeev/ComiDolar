@@ -14,7 +14,9 @@ export default function InstallApp() {
 
   useEffect(() => {
     const checkInstallationStatus = () => {
-      const isStandalone = window.matchMedia("(display-mode: standalone)").matches;
+      const isStandalone = window.matchMedia(
+        "(display-mode: standalone)",
+      ).matches;
       const hasOptedOut = localStorage.getItem("pwaOptIn") === "false";
       const wasInstalled = localStorage.getItem("pwaInstalled") === "true";
 
@@ -40,7 +42,10 @@ export default function InstallApp() {
     window.addEventListener("beforeinstallprompt", handleBeforeInstallPrompt);
 
     return () => {
-      window.removeEventListener("beforeinstallprompt", handleBeforeInstallPrompt);
+      window.removeEventListener(
+        "beforeinstallprompt",
+        handleBeforeInstallPrompt,
+      );
     };
   }, []);
 

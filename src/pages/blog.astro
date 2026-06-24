@@ -34,14 +34,14 @@ const metadata = {
       {
         posts.map((post) => (
           <BlogPostCard
-            key={post.slug}
+            key={post.id}
             title={post.data.title}
             description={post.data.description}
             date={post.data.date}
             author={post.data.author}
             theme={post.data.theme}
             tags={post.data.tags}
-            slug={post.slug}
+            slug={post.id}
             className="w-full max-w-[400px] h-[500px]"
           />
         ))

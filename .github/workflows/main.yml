@@ -6,8 +6,8 @@ env:
 
 on:
   schedule:
-    - cron: '*/15 * * * *'
-  workflow_dispatch: 
+    - cron: "*/15 * * * *"
+  workflow_dispatch:
 
 jobs:
   Deploy-Production:

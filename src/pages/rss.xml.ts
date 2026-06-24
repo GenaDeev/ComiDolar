@@ -4,7 +4,32 @@ import sanitizeHtml from "sanitize-html";
 import MarkdownIt from "markdown-it";
 const parser = new MarkdownIt({ html: true });
 
-const prohibitedTags = ["script","style","iframe","object","embed","link","form","input","button","select","textarea","canvas","svg","audio","video","math","frame","frameset","noscript","noembed","frame","frameset","base","basefont"];
+const prohibitedTags = [
+  "script",
+  "style",
+  "iframe",
+  "object",
+  "embed",
+  "link",
+  "form",
+  "input",
+  "button",
+  "select",
+  "textarea",
+  "canvas",
+  "svg",
+  "audio",
+  "video",
+  "math",
+  "frame",
+  "frameset",
+  "noscript",
+  "noembed",
+  "frame",
+  "frameset",
+  "base",
+  "basefont",
+];
 
 export async function GET(context) {
   const blog = await getCollection("blog");
@@ -14,11 +39,11 @@ export async function GET(context) {
       "Todas las últimas publicaciones de ComiDólar a través de su blog oficial. Noticias del dólar, del CNBA y mucho más.",
     site: context.site,
     items: blog.map((post) => {
-      const imageUrl = `/assets/img/opengraph/blog/${post.slug}.webp`;
+      const imageUrl = `/assets/img/opengraph/blog/${post.id}.webp`;
       const imageHtml = `<img src="${imageUrl}" alt="${post.data.title}" class="opengraph-image" />`;
       let contentHtml = parser.render(post.body);
       const containsProhibitedTags = prohibitedTags.some((tag) =>
-        new RegExp(`<${tag}\\b[^>]*>`, "i").test(contentHtml)
+        new RegExp(`<${tag}\\b[^>]*>`, "i").test(contentHtml),
       );
       if (containsProhibitedTags) {
         contentHtml =
@@ -39,7 +64,7 @@ export async function GET(context) {
         description: post.data.description,
         categories: post.data.tags,
         author: post.data.rssauthor,
-        link: `/blog/${post.slug}/`,
+        link: `/blog/${post.id}/`,
         content: finalContentHtml,
       };
     }),
@@ -47,7 +72,7 @@ export async function GET(context) {
       "<language>es-es</language>",
       `<atom:link xmlns:atom="http://www.w3.org/2005/Atom" href="${new URL(
         "rss.xml",
-        context.site
+        context.site,
       )}" rel="self" type="application/rss+xml" />`,
     ].join(""),
   });

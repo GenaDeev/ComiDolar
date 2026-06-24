@@ -29,7 +29,7 @@ const CarouselElement: React.FC = () => {
 
   const { selectedIndex, scrollSnaps, onDotButtonClick } = useDotButton(
     emblaApi,
-    onNavButtonClick
+    onNavButtonClick,
   );
 
   return (

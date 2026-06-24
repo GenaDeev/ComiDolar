@@ -10,16 +10,24 @@ export async function GET(context: APIContext) {
     { url: `${siteUrl}/`, changefreq: "hourly", priority: 1.0 },
     { url: `${siteUrl}/whatsapp`, changefreq: "never", priority: 0.5 },
     { url: `${siteUrl}/calculadora`, changefreq: "never", priority: 0.5 },
-    { url: `${siteUrl}/calculadora/servicios`, changefreq: "yearly", priority: 0.5 },
+    {
+      url: `${siteUrl}/calculadora/servicios`,
+      changefreq: "yearly",
+      priority: 0.5,
+    },
     { url: `${siteUrl}/blog`, changefreq: "weekly", priority: 0.5 },
     { url: `${siteUrl}/donaciones`, changefreq: "never", priority: 0.5 },
 
     ...blogPosts.map((post) => ({
-      url: `${siteUrl}/blog/${post.slug}/`,
+      url: `${siteUrl}/blog/${post.id}/`,
       changefreq: "never",
       priority: 0.1,
     })),
-    { url: "https://prode.comidolar.com.ar/", changefreq: "never", priority: 0.5 },
+    {
+      url: "https://prode.comidolar.com.ar/",
+      changefreq: "never",
+      priority: 0.5,
+    },
   ];
 
   const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
@@ -31,7 +39,7 @@ export async function GET(context: APIContext) {
           <loc>${url}</loc>
           <changefreq>${changefreq}</changefreq>
           <priority>${priority}</priority>
-        </url>`
+        </url>`,
       )
       .join("")}
   </urlset>`;
