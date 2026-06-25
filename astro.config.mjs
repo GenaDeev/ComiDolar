@@ -11,6 +11,7 @@ export default defineConfig({
   ],
   vite: {
     plugins: [tailwindcss()],
+	cacheDir: './.astro/vite_cache'
   },
   output: "static",
 });
